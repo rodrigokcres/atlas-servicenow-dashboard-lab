@@ -1,0 +1,1621 @@
+{
+  "status": "passed",
+  "matrix_cases": 160,
+  "all_priority_regression_cases": 32,
+  "empty_backlog_cases": 62,
+  "browser": "140.0.7339.16",
+  "tests": [
+    "Core matches priority partition of historical v1.1 for all 160 combinations",
+    "UI rows, cards, groups, states, age, anomalies and scope match same population for 160 combinations",
+    "32 all-priority cases preserve v1.1 values",
+    "Reset clears three controls and restores 64 backlog tickets",
+    "390px viewport has no document overflow",
+    "No browser errors or external requests"
+  ],
+  "limitations": [
+    "FORGE metamorphic regression uses historical code; independent Excel recomputation belongs to SENTINEL"
+  ],
+  "results": [
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 100,
+      "backlog": 64
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 22,
+      "backlog": 12
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 21,
+      "backlog": 12
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 26,
+      "backlog": 19
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 31,
+      "backlog": 21
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Mesa de Ayuda",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 15,
+      "backlog": 9
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 5,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Aplicaciones",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 19,
+      "backlog": 12
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Aplicaciones",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 10,
+      "backlog": 7
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Aplicaciones",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Aplicaciones",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Aplicaciones",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "ERP",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 17,
+      "backlog": 14
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "ERP",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "ERP",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "ERP",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 5,
+      "backlog": 4
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "ERP",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 8,
+      "backlog": 6
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Sin grupo",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 5,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Sin grupo",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Sin grupo",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Sin grupo",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Sin grupo",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "CoE Retail",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 18,
+      "backlog": 11
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "CoE Retail",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "CoE Retail",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "CoE Retail",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 8,
+      "backlog": 6
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "CoE Retail",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Cognos",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 25,
+      "backlog": 16
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Cognos",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Cognos",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 5,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Cognos",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 6,
+      "backlog": 5
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Cognos",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 11,
+      "backlog": 6
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Proveedor Externo",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Proveedor Externo",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Proveedor Externo",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Proveedor Externo",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Proveedor Externo",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 35,
+      "backlog": 24
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 10,
+      "backlog": 7
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 12,
+      "backlog": 11
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 10,
+      "backlog": 5
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Mesa de Ayuda",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 6,
+      "backlog": 4
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Aplicaciones",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 5,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Aplicaciones",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Aplicaciones",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Aplicaciones",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Aplicaciones",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "ERP",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 7,
+      "backlog": 6
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "ERP",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "ERP",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "ERP",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "ERP",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Sin grupo",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Sin grupo",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Sin grupo",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Sin grupo",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Sin grupo",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "CoE Retail",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 4
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "CoE Retail",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "CoE Retail",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "CoE Retail",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "CoE Retail",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Cognos",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 10,
+      "backlog": 7
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Cognos",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Cognos",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Cognos",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 4
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Cognos",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Proveedor Externo",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Proveedor Externo",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Proveedor Externo",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Proveedor Externo",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Proveedor Externo",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 52,
+      "backlog": 33
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 17,
+      "backlog": 10
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 5,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 13,
+      "backlog": 8
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 17,
+      "backlog": 13
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Mesa de Ayuda",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 9,
+      "backlog": 5
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Aplicaciones",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 10,
+      "backlog": 8
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Aplicaciones",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 6,
+      "backlog": 5
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Aplicaciones",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Aplicaciones",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Aplicaciones",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "ERP",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 6,
+      "backlog": 5
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "ERP",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "ERP",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "ERP",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "ERP",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Sin grupo",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Sin grupo",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Sin grupo",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Sin grupo",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Sin grupo",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "CoE Retail",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 12,
+      "backlog": 5
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "CoE Retail",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "CoE Retail",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "CoE Retail",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 5,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "CoE Retail",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Cognos",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 12,
+      "backlog": 8
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Cognos",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Cognos",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Cognos",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Cognos",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 6,
+      "backlog": 4
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Proveedor Externo",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Proveedor Externo",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Proveedor Externo",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Proveedor Externo",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Proveedor Externo",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 13,
+      "backlog": 7
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 6,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Mesa de Ayuda",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Mesa de Ayuda",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Aplicaciones",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Aplicaciones",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Aplicaciones",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Aplicaciones",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Aplicaciones",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "ERP",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "ERP",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "ERP",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "ERP",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "ERP",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Sin grupo",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Sin grupo",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Sin grupo",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Sin grupo",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Sin grupo",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "CoE Retail",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "CoE Retail",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "CoE Retail",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "CoE Retail",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "CoE Retail",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Cognos",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Cognos",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Cognos",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Cognos",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Cognos",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Proveedor Externo",
+        "priority": ""
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Proveedor Externo",
+        "priority": "P1"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Proveedor Externo",
+        "priority": "P2"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Proveedor Externo",
+        "priority": "P3"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Proveedor Externo",
+        "priority": "P4"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0
+    }
+  ],
+  "errors": []
+}

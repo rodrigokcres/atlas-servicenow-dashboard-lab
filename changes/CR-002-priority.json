@@ -1,0 +1,32 @@
+{
+  "artifact_type": "CHANGE_REQUEST",
+  "artifact_version": "1.0",
+  "project_id": "servicenow-gestion-tickets",
+  "created_by": "ATLAS",
+  "requested_by": "Usuario vía ATLAS",
+  "id": "CR-002-priority",
+  "target_artifact": [
+    "PROJECT_SPEC",
+    "DATA_SPEC"
+  ],
+  "target_version": [
+    "1.0",
+    "1.0"
+  ],
+  "reason": "Añadir prioridad y preservar contratos históricos sin modificación silenciosa.",
+  "proposed_change": "PROJECT_SPEC 1.1, DATA_SPEC 1.1 T6 y dimensión prioridad; implementación/DEV_REPORT 1.2; QA_REPORT 1.2. Mantener originales 1.0/1.1.",
+  "impact": "Nuevo filtro sobre campo existente; no modifica semántica KPI, datos ni corte. Reconciliación ID documentada.",
+  "status": "approved",
+  "approved_by": "ATLAS conforme solicitud explícita del usuario",
+  "based_on": [
+    {
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.0",
+      "project_id": "ATLAS-SN-QA-20261002",
+      "path": "history/contracts/PROJECT_SPEC_v1.0.json"
+    }
+  ],
+  "change_log": [
+    "Solicitud aprobada antes de implementación."
+  ]
+}

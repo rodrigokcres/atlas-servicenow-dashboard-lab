@@ -1,0 +1,58 @@
+{
+  "artifact_type": "DATA_PROFILE",
+  "created_by": "NEXUS",
+  "project_id": "servicenow-gestion-tickets",
+  "data_spec_version": "1.1",
+  "source_path": "history/source/nexus_servicenow_test_v1.xlsx",
+  "source_sha256": "a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c",
+  "source_hash_matches_v1_0": true,
+  "inspection": "Read original Excel, all rows; independent priority counts; same T1 trim and T3 canonical selection. No source write.",
+  "source_rows": 102,
+  "canonical_tickets": 100,
+  "backlog_tickets": 64,
+  "priority_source_counts": {
+    "P1": 22,
+    "P2": 21,
+    "P3": 28,
+    "P4": 31
+  },
+  "priority_canonical_counts": {
+    "P1": 22,
+    "P2": 21,
+    "P3": 26,
+    "P4": 31
+  },
+  "priority_backlog_counts": {
+    "P1": 12,
+    "P2": 12,
+    "P3": 19,
+    "P4": 21
+  },
+  "priority_null_count": 0,
+  "priority_unknown_count": 0,
+  "priority_normalization_changes": 0,
+  "priority_normalization": "Existing T1 trim; blank to null; preserve case. Source values are already P1/P2/P3/P4. No new upper-case conversion.",
+  "canonical_filter_dimensions": {
+    "ticket_type": [
+      "INC",
+      "RITM",
+      "SCTASK"
+    ],
+    "group_label": [
+      "Aplicaciones",
+      "CoE Retail",
+      "Cognos",
+      "ERP",
+      "Mesa de Ayuda",
+      "Proveedor Externo",
+      "Sin grupo"
+    ],
+    "priority": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ]
+  },
+  "filter_combinations_including_all": 160
+}

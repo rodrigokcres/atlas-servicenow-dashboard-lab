@@ -1,0 +1,38 @@
+{
+  "artifact_type": "GIT_EXECUTION_REPORT",
+  "artifact_version": "1.0",
+  "project_id": "servicenow-gestion-tickets",
+  "created_by": "ATLAS",
+  "based_on": [
+    {
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.1",
+      "path": "specs/PROJECT_SPEC_v1.1.json"
+    }
+  ],
+  "change_log": [
+    "Rama creada y base v1.1 conservada mediante GitHub API."
+  ],
+  "repository": "rodrigokcres/atlas-servicenow-dashboard-lab",
+  "branch": "feat/priority-filter-v1.2",
+  "base_main_commit": "b27ca326c4fc6d6907e64bcb33f8df88437dc3b2",
+  "baseline_commit": "797f6d52c497c7625364f88df6e37f658b59267b",
+  "baseline_tree": "d4d362403017e6e1fb43c7918bb5f810ffe1f666",
+  "executed": [
+    "Lectura de main y árbol original: sólo .gitignore, README.md y data/README.md.",
+    "Creación real de rama desde SHA base.",
+    "Creación real de árbol y commit histórico.",
+    "Actualización fast-forward de la rama de trabajo.",
+    "Verificación contra árbol remoto: 57 blobs históricos coinciden con bytes locales."
+  ],
+  "not_executed": [
+    "git clone por CLI: falló conexión de red; se utilizó GitHub API para operaciones remotas.",
+    "Merge a main.",
+    "Despliegue."
+  ],
+  "source_policy": "Excel fuente fuera de Git según data/README.md. Capturas históricas permanecen en paquete original. Se conservan 57 archivos históricos de texto byte a byte.",
+  "pending_at_emission": [
+    "Commit de implementación y auditoría final",
+    "Creación de PR"
+  ]
+}
