@@ -1,0 +1,138 @@
+{
+  "scope": "Exploratory raw numeric equality; not contractual binary tolerance, UI comparisons in browser audit",
+  "cases": 160,
+  "differences": [
+    {
+      "case": 3,
+      "filters": {
+        "ticket_type": "",
+        "group_label": "",
+        "priority": "P3"
+      },
+      "kpi": "age_mean_days",
+      "expected": 19.640350877192983,
+      "actual": 19.640350877192986,
+      "difference": 3.552713678800501e-15
+    },
+    {
+      "case": 4,
+      "filters": {
+        "ticket_type": "",
+        "group_label": "",
+        "priority": "P4"
+      },
+      "kpi": "age_mean_days",
+      "expected": 25.064583333333335,
+      "actual": 25.06458333333333,
+      "difference": -3.552713678800501e-15
+    },
+    {
+      "case": 15,
+      "filters": {
+        "ticket_type": "",
+        "group_label": "Cognos",
+        "priority": ""
+      },
+      "kpi": "age_mean_days",
+      "expected": 25.494444444444444,
+      "actual": 25.494444444444447,
+      "difference": 3.552713678800501e-15
+    },
+    {
+      "case": 20,
+      "filters": {
+        "ticket_type": "",
+        "group_label": "ERP",
+        "priority": ""
+      },
+      "kpi": "age_mean_days",
+      "expected": 22.55952380952381,
+      "actual": 22.559523809523814,
+      "difference": 3.552713678800501e-15
+    },
+    {
+      "case": 24,
+      "filters": {
+        "ticket_type": "",
+        "group_label": "ERP",
+        "priority": "P4"
+      },
+      "kpi": "age_mean_days",
+      "expected": 24.958333333333336,
+      "actual": 24.958333333333332,
+      "difference": -3.552713678800501e-15
+    },
+    {
+      "case": 41,
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "",
+        "priority": "P1"
+      },
+      "kpi": "age_mean_days",
+      "expected": 15.758333333333333,
+      "actual": 15.758333333333335,
+      "difference": 1.7763568394002505e-15
+    },
+    {
+      "case": 43,
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "",
+        "priority": "P3"
+      },
+      "kpi": "age_mean_days",
+      "expected": 12.541666666666666,
+      "actual": 12.541666666666668,
+      "difference": 1.7763568394002505e-15
+    },
+    {
+      "case": 53,
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "CoE Retail",
+        "priority": "P3"
+      },
+      "kpi": "age_mean_days",
+      "expected": 17.194444444444443,
+      "actual": 17.194444444444446,
+      "difference": 3.552713678800501e-15
+    },
+    {
+      "case": 55,
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Cognos",
+        "priority": ""
+      },
+      "kpi": "age_mean_days",
+      "expected": 23.442708333333332,
+      "actual": 23.442708333333336,
+      "difference": 3.552713678800501e-15
+    },
+    {
+      "case": 100,
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "ERP",
+        "priority": ""
+      },
+      "kpi": "age_mean_days",
+      "expected": 23.65277777777778,
+      "actual": 23.652777777777775,
+      "difference": -3.552713678800501e-15
+    },
+    {
+      "case": 140,
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "ERP",
+        "priority": ""
+      },
+      "kpi": "age_mean_days",
+      "expected": 29.72222222222222,
+      "actual": 29.722222222222225,
+      "difference": 3.552713678800501e-15
+    }
+  ]
+}

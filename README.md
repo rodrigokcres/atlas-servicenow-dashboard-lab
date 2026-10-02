@@ -44,3 +44,20 @@ El build usa los campos originales sintéticos conservados en `history/data/norm
 El Excel original y las capturas binarias históricas no se incorporan a Git. El paquete `ATLAS_ServiceNow_prueba_integral(1).zip` conserva esas evidencias. Para repetir la auditoría desde fuente, coloque el Excel original, sin modificar, en `history/source/nexus_servicenow_test_v1.xlsx`; SHA-256 esperado: `a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c`.
 
 Los informes y manifiestos históricos mantienen rutas de su contexto original. Los scripts históricos se conservan como evidencia y no se presentan como portables; utilice los scripts nuevos para esta entrega. El HTML de prueba incluye registros sintéticos, no datos productivos.
+
+### Repetir la auditoría independiente
+
+Para la comprobación completa de integridad histórica, restaure también las capturas PNG del paquete original en sus rutas `history/`; este directorio corresponde al contenido de `deliverables/` del ZIP. El manifiesto incluye esos binarios y el script no los omite. Sin ellos, puede ejecutar las pruebas de navegador con el oráculo conservado, pero no afirmar una nueva conciliación desde el Excel ni una verificación completa del paquete.
+
+Con la fuente y el paquete histórico disponibles:
+
+```bash
+python3 qa/independent_oracle.py
+python3 qa/integrity_v1.2.py
+# Ajustar estas dos rutas a la instalación local.
+export CODEX_PRIMARY_RUNTIME_NODE_MODULES=/ruta/a/node_modules
+export ATLAS_BROWSER=/ruta/a/chrome-headless-shell
+node qa/browser_audit_v1.2.cjs
+```
+
+Resultado de SENTINEL para v1.2: **passed_with_observations**. Pasaron las 160 combinaciones, 32 regresiones contra v1.1, restablecimiento, selecciones vacías, bordes de fechas y vista móvil. La observación histórica QA-002 corresponde a diferencias internas IEEE-754 de medias frente a Python (máximo 3,55e-15 días); no se ocultó con tolerancias y las representaciones visibles coinciden. Consulte el informe independiente para el alcance y evidencia exactos.

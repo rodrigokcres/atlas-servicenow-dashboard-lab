@@ -1,0 +1,35 @@
+{
+  "artifact_type": "CHANGE_REQUEST_RESOLUTION",
+  "artifact_version": "1.0",
+  "project_id": "servicenow-gestion-tickets",
+  "created_by": "ATLAS",
+  "based_on": [
+    {
+      "artifact_type": "CHANGE_REQUEST",
+      "id": "CR-002-priority",
+      "artifact_version": "1.0",
+      "path": "changes/CR-002-priority.json"
+    },
+    {
+      "artifact_type": "DEV_REPORT",
+      "artifact_version": "1.2",
+      "path": "reports/DEV_REPORT_v1.2.json"
+    },
+    {
+      "artifact_type": "QA_REPORT",
+      "artifact_version": "1.2",
+      "path": "reports/QA_REPORT_v1.2.json"
+    }
+  ],
+  "change_log": [
+    "Cierre de implementación tras auditoría independiente; solicitud original consumida conservada intacta."
+  ],
+  "status": "implemented",
+  "implementation_commit": "8132a4f12984cf03f7ec2175a5f83a81ae2cc113",
+  "qa_status": "passed_with_observations",
+  "remaining_observations": [
+    "QA-002 heredado: precisión IEEE-754 sin diferencia visible; no bloqueante."
+  ],
+  "main_merge_performed": false,
+  "next_action": "Crear PR para revisión; conservar main sin cambios."
+}
