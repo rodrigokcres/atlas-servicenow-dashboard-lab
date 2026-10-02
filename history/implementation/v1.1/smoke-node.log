@@ -1,0 +1,6 @@
+PASS canonical count and all baseline KPI values
+PASS INC and group intersection consistent with detail
+PASS empty population null ages and zero denominators
+PASS date boundaries and missing/invalid/future dates
+PASS HTML embedded engine exactly matches core and UI files
+{"status":"passed","checks":5,"scope":"Smoke only; not independent acceptance or complete filter coverage."}

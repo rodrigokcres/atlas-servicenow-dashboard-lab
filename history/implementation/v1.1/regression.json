@@ -1,0 +1,345 @@
+{
+  "status": "passed",
+  "finding": "QA-001",
+  "cases": 32,
+  "results": [
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": null
+      },
+      "status": "passed",
+      "ticket_count": 100,
+      "backlog": 64,
+      "stale_48h": 52
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "Aplicaciones"
+      },
+      "status": "passed",
+      "ticket_count": 19,
+      "backlog": 12,
+      "stale_48h": 11
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "CoE Retail"
+      },
+      "status": "passed",
+      "ticket_count": 18,
+      "backlog": 11,
+      "stale_48h": 9
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "Cognos"
+      },
+      "status": "passed",
+      "ticket_count": 25,
+      "backlog": 16,
+      "stale_48h": 14
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "ERP"
+      },
+      "status": "passed",
+      "ticket_count": 17,
+      "backlog": 14,
+      "stale_48h": 10
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "Mesa de Ayuda"
+      },
+      "status": "passed",
+      "ticket_count": 15,
+      "backlog": 9,
+      "stale_48h": 6
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "Proveedor Externo"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0,
+      "stale_48h": 0
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "Sin grupo"
+      },
+      "status": "passed",
+      "ticket_count": 5,
+      "backlog": 2,
+      "stale_48h": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": null
+      },
+      "status": "passed",
+      "ticket_count": 52,
+      "backlog": 33,
+      "stale_48h": 27
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Aplicaciones"
+      },
+      "status": "passed",
+      "ticket_count": 10,
+      "backlog": 8,
+      "stale_48h": 7
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "CoE Retail"
+      },
+      "status": "passed",
+      "ticket_count": 12,
+      "backlog": 5,
+      "stale_48h": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Cognos"
+      },
+      "status": "passed",
+      "ticket_count": 12,
+      "backlog": 8,
+      "stale_48h": 8
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "ERP"
+      },
+      "status": "passed",
+      "ticket_count": 6,
+      "backlog": 5,
+      "stale_48h": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Mesa de Ayuda"
+      },
+      "status": "passed",
+      "ticket_count": 9,
+      "backlog": 5,
+      "stale_48h": 4
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Proveedor Externo"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0,
+      "stale_48h": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Sin grupo"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 2,
+      "stale_48h": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": null
+      },
+      "status": "passed",
+      "ticket_count": 35,
+      "backlog": 24,
+      "stale_48h": 19
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Aplicaciones"
+      },
+      "status": "passed",
+      "ticket_count": 5,
+      "backlog": 3,
+      "stale_48h": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "CoE Retail"
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 4,
+      "stale_48h": 4
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Cognos"
+      },
+      "status": "passed",
+      "ticket_count": 10,
+      "backlog": 7,
+      "stale_48h": 6
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "ERP"
+      },
+      "status": "passed",
+      "ticket_count": 7,
+      "backlog": 6,
+      "stale_48h": 4
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Mesa de Ayuda"
+      },
+      "status": "passed",
+      "ticket_count": 6,
+      "backlog": 4,
+      "stale_48h": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Proveedor Externo"
+      },
+      "status": "passed",
+      "ticket_count": 1,
+      "backlog": 0,
+      "stale_48h": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Sin grupo"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 0,
+      "stale_48h": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": null
+      },
+      "status": "passed",
+      "ticket_count": 13,
+      "backlog": 7,
+      "stale_48h": 6
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Aplicaciones"
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 1,
+      "stale_48h": 1
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "CoE Retail"
+      },
+      "status": "passed",
+      "ticket_count": 2,
+      "backlog": 2,
+      "stale_48h": 2
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Cognos"
+      },
+      "status": "passed",
+      "ticket_count": 3,
+      "backlog": 1,
+      "stale_48h": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "ERP"
+      },
+      "status": "passed",
+      "ticket_count": 4,
+      "backlog": 3,
+      "stale_48h": 3
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Mesa de Ayuda"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0,
+      "stale_48h": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Proveedor Externo"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0,
+      "stale_48h": 0
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Sin grupo"
+      },
+      "status": "passed",
+      "ticket_count": 0,
+      "backlog": 0,
+      "stale_48h": 0
+    }
+  ],
+  "previous_artifacts_unchanged": true,
+  "previous_sha256": {
+    "implementation/v1.0/build.py": "e29610ad15c42a8b8a127e548fb5e0c60fee8e58f5e21b8bb9b649ff6dc2e65a",
+    "implementation/v1.0/smoke.cjs": "7920cfc6c7eed80c049f007a13a5b421d827ee1d5c8c079a19ec3fbb317fead5",
+    "implementation/v1.0/ui.js": "74618254c20a5cd129c45f8f616643df6b2893abe811df26dc8140b9962327b9",
+    "implementation/v1.0/desktop.png": "4a713f354787e87e2062d5587b874a6f0d82f65b800da6ed0909b9c0b263f736",
+    "implementation/v1.0/smoke-node.log": "11c95469a03ab014d29f1af6a4e155012b5f4e62553d4a91eadf7741d0886ee4",
+    "implementation/v1.0/template.html": "417ec3507b4fc656cbb567fe6f7160bef428f9233d4db6f0bc943aa9c00f116a",
+    "implementation/v1.0/dashboard.html": "d75d148ca8a5fb2c4cb1d133630230f38d53a3808e14f36556bac0a1364ef2e9",
+    "implementation/v1.0/smoke-browser.json": "a7bcb9ae473a0dc05868cd2eeba77f3d3e61d97dedd9153bf664b0bb86317506",
+    "implementation/v1.0/mobile.png": "f8b528404c55eabf7c709802c593364dee4b9cb83048825488174fb6d14df6bf",
+    "implementation/v1.0/core.js": "8bd3939a536485b372fd50ed1360064ef45fd47747c1437b3241ffd33152c2a9",
+    "implementation/v1.0/browser-smoke.cjs": "8a9e9f3c9eb6b860e40826c4783cdb24103e1a51e8a6a3e02bb206ded5a0b607",
+    "reports/DEV_REPORT_v1.0.json": "442a3384d528a73739ba47219b247811d88ba5efb89807ee3cce65787b1a005e",
+    "contracts/DATA_SPEC_v1.0.json": "dad311e404f64e161f7287295ce643c46f3b37f9b7fc55c11e65b348ae5d6fcf",
+    "contracts/PROJECT_SPEC_v1.0.json": "2703526c88db95f04dbce7d334b8e72f629da43e00a1659a1dcb5e805acb7b35"
+  },
+  "scope": "Regresión FORGE contra evidencia NEXUS; no reemplaza revalidación independiente SENTINEL."
+}

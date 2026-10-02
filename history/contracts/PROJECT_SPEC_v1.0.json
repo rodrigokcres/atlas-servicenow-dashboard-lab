@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "PROJECT_SPEC",
+  "artifact_version": "1.0",
+  "project_id": "ATLAS-SN-QA-20261002",
+  "created_by": "ATLAS",
+  "based_on": [],
+  "change_log": [
+    "Creación inicial de proyecto de prueba integral independiente."
+  ],
+  "name": {
+    "value": "ServiceNow · Prueba integral de QA",
+    "status": "confirmed"
+  },
+  "objective": {
+    "value": "Construir prototipo funcional y probar detección y corrección independiente de defecto de filtro.",
+    "status": "confirmed"
+  },
+  "scope": {
+    "confirmed_in_scope": [
+      "Excel completo",
+      "Dashboard local funcional",
+      "QA independiente y revalidación"
+    ],
+    "confirmed_out_of_scope": [],
+    "proposed_in_scope": [],
+    "proposed_out_of_scope": [
+      "Publicación externa"
+    ]
+  },
+  "data_sources": {
+    "confirmed": [],
+    "proposed": [
+      {
+        "file": "input/nexus_servicenow_test_v1(3).xlsx",
+        "reason": "Excel más reciente disponible; mensaje sin nuevo adjunto"
+      }
+    ],
+    "pending": []
+  },
+  "requirements": {
+    "confirmed": [
+      {
+        "id": "R1",
+        "text": "Backlog: Nuevo, En progreso y En espera"
+      },
+      {
+        "id": "R2",
+        "text": "Sin actualización: más de 48 horas corridas desde updated_at; updated_at < opened_at no evaluable; fechas faltantes identificadas como no evaluables"
+      },
+      {
+        "id": "R3",
+        "text": "Tickets sin asignar"
+      },
+      {
+        "id": "R4",
+        "text": "Antigüedad"
+      },
+      {
+        "id": "R5",
+        "text": "Distribución por grupo resolutor"
+      },
+      {
+        "id": "R6",
+        "text": "Filtros por tipo de ticket y grupo resolutor combinables y restablecibles; afectan consistentemente tarjetas, gráficos y detalle"
+      },
+      {
+        "id": "R7",
+        "text": "Fecha de corte 2026-10-01 18:00:00 misma referencia horaria del Excel"
+      },
+      {
+        "id": "R8",
+        "text": "Ciclo ATLAS → NEXUS → FORGE → SENTINEL, corrección y segunda auditoría con historial inmutable"
+      }
+    ],
+    "proposed": []
+  },
+  "kpis": {
+    "confirmed": [
+      "backlog",
+      "stale_48h",
+      "unassigned",
+      "age",
+      "by_group"
+    ],
+    "proposed": [],
+    "pending": []
+  },
+  "assumptions": [
+    {
+      "id": "A1",
+      "status": "proposed",
+      "text": "KPIs operativos sin actualización, sin asignar, antigüedad y distribución se calculan sobre backlog; mostrar total fuente y detalle de población."
+    },
+    {
+      "id": "A2",
+      "status": "proposed",
+      "text": "Separar sin responsable de sin grupo; antigüedad al corte desde opened_at."
+    },
+    {
+      "id": "A3",
+      "status": "proposed",
+      "text": "Prototipo HTML autocontenido descargable, sin despliegue."
+    }
+  ],
+  "open_questions": [],
+  "constraints": {
+    "confirmed": [
+      "No alterar fuente",
+      "PROJECT_SPEC y DATA_SPEC consumidos inmutables",
+      "Exactamente un defecto deliberado de filtro en primera entrega por autorización explícita del usuario; no revelar identidad/ubicación a SENTINEL; registrar desviación general y detalle sellado por separado hasta auditoría",
+      "No fingir pruebas ni aprobaciones"
+    ],
+    "proposed": [],
+    "pending": []
+  },
+  "agents_required": [
+    "ATLAS",
+    "NEXUS",
+    "FORGE",
+    "SENTINEL"
+  ],
+  "workflow": {
+    "confirmed_steps": [
+      "NEXUS analiza y emite DATA_SPEC",
+      "FORGE implementa entrega controlada v1.0",
+      "SENTINEL audita independientemente sin detalle del defecto",
+      "ATLAS asigna hallazgos",
+      "FORGE corrige y versiona",
+      "SENTINEL revalida"
+    ],
+    "proposed_steps": [],
+    "dependencies": []
+  },
+  "deliverables": {
+    "confirmed": [
+      "dashboard funcional",
+      "PROJECT_SPEC",
+      "DATA_SPEC",
+      "DEV_REPORT por versión",
+      "QA_REPORT por auditoría",
+      "evidencia reproducible",
+      "historial y paquete descargable"
+    ],
+    "proposed": [],
+    "pending": []
+  },
+  "acceptance_criteria": {
+    "confirmed": [
+      "Semántica exacta de reglas confirmadas",
+      "Filtros individuales, combinaciones y restablecimiento consistentes",
+      "No evaluables visibles y excluidos solo de cálculos que requieren sus fechas",
+      "Auditoría final basada en ejecución real y fuente independiente"
+    ],
+    "proposed": [],
+    "pending": []
+  },
+  "next_action": {
+    "action": "Inspeccionar Excel y emitir DATA_SPEC",
+    "status": "pending",
+    "owner": "NEXUS",
+    "depends_on": []
+  }
+}

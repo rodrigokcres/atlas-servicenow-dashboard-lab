@@ -1,0 +1,5 @@
+import json,re,hashlib
+from pathlib import Path
+from datetime import datetime
+import openpyxl
+P=Path('deliverables');h=(P/'implementation/v1.1/dashboard.html').read_text();embedded=json.loads(re.search(r'<script id="source-data" type="application/json">(.*?)</script>',h,re.S)[1]);w=openpyxl.load_workbook(P/'source/nexus_servicenow_test_v1.xlsx',read_only=True,data_only=False);v=list(w['Tickets_ServiceNow'].values);expected=[dict(zip(v[0],[x.strftime('%Y-%m-%d %H:%M:%S') if isinstance(x,datetime) else x for x in row])) for row in v[1:]];actual=[r['raw'] for r in embedded['records']];result={'source_cells_match':expected==actual,'embedded_rows':len(actual),'source_rows':len(expected),'readme_rows':list(w['README'].values),'core_embedded_exact':(P/'implementation/v1.1/core.js').read_text() in h,'ui_embedded_exact':(P/'implementation/v1.1/ui.js').read_text() in h};(P/'qa/source_integrity_v1.1.json').write_text(json.dumps(result,ensure_ascii=False,indent=2,default=str));print({k:v for k,v in result.items() if k!='readme_rows'})

@@ -1,0 +1,822 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "DATA_SPEC",
+  "artifact_version": "1.0",
+  "project_id": "ATLAS-SN-QA-20261002",
+  "created_by": "NEXUS",
+  "based_on": [
+    {
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.0",
+      "path": "contracts/PROJECT_SPEC_v1.0.json"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "1.0",
+      "change": "Initial complete workbook profile, provisional canonical selection and reproducible KPI/filter oracle."
+    }
+  ],
+  "source_summary": {
+    "status": "inspected",
+    "sources": [
+      {
+        "file": "input/nexus_servicenow_test_v1(3).xlsx",
+        "sha256": "a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c",
+        "selection_status": "proposed by PROJECT_SPEC",
+        "reader": "Python openpyxl read_only=True, data_only=False; no workbook write",
+        "formula_count": 0
+      }
+    ],
+    "inspection_scope": "Every row and column of Tickets_ServiceNow and README; no sampling. Source README historical suggestions do not override confirmed PROJECT_SPEC backlog and 48h rules.",
+    "complete_dataset_or_sample": "complete_dataset"
+  },
+  "dataset_profile": [
+    {
+      "sheet": "Tickets_ServiceNow",
+      "name": "Tickets_ServiceNow",
+      "physical_rows": 103,
+      "max_columns": 11
+    },
+    {
+      "sheet": "README",
+      "name": "README",
+      "physical_rows": 10,
+      "max_columns": 2
+    },
+    {
+      "source_ticket_rows": 102,
+      "canonical_tickets": 100,
+      "duplicate_excess_rows": 2,
+      "profile_evidence": "analysis/source_profile.json"
+    }
+  ],
+  "fields": [
+    {
+      "name": "number",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 100
+    },
+    {
+      "name": "ticket_type",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 3,
+      "value_counts": {
+        "RITM": 35,
+        "INC": 53,
+        "SCTASK": 14
+      }
+    },
+    {
+      "name": "state",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 8,
+      "value_counts": {
+        "Nuevo": 15,
+        "En espera": 13,
+        "Resuelto": 19,
+        "En progreso": 34,
+        "Cerrado": 18,
+        "en progreso": 1,
+        "En Progreso": 1,
+        "CERRADO": 1
+      }
+    },
+    {
+      "name": "priority",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 4,
+      "value_counts": {
+        "P3": 28,
+        "P1": 22,
+        "P4": 31,
+        "P2": 21
+      }
+    },
+    {
+      "name": "opened_at",
+      "source_type_counts": {
+        "datetime": 101,
+        "NoneType": 1
+      },
+      "null_count": 1,
+      "distinct_non_null": 93,
+      "min": "2026-08-17 09:00:00",
+      "max": "2026-09-30 00:00:00",
+      "future_rows": [],
+      "invalid_non_null_rows": []
+    },
+    {
+      "name": "updated_at",
+      "source_type_counts": {
+        "datetime": 101,
+        "NoneType": 1
+      },
+      "null_count": 1,
+      "distinct_non_null": 88,
+      "min": "2026-08-21 14:00:00",
+      "max": "2026-10-01 09:00:00",
+      "future_rows": [],
+      "invalid_non_null_rows": []
+    },
+    {
+      "name": "assignment_group",
+      "source_type_counts": {
+        "str": 97,
+        "NoneType": 5
+      },
+      "null_count": 5,
+      "distinct_non_null": 7,
+      "value_counts": {
+        "Mesa de Ayuda": 16,
+        "Aplicaciones": 20,
+        "ERP": 16,
+        "None": 5,
+        "CoE Retail": 18,
+        "Cognos": 25,
+        "ERP ": 1,
+        "Proveedor Externo": 1
+      }
+    },
+    {
+      "name": "assigned_to",
+      "source_type_counts": {
+        "str": 91,
+        "NoneType": 11
+      },
+      "null_count": 11,
+      "distinct_non_null": 11
+    },
+    {
+      "name": "category",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 6,
+      "value_counts": {
+        "Integración": 20,
+        "Reportería": 20,
+        "Hardware": 17,
+        "Software": 14,
+        "Acceso": 18,
+        "SAP": 13
+      }
+    },
+    {
+      "name": "short_description",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 100
+    },
+    {
+      "name": "sla_due",
+      "source_type_counts": {
+        "datetime": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 96,
+      "min": "2026-08-18 08:00:00",
+      "max": "2026-10-01 17:00:00",
+      "future_rows": [],
+      "invalid_non_null_rows": []
+    }
+  ],
+  "data_quality": {
+    "checks_performed": [
+      "all sheets and cells",
+      "types and nulls",
+      "ID exact/version duplicates",
+      "category case/whitespace",
+      "date ranges and future dates",
+      "updated_at before opened_at",
+      "formula cells",
+      "relationship grain",
+      "every filter cross combination"
+    ],
+    "issues": [
+      {
+        "number": "INC1500015",
+        "source_rows": [
+          16,
+          102
+        ],
+        "canonical_row": 16,
+        "exact": true
+      },
+      {
+        "number": "SCTASK1500033",
+        "source_rows": [
+          34,
+          103
+        ],
+        "canonical_row": 103,
+        "exact": false
+      },
+      {
+        "source_row": 3,
+        "number": "INC1500002",
+        "included": true,
+        "backlog": true,
+        "stale_reasons": [
+          "updated_before_opened"
+        ],
+        "age_reasons": []
+      },
+      {
+        "source_row": 13,
+        "number": "INC1500012",
+        "included": true,
+        "backlog": false,
+        "stale_reasons": [
+          "updated_before_opened"
+        ],
+        "age_reasons": []
+      },
+      {
+        "source_row": 27,
+        "number": "SCTASK1500026",
+        "included": true,
+        "backlog": false,
+        "stale_reasons": [
+          "updated_before_opened"
+        ],
+        "age_reasons": []
+      },
+      {
+        "source_row": 36,
+        "number": "RITM1500035",
+        "included": true,
+        "backlog": true,
+        "stale_reasons": [
+          "updated_at_missing"
+        ],
+        "age_reasons": []
+      },
+      {
+        "source_row": 72,
+        "number": "INC1500071",
+        "included": true,
+        "backlog": true,
+        "stale_reasons": [
+          "updated_before_opened"
+        ],
+        "age_reasons": []
+      },
+      {
+        "source_row": 86,
+        "number": "INC1500085",
+        "included": true,
+        "backlog": true,
+        "stale_reasons": [
+          "updated_before_opened"
+        ],
+        "age_reasons": []
+      },
+      {
+        "source_row": 90,
+        "number": "SCTASK1500089",
+        "included": true,
+        "backlog": true,
+        "stale_reasons": [
+          "opened_at_missing"
+        ],
+        "age_reasons": [
+          "opened_at_missing"
+        ]
+      },
+      {
+        "source_row": 42,
+        "field": "state",
+        "raw": "en progreso",
+        "normalized": "En progreso"
+      },
+      {
+        "source_row": 51,
+        "field": "assignment_group",
+        "raw": "ERP ",
+        "normalized": "ERP"
+      },
+      {
+        "source_row": 60,
+        "field": "state",
+        "raw": "En Progreso",
+        "normalized": "En progreso"
+      },
+      {
+        "source_row": 79,
+        "field": "state",
+        "raw": "CERRADO",
+        "normalized": "Cerrado"
+      }
+    ],
+    "overall_assessment": "Suitable for explicitly provisional prototype. Five invalid chronology pairs total, one missing updated_at, one missing opened_at; 5 backlog stale records and 1 backlog age record not evaluable. No invalid non-null date representations or future dates observed."
+  },
+  "relationships": [
+    {
+      "relationship": "source row -> canonical ticket",
+      "key": "normalized number",
+      "cardinality": "many-to-one",
+      "provenance": "source_sheet/source_row/canonical_row/included and full raw payload retained",
+      "join_to_other_sheets": "none; README is metadata"
+    }
+  ],
+  "dimensions": [
+    {
+      "field": "ticket_type",
+      "normalization": "trim then upper case",
+      "values": [
+        "INC",
+        "RITM",
+        "SCTASK"
+      ]
+    },
+    {
+      "field": "assignment_group",
+      "normalization": "trim; null display/filter Sin grupo",
+      "values": [
+        "Aplicaciones",
+        "CoE Retail",
+        "Cognos",
+        "ERP",
+        "Mesa de Ayuda",
+        "Proveedor Externo",
+        "Sin grupo"
+      ]
+    },
+    {
+      "field": "state",
+      "normalization": "trim + case-insensitive canonical lookup",
+      "values": [
+        "Nuevo",
+        "En progreso",
+        "En espera",
+        "Resuelto",
+        "Cerrado"
+      ]
+    }
+  ],
+  "metrics": [
+    "backlog",
+    "stale_48h",
+    "stale_evaluable",
+    "stale_not_evaluable",
+    "unassigned",
+    "no_group",
+    "age_mean_days",
+    "age_median_days",
+    "age_max_days",
+    "age_evaluable",
+    "age_not_evaluable",
+    "by_group"
+  ],
+  "kpi_definitions": [
+    {
+      "kpi_id": "backlog",
+      "requirement_id": "R1",
+      "name": "Backlog",
+      "status": "calculable",
+      "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+      "required_fields": [
+        "number",
+        "state"
+      ],
+      "available_fields": [
+        "number",
+        "state"
+      ],
+      "calculation_rule": "Count canonical tickets whose normalized state is Nuevo, En progreso or En espera.",
+      "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+      "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+      "validations_pending": [
+        "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+      ],
+      "limitations": []
+    },
+    {
+      "kpi_id": "stale_48h",
+      "requirement_id": "R2",
+      "name": "Sin actualización >48h",
+      "status": "partially_calculable",
+      "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+      "required_fields": [
+        "number",
+        "state",
+        "opened_at",
+        "updated_at"
+      ],
+      "available_fields": [
+        "number",
+        "state",
+        "opened_at",
+        "updated_at"
+      ],
+      "calculation_rule": "Evaluate only when opened_at and updated_at parse, both <= cutoff, and updated_at >= opened_at. Count (cutoff-updated_at).total_seconds() > 172800. Exactly 48 hours is NOT stale; elapsed continuous hours, no business calendar. Show not-evaluable count separately.",
+      "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+      "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+      "validations_pending": [
+        "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+      ],
+      "limitations": [
+        "5 of 64 backlog tickets cannot be evaluated."
+      ]
+    },
+    {
+      "kpi_id": "unassigned",
+      "requirement_id": "R3",
+      "name": "Sin responsable",
+      "status": "calculable",
+      "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+      "required_fields": [
+        "number",
+        "state",
+        "assigned_to"
+      ],
+      "available_fields": [
+        "number",
+        "state",
+        "assigned_to"
+      ],
+      "calculation_rule": "Count backlog tickets with assigned_to null after trimming; report no_group separately as assignment_group null. Do not use OR between these conditions.",
+      "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+      "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+      "validations_pending": [
+        "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+      ],
+      "limitations": []
+    },
+    {
+      "kpi_id": "age",
+      "requirement_id": "R4",
+      "name": "Antigüedad",
+      "status": "partially_calculable",
+      "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+      "required_fields": [
+        "number",
+        "state",
+        "opened_at"
+      ],
+      "available_fields": [
+        "number",
+        "state",
+        "opened_at"
+      ],
+      "calculation_rule": "age_days=(cutoff-opened_at).total_seconds()/86400 for valid opened_at <= cutoff. Show arithmetic mean, median, maximum and evaluable denominator. Unknown age stays null, not zero. updated_at validity does not affect age.",
+      "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+      "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+      "validations_pending": [
+        "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+      ],
+      "limitations": [
+        "1 of 64 backlog tickets has missing opened_at."
+      ]
+    },
+    {
+      "kpi_id": "by_group",
+      "requirement_id": "R5",
+      "name": "Distribución por grupo resolutor",
+      "status": "calculable",
+      "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+      "required_fields": [
+        "number",
+        "state",
+        "assignment_group"
+      ],
+      "available_fields": [
+        "number",
+        "state",
+        "assignment_group"
+      ],
+      "calculation_rule": "Count backlog by trimmed assignment_group, replacing null only for display/filter by Sin grupo. Counts sum to filtered backlog. Empty groups may display zero or be omitted from chart; filter options derive from all canonical source tickets.",
+      "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+      "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+      "validations_pending": [
+        "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+      ],
+      "limitations": []
+    }
+  ],
+  "transformations_required": [
+    {
+      "id": "T1",
+      "rule": "Trim every source string; blank strings normalize to null. Preserve unmodified values under raw."
+    },
+    {
+      "id": "T2",
+      "rule": "ticket_type upper case; state casefold canonical map; do not infer unknown state or type from ticket number."
+    },
+    {
+      "id": "T3",
+      "status": "proposed",
+      "rule": "Group by normalized number, missing number treated as separate row. Choose greatest parseable updated_at <= cutoff; invalid/missing/future timestamp ranks below any valid timestamp. Ties select lowest source row. If all candidates lack valid timestamp select lowest source row and retain anomalies. Do not merge cells across versions.",
+      "selected": [
+        {
+          "number": "INC1500015",
+          "source_rows": [
+            16,
+            102
+          ],
+          "canonical_row": 16,
+          "exact": true
+        },
+        {
+          "number": "SCTASK1500033",
+          "source_rows": [
+            34,
+            103
+          ],
+          "canonical_row": 103,
+          "exact": false
+        }
+      ],
+      "warning": "Version selection is a provisional assumption, not confirmed user business rule. Both duplicate IDs are outside backlog here, so selection does not change these backlog KPI totals."
+    },
+    {
+      "id": "T4",
+      "rule": "Cutoff 2026-10-01 18:00:00 is naive in same clock reference as Excel. No timezone conversion or browser local-time dependence. Use deterministic calendar arithmetic. Future dates remain traceable, but exclude them only from date-dependent evaluations: future opened_at excludes age and stale; future updated_at excludes stale only; future sla_due has no KPI effect."
+    },
+    {
+      "id": "T5",
+      "rule": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics."
+    },
+    {
+      "id": "T6",
+      "rule": "Apply filters ticket_type AND group_label to canonical tickets before every card/chart/detail computation. No filter means all; reset clears both. Dashboard operational detail shows filtered backlog records; source audit detail may show all 102 with canonical markers and explicit scope. Total source 102 is invariant and labelled source; filtered canonical ticket_count changes with filters. Options remain based on all canonical tickets including zero-backlog Proveedor Externo. Empty population counts=0, ages=null, denominators=0."
+    }
+  ],
+  "anomalies": [
+    {
+      "source_row": 3,
+      "number": "INC1500002",
+      "included": true,
+      "backlog": true,
+      "stale_reasons": [
+        "updated_before_opened"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 13,
+      "number": "INC1500012",
+      "included": true,
+      "backlog": false,
+      "stale_reasons": [
+        "updated_before_opened"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 27,
+      "number": "SCTASK1500026",
+      "included": true,
+      "backlog": false,
+      "stale_reasons": [
+        "updated_before_opened"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 36,
+      "number": "RITM1500035",
+      "included": true,
+      "backlog": true,
+      "stale_reasons": [
+        "updated_at_missing"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 72,
+      "number": "INC1500071",
+      "included": true,
+      "backlog": true,
+      "stale_reasons": [
+        "updated_before_opened"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 86,
+      "number": "INC1500085",
+      "included": true,
+      "backlog": true,
+      "stale_reasons": [
+        "updated_before_opened"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 90,
+      "number": "SCTASK1500089",
+      "included": true,
+      "backlog": true,
+      "stale_reasons": [
+        "opened_at_missing"
+      ],
+      "age_reasons": [
+        "opened_at_missing"
+      ]
+    }
+  ],
+  "limitations": [
+    "Snapshot current states do not reconstruct historical status changes at cutoff. All timestamps observed <= cutoff, but no event history exists.",
+    "No SLA KPI requested; sla_due profiled only.",
+    "Field assigned_to contains personal names from test export; retain in local evidence, do not expose unnecessarily.",
+    "Source selection and ancillary KPI population are explicitly proposed assumptions, not newly confirmed requirements."
+  ],
+  "assumptions": [
+    {
+      "id": "A1",
+      "status": "proposed",
+      "text": "Operational stale, unassigned, age and by_group metrics use backlog population."
+    },
+    {
+      "id": "A2",
+      "status": "proposed",
+      "text": "Unassigned means no individual responsible; missing group is separate. Age starts at opened_at."
+    },
+    {
+      "id": "A4",
+      "status": "proposed",
+      "text": "T3 canonical selection latest valid updated_at, tie earliest row; all 102 rows preserved."
+    },
+    {
+      "id": "A5",
+      "status": "proposed",
+      "text": "Missing opened_at makes stale non-evaluable because chronology cannot be validated; future timestamps treatment follows T4."
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "Q1",
+      "blocking": false,
+      "question": "Ratify proposed assumptions for production use; prototype labels them as provisional."
+    }
+  ],
+  "requirements_coverage": [
+    {
+      "requirement_id": "R1",
+      "status": "calculable",
+      "basis": "See KPI definitions and T6 filter contract; complete data evidence supplied."
+    },
+    {
+      "requirement_id": "R2",
+      "status": "partially_calculable",
+      "basis": "See KPI definitions and T6 filter contract; complete data evidence supplied."
+    },
+    {
+      "requirement_id": "R3",
+      "status": "calculable",
+      "basis": "See KPI definitions and T6 filter contract; complete data evidence supplied."
+    },
+    {
+      "requirement_id": "R4",
+      "status": "partially_calculable",
+      "basis": "See KPI definitions and T6 filter contract; complete data evidence supplied."
+    },
+    {
+      "requirement_id": "R5",
+      "status": "calculable",
+      "basis": "See KPI definitions and T6 filter contract; complete data evidence supplied."
+    },
+    {
+      "requirement_id": "R6",
+      "status": "calculable",
+      "basis": "See KPI definitions and T6 filter contract; complete data evidence supplied."
+    },
+    {
+      "requirement_id": "R7",
+      "status": "calculable",
+      "basis": "See KPI definitions and T6 filter contract; complete data evidence supplied."
+    },
+    {
+      "requirement_id": "R8",
+      "status": "not_calculable",
+      "basis": "Governance process is validated by ATLAS/SENTINEL, not dataset."
+    }
+  ],
+  "recommendations": [
+    "Display source rows=102 and canonical tickets=100 clearly; never present dedup as confirmed.",
+    "Display date non-evaluable counts and row-level reasons, including when filtering.",
+    "Compare independently against all 32 cases in analysis/expected_results.json and synthetic exact-48h/future/invalid-date edges.",
+    "Do not consume normalized flags as independent QA oracle: reread original workbook and recalculate."
+  ],
+  "expected_results": {
+    "ticket_count": 100,
+    "backlog": 64,
+    "stale_48h": 52,
+    "stale_evaluable": 59,
+    "stale_not_evaluable": 5,
+    "unassigned": 6,
+    "no_group": 2,
+    "age_evaluable": 63,
+    "age_not_evaluable": 1,
+    "age_mean_days": 21.044973544973544,
+    "age_median_days": 17.458333333333332,
+    "age_max_days": 45.375,
+    "by_group": {
+      "Aplicaciones": 12,
+      "CoE Retail": 11,
+      "Cognos": 16,
+      "ERP": 14,
+      "Mesa de Ayuda": 9,
+      "Sin grupo": 2
+    },
+    "backlog_source_rows": [
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      11,
+      14,
+      15,
+      17,
+      18,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      28,
+      31,
+      32,
+      33,
+      36,
+      37,
+      38,
+      42,
+      44,
+      45,
+      47,
+      48,
+      51,
+      52,
+      53,
+      54,
+      56,
+      57,
+      58,
+      60,
+      62,
+      63,
+      65,
+      69,
+      70,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      80,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      89,
+      90,
+      91,
+      92,
+      93,
+      97,
+      98,
+      100
+    ]
+  },
+  "evidence_files": [
+    "analysis/analyze_source.py",
+    "analysis/emit_data_spec.py",
+    "analysis/source_profile.json",
+    "analysis/expected_results.json",
+    "data/normalized_tickets.json"
+  ],
+  "next_action": {
+    "action": "Implement explicit provisional prototype against DATA_SPEC 1.0; freeze consumed contract and validate independently.",
+    "owner": "ATLAS",
+    "status": "ready",
+    "depends_on": [
+      "PROJECT_SPEC 1.0",
+      "DATA_SPEC 1.0"
+    ]
+  }
+}

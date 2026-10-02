@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "DEV_REPORT",
+  "artifact_version": "1.1",
+  "project_id": "ATLAS-SN-QA-20261002",
+  "created_by": "FORGE",
+  "based_on": [
+    {
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.0",
+      "path": "contracts/PROJECT_SPEC_v1.0.json"
+    },
+    {
+      "artifact_type": "DATA_SPEC",
+      "artifact_version": "1.0",
+      "path": "contracts/DATA_SPEC_v1.0.json"
+    },
+    {
+      "artifact_type": "QA_REPORT",
+      "artifact_version": "1.0",
+      "path": "qa/QA_REPORT_v1.0.json",
+      "finding_id": "QA-001"
+    },
+    {
+      "artifact_type": "CORRECTION_ASSIGNMENT",
+      "artifact_version": "1.0",
+      "path": "ATLAS_correction_assignment_v1.0.json"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "1.1",
+      "change": "QA-001 corregido: aplicar ticket_type seleccionado sin remapeo SCTASK→RITM. Actualizar badge v1.1 y retirar advertencia específica del ensayo; conservar supuestos. Historial v1.0 intacto."
+    }
+  ],
+  "implementation_status": "completed",
+  "technical_summary": {
+    "summary": "Corrección de QA-001 en motor compartido: SCTASK conserva identidad de tipo en filtros individuales y combinaciones AND. Pruebas FORGE pasan; revalidación independiente pendiente. Implementación concluida no equivale a aprobación QA.",
+    "input_contracts": [
+      {
+        "artifact_type": "PROJECT_SPEC",
+        "artifact_version": "1.0",
+        "path": "contracts/PROJECT_SPEC_v1.0.json"
+      },
+      {
+        "artifact_type": "DATA_SPEC",
+        "artifact_version": "1.0",
+        "path": "contracts/DATA_SPEC_v1.0.json"
+      }
+    ]
+  },
+  "architecture": {
+    "build": "build.py inserta datos fuente, core.js y ui.js en template.html; salida dashboard.html sin dependencias externas.",
+    "data_flow": "records.raw → normalize (T1/T2/T3/T5) → filterTickets → evaluate → metrics → render",
+    "api": "globalThis.DashboardCore en browser; require(core.js) en Node. normalize(records), filterTickets(tickets,filters), evaluate(record), metrics(tickets,filters), clock(value).",
+    "ui": "DashboardApp.render llama al mismo DashboardCore.metrics para todas las regiones. Selectores #type, #group, #reset; regiones #cards, #groups, #states, #ages, #tickets, #anomalies."
+  },
+  "stack": [
+    "HTML5",
+    "CSS responsive y barras accesibles con valores textuales",
+    "JavaScript ES2020 sin librerías en runtime",
+    "Python 3 para build",
+    "Node assert para smoke",
+    "Playwright/Chromium 131 para smoke real"
+  ],
+  "files_created_or_modified": [
+    "implementation/v1.1/before-sha256.json",
+    "implementation/v1.1/browser-smoke.cjs",
+    "implementation/v1.1/build.py",
+    "implementation/v1.1/core.js",
+    "implementation/v1.1/dashboard.html",
+    "implementation/v1.1/desktop.png",
+    "implementation/v1.1/mobile.png",
+    "implementation/v1.1/regression.cjs",
+    "implementation/v1.1/regression.json",
+    "implementation/v1.1/smoke-browser.json",
+    "implementation/v1.1/smoke-node.log",
+    "implementation/v1.1/smoke.cjs",
+    "implementation/v1.1/template.html",
+    "implementation/v1.1/ui.js",
+    "reports/DEV_REPORT_v1.1.json",
+    "controlled_defect_disclosure.json"
+  ],
+  "implemented_requirements": [
+    {
+      "requirement_id": "R1",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js evaluate/metrics: estados de backlog"
+    },
+    {
+      "requirement_id": "R2",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js clock/evaluate: >48h y no evaluables; UI tarjetas y tabla"
+    },
+    {
+      "requirement_id": "R3",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js metrics: responsable/grupo separados"
+    },
+    {
+      "requirement_id": "R4",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js metrics: media/mediana/máximo y denominadores"
+    },
+    {
+      "requirement_id": "R5",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js metrics by_group y ui.js bars"
+    },
+    {
+      "requirement_id": "R6",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js filterTickets aplica ticket_type literal AND group_label; ui.js controles y render; QA-001 corregido, pendiente revalidación."
+    },
+    {
+      "requirement_id": "R7",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js CUTOFF y aritmética UTC utilizada como reloj naive"
+    },
+    {
+      "requirement_id": "R8",
+      "status": "partial",
+      "trace": "Corrección y revelación tras primera auditoría emitidas; segunda auditoría pendiente."
+    }
+  ],
+  "implemented_kpis": [
+    {
+      "kpi_id": "backlog",
+      "calculability": "calculable",
+      "rule_reference": "DATA_SPEC 1.0 kpi_definitions[kpi_id=backlog]",
+      "implementation": "core.js metrics/evaluate; ui.js render",
+      "validation_status": "32 filter cases passed in FORGE regression; independent acceptance pending"
+    },
+    {
+      "kpi_id": "stale_48h",
+      "calculability": "partially_calculable",
+      "rule_reference": "DATA_SPEC 1.0 kpi_definitions[kpi_id=stale_48h]",
+      "implementation": "core.js metrics/evaluate; ui.js render",
+      "validation_status": "32 filter cases passed in FORGE regression; independent acceptance pending"
+    },
+    {
+      "kpi_id": "unassigned",
+      "calculability": "calculable",
+      "rule_reference": "DATA_SPEC 1.0 kpi_definitions[kpi_id=unassigned]",
+      "implementation": "core.js metrics/evaluate; ui.js render",
+      "validation_status": "32 filter cases passed in FORGE regression; independent acceptance pending"
+    },
+    {
+      "kpi_id": "age",
+      "calculability": "partially_calculable",
+      "rule_reference": "DATA_SPEC 1.0 kpi_definitions[kpi_id=age]",
+      "implementation": "core.js metrics/evaluate; ui.js render",
+      "validation_status": "32 filter cases passed in FORGE regression; independent acceptance pending"
+    },
+    {
+      "kpi_id": "by_group",
+      "calculability": "calculable",
+      "rule_reference": "DATA_SPEC 1.0 kpi_definitions[kpi_id=by_group]",
+      "implementation": "core.js metrics/evaluate; ui.js render",
+      "validation_status": "32 filter cases passed in FORGE regression; independent acceptance pending"
+    }
+  ],
+  "data_transformations": [
+    {
+      "id": "T1",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js normalize",
+      "status": "specified",
+      "note": "Aplicación conforme en regresión FORGE; aceptación independiente pendiente."
+    },
+    {
+      "id": "T2",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js normalize",
+      "status": "specified",
+      "note": "Aplicación conforme en regresión FORGE; aceptación independiente pendiente."
+    },
+    {
+      "id": "T3",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js normalize",
+      "status": "proposed",
+      "note": "Aplicación conforme en regresión FORGE; aceptación independiente pendiente."
+    },
+    {
+      "id": "T4",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js clock/evaluate",
+      "status": "specified",
+      "note": "Aplicación conforme en regresión FORGE; aceptación independiente pendiente."
+    },
+    {
+      "id": "T5",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js normalize",
+      "status": "specified",
+      "note": "Aplicación conforme en regresión FORGE; aceptación independiente pendiente."
+    },
+    {
+      "id": "T6",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js filterTickets/metrics y ui.js render",
+      "status": "specified",
+      "note": "Aplicación conforme en regresión FORGE; aceptación independiente pendiente."
+    }
+  ],
+  "technical_decisions": [
+    "Un único motor puro para UI y pruebas, sin respuestas precalculadas.",
+    "Se recalcula normalización y selección canónica desde raw; se preserva procedencia por fila.",
+    "No redondear antes de agregación; presentar hasta dos decimales con formato es-ES.",
+    "Fecha fija con componentes UTC para evitar dependencia de zona local; no convierte la referencia horaria Excel.",
+    "Opciones derivadas de todas las filas canónicas, incluidos grupos sin backlog.",
+    "Nombres personales no se muestran en tablas; solo condición de asignación."
+  ],
+  "tests_performed": [
+    {
+      "name": "Node smoke",
+      "status": "passed",
+      "command": "node implementation/v1.1/smoke.cjs",
+      "evidence": "implementation/v1.1/smoke-node.log",
+      "scope": "Baseline, intersección INC/ERP, vacío, fechas y HTML/motor compartido."
+    },
+    {
+      "name": "Regresión completa propia FORGE",
+      "status": "passed",
+      "command": "node implementation/v1.1/regression.cjs",
+      "evidence": "implementation/v1.1/regression.json",
+      "scope": "32 combinaciones contra NEXUS expected_results, todos los KPI/poblaciones/filas; hashes de archivos v1.0 y contratos iguales."
+    },
+    {
+      "name": "Chromium real con QA-001",
+      "status": "passed",
+      "command": "node implementation/v1.1/browser-smoke.cjs",
+      "evidence": "implementation/v1.1/smoke-browser.json",
+      "scope": "SCTASK 13 canónicos/7 backlog/6 stale y detalle SCTASK; baseline, INC/ERP, reset, 390px, sin errores JS/red externa."
+    },
+    {
+      "name": "Revalidación independiente SENTINEL",
+      "status": "not_run",
+      "evidence": null,
+      "scope": "FORGE no emite aprobación QA."
+    }
+  ],
+  "known_issues": [],
+  "limitations": [
+    "Supuestos A1/A2/A3/A4/A5 y elección de fuente continúan provisionales.",
+    "No reconstruye estados históricos.",
+    "Pruebas FORGE no sustituyen revalidación independiente de SENTINEL.",
+    "Browser smoke requiere Playwright y Chromium local; dashboard autocontenido funciona sin servidor."
+  ],
+  "deviations": [],
+  "pending_decisions": [
+    {
+      "owner": "SENTINEL",
+      "decision": "Revalidar v1.1 contra Excel y matriz completa; cerrar QA-001 si procede",
+      "status": "pending"
+    },
+    {
+      "owner": "Usuario / ATLAS",
+      "decision": "Ratificar supuestos antes de producción",
+      "status": "pending"
+    }
+  ],
+  "run_instructions": {
+    "open": "Abrir implementation/v1.1/dashboard.html directamente en navegador. No instalar dependencias para usarlo.",
+    "build": "Desde carpeta deliverables: python implementation/v1.1/build.py",
+    "node_smoke": "Desde deliverables: node implementation/v1.1/smoke.cjs",
+    "browser_smoke": "Desde deliverables: node implementation/v1.1/browser-smoke.cjs. Requiere Playwright en CODEX_PRIMARY_RUNTIME_NODE_MODULES y Chromium en ATLAS_BROWSER o ruta por defecto indicada en script.",
+    "filters": "Seleccionar tipo y grupo; botón Restablecer vacía ambos.",
+    "regression": "Desde deliverables: node implementation/v1.1/regression.cjs"
+  },
+  "deployment_status": {
+    "status": "not_requested",
+    "target": null,
+    "url": null,
+    "evidence": [],
+    "reason": "Prototipo local descargable; no publicación externa solicitada."
+  },
+  "next_action": {
+    "action": "Entregar implementación 1.1 y DEV_REPORT 1.1 a SENTINEL para revalidación independiente.",
+    "owner": "ATLAS",
+    "status": "pending",
+    "depends_on": [
+      "SENTINEL QA_REPORT 1.1"
+    ]
+  },
+  "resolved_findings": [
+    {
+      "finding_id": "QA-001",
+      "source": "QA_REPORT 1.0",
+      "status": "fixed_pending_independent_revalidation",
+      "expected": {
+        "ticket_count": 13,
+        "backlog": 7,
+        "stale_48h": 6
+      },
+      "observed": {
+        "ticket_count": 13,
+        "backlog": 7,
+        "stale_48h": 6
+      },
+      "evidence": [
+        "implementation/v1.1/regression.json",
+        "implementation/v1.1/smoke-browser.json"
+      ],
+      "change": "core.js filterTickets: const type=filters.ticket_type;"
+    }
+  ],
+  "controlled_defect_disclosure": {
+    "path": "controlled_defect_disclosure.json",
+    "released_after": "QA_REPORT 1.0 failed emitted",
+    "matching_findings": [
+      "QA-001"
+    ],
+    "sealed_defect_count": 1,
+    "qa_findings_count": 1,
+    "verification": "Único defecto sellado SCTASK→RITM coincide con único hallazgo QA-001; una sola sustitución de expresión corrige causa funcional. Otros cambios son badge/texto de versión y pruebas."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "browser": "131.0.6778.204",
+  "tests": [
+    "file:// load and 64 baseline rows",
+    "INC + ERP yields 5 detail rows",
+    "reset clears both filters and restores 64 rows",
+    "390px viewport has no document overflow",
+    "no page errors",
+    "no network requests"
+  ],
+  "limitations": [
+    "Smoke only, not independent full filter matrix or manual visual audit."
+  ],
+  "errors": [],
+  "requests": [
+    "file:///workspace/scratch/81d4f88d8ba2/deliverables/implementation/v1.0/dashboard.html"
+  ]
+}

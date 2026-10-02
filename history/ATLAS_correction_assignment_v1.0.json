@@ -1,0 +1,18 @@
+{
+  "artifact_type": "CORRECTION_ASSIGNMENT",
+  "artifact_version": "1.0",
+  "project_id": "ATLAS-SN-QA-20261002",
+  "created_by": "ATLAS",
+  "based_on": [
+    {
+      "artifact_type": "QA_REPORT",
+      "artifact_version": "1.0"
+    }
+  ],
+  "finding_id": "QA-001",
+  "responsible_specialty": "FORGE",
+  "action": "Corregir filtro SCTASK que devuelve RITM; generar implementación v1.1 y DEV_REPORT v1.1 conservando v1.0. Entregar de nuevo a SENTINEL.",
+  "contract_changes_required": false,
+  "reason": "Fallo de código contra contrato correcto. PROJECT_SPEC 1.0 y DATA_SPEC 1.0 permanecen inmutables.",
+  "status": "assigned"
+}

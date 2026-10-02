@@ -1,0 +1,45 @@
+{
+  "source_cells_match": true,
+  "embedded_rows": 102,
+  "source_rows": 102,
+  "readme_rows": [
+    [
+      "Dataset de prueba — NEXUS / ServiceNow"
+    ],
+    [],
+    [
+      "Propósito",
+      "Evaluar si NEXUS perfila datos, detecta problemas de calidad y define KPIs reproducibles."
+    ],
+    [
+      "Fuente simulada",
+      "Exportación de tickets de ServiceNow."
+    ],
+    [
+      "Fecha de referencia sugerida",
+      "2026-10-01 18:00:00"
+    ],
+    [
+      "Registros de datos",
+      102
+    ],
+    [
+      "Tipos presentes",
+      "INC, RITM, SCTASK"
+    ],
+    [
+      "Regla de prueba backlog",
+      "No está definida: NEXUS debe identificar que requiere validación funcional."
+    ],
+    [
+      "Regla de prueba sin movimiento",
+      "48 horas es una propuesta, no una definición confirmada."
+    ],
+    [
+      "Nota",
+      "El dataset contiene problemas intencionales de calidad. No se enumeran aquí para no sesgar la prueba."
+    ]
+  ],
+  "core_embedded_exact": true,
+  "ui_embedded_exact": true
+}
