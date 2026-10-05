@@ -1,0 +1,12 @@
+{
+  "project_id": "ATLAS-SN-QA-20261002",
+  "version": "1.0",
+  "authorized_defect_count": 1,
+  "identity": "SCTASK type filter aliases to RITM",
+  "location": "implementation/v1.0/core.js::filterTickets, const type",
+  "expected": "ticket_type SCTASK selects SCTASK",
+  "actual": "ticket_type SCTASK selects RITM, with group predicate remaining AND",
+  "repair": "const type=filters.ticket_type;",
+  "sealed_until": "first independent QA report issued",
+  "contract_unchanged": true
+}

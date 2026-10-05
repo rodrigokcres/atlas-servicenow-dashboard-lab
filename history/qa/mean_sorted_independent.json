@@ -1,0 +1,226 @@
+[
+  {
+    "filters": {
+      "ticket_type": null,
+      "group_label": null
+    },
+    "mean_days": 21.044973544973544
+  },
+  {
+    "filters": {
+      "ticket_type": null,
+      "group_label": "Aplicaciones"
+    },
+    "mean_days": 17.4375
+  },
+  {
+    "filters": {
+      "ticket_type": null,
+      "group_label": "CoE Retail"
+    },
+    "mean_days": 18.382575757575758
+  },
+  {
+    "filters": {
+      "ticket_type": null,
+      "group_label": "Cognos"
+    },
+    "mean_days": 25.494444444444447
+  },
+  {
+    "filters": {
+      "ticket_type": null,
+      "group_label": "ERP"
+    },
+    "mean_days": 22.559523809523807
+  },
+  {
+    "filters": {
+      "ticket_type": null,
+      "group_label": "Mesa de Ayuda"
+    },
+    "mean_days": 18.27314814814815
+  },
+  {
+    "filters": {
+      "ticket_type": null,
+      "group_label": "Proveedor Externo"
+    },
+    "mean_days": null
+  },
+  {
+    "filters": {
+      "ticket_type": null,
+      "group_label": "Sin grupo"
+    },
+    "mean_days": 25.833333333333336
+  },
+  {
+    "filters": {
+      "ticket_type": "INC",
+      "group_label": null
+    },
+    "mean_days": 19.180555555555557
+  },
+  {
+    "filters": {
+      "ticket_type": "INC",
+      "group_label": "Aplicaciones"
+    },
+    "mean_days": 15.0625
+  },
+  {
+    "filters": {
+      "ticket_type": "INC",
+      "group_label": "CoE Retail"
+    },
+    "mean_days": 14.75
+  },
+  {
+    "filters": {
+      "ticket_type": "INC",
+      "group_label": "Cognos"
+    },
+    "mean_days": 23.442708333333332
+  },
+  {
+    "filters": {
+      "ticket_type": "INC",
+      "group_label": "ERP"
+    },
+    "mean_days": 16.95
+  },
+  {
+    "filters": {
+      "ticket_type": "INC",
+      "group_label": "Mesa de Ayuda"
+    },
+    "mean_days": 22.95
+  },
+  {
+    "filters": {
+      "ticket_type": "INC",
+      "group_label": "Proveedor Externo"
+    },
+    "mean_days": null
+  },
+  {
+    "filters": {
+      "ticket_type": "INC",
+      "group_label": "Sin grupo"
+    },
+    "mean_days": 25.833333333333336
+  },
+  {
+    "filters": {
+      "ticket_type": "RITM",
+      "group_label": null
+    },
+    "mean_days": 21.538194444444443
+  },
+  {
+    "filters": {
+      "ticket_type": "RITM",
+      "group_label": "Aplicaciones"
+    },
+    "mean_days": 21.041666666666668
+  },
+  {
+    "filters": {
+      "ticket_type": "RITM",
+      "group_label": "CoE Retail"
+    },
+    "mean_days": 16.822916666666664
+  },
+  {
+    "filters": {
+      "ticket_type": "RITM",
+      "group_label": "Cognos"
+    },
+    "mean_days": 27.839285714285715
+  },
+  {
+    "filters": {
+      "ticket_type": "RITM",
+      "group_label": "ERP"
+    },
+    "mean_days": 23.652777777777775
+  },
+  {
+    "filters": {
+      "ticket_type": "RITM",
+      "group_label": "Mesa de Ayuda"
+    },
+    "mean_days": 12.427083333333332
+  },
+  {
+    "filters": {
+      "ticket_type": "RITM",
+      "group_label": "Proveedor Externo"
+    },
+    "mean_days": null
+  },
+  {
+    "filters": {
+      "ticket_type": "RITM",
+      "group_label": "Sin grupo"
+    },
+    "mean_days": null
+  },
+  {
+    "filters": {
+      "ticket_type": "SCTASK",
+      "group_label": null
+    },
+    "mean_days": 29.32638888888889
+  },
+  {
+    "filters": {
+      "ticket_type": "SCTASK",
+      "group_label": "Aplicaciones"
+    },
+    "mean_days": 25.625
+  },
+  {
+    "filters": {
+      "ticket_type": "SCTASK",
+      "group_label": "CoE Retail"
+    },
+    "mean_days": 30.583333333333336
+  },
+  {
+    "filters": {
+      "ticket_type": "SCTASK",
+      "group_label": "Cognos"
+    },
+    "mean_days": null
+  },
+  {
+    "filters": {
+      "ticket_type": "SCTASK",
+      "group_label": "ERP"
+    },
+    "mean_days": 29.722222222222225
+  },
+  {
+    "filters": {
+      "ticket_type": "SCTASK",
+      "group_label": "Mesa de Ayuda"
+    },
+    "mean_days": null
+  },
+  {
+    "filters": {
+      "ticket_type": "SCTASK",
+      "group_label": "Proveedor Externo"
+    },
+    "mean_days": null
+  },
+  {
+    "filters": {
+      "ticket_type": "SCTASK",
+      "group_label": "Sin grupo"
+    },
+    "mean_days": null
+  }
+]

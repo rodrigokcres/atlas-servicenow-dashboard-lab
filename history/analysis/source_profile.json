@@ -1,0 +1,410 @@
+{
+  "source_sha256": "a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c",
+  "sheets": [
+    {
+      "name": "Tickets_ServiceNow",
+      "physical_rows": 103,
+      "max_columns": 11
+    },
+    {
+      "name": "README",
+      "physical_rows": 10,
+      "max_columns": 2
+    }
+  ],
+  "readme": [
+    [
+      "Dataset de prueba — NEXUS / ServiceNow"
+    ],
+    [],
+    [
+      "Propósito",
+      "Evaluar si NEXUS perfila datos, detecta problemas de calidad y define KPIs reproducibles."
+    ],
+    [
+      "Fuente simulada",
+      "Exportación de tickets de ServiceNow."
+    ],
+    [
+      "Fecha de referencia sugerida",
+      "2026-10-01 18:00:00"
+    ],
+    [
+      "Registros de datos",
+      102
+    ],
+    [
+      "Tipos presentes",
+      "INC, RITM, SCTASK"
+    ],
+    [
+      "Regla de prueba backlog",
+      "No está definida: NEXUS debe identificar que requiere validación funcional."
+    ],
+    [
+      "Regla de prueba sin movimiento",
+      "48 horas es una propuesta, no una definición confirmada."
+    ],
+    [
+      "Nota",
+      "El dataset contiene problemas intencionales de calidad. No se enumeran aquí para no sesgar la prueba."
+    ]
+  ],
+  "fields": [
+    {
+      "name": "number",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 100
+    },
+    {
+      "name": "ticket_type",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 3,
+      "value_counts": {
+        "RITM": 35,
+        "INC": 53,
+        "SCTASK": 14
+      }
+    },
+    {
+      "name": "state",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 8,
+      "value_counts": {
+        "Nuevo": 15,
+        "En espera": 13,
+        "Resuelto": 19,
+        "En progreso": 34,
+        "Cerrado": 18,
+        "en progreso": 1,
+        "En Progreso": 1,
+        "CERRADO": 1
+      }
+    },
+    {
+      "name": "priority",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 4,
+      "value_counts": {
+        "P3": 28,
+        "P1": 22,
+        "P4": 31,
+        "P2": 21
+      }
+    },
+    {
+      "name": "opened_at",
+      "source_type_counts": {
+        "datetime": 101,
+        "NoneType": 1
+      },
+      "null_count": 1,
+      "distinct_non_null": 93,
+      "min": "2026-08-17 09:00:00",
+      "max": "2026-09-30 00:00:00",
+      "future_rows": [],
+      "invalid_non_null_rows": []
+    },
+    {
+      "name": "updated_at",
+      "source_type_counts": {
+        "datetime": 101,
+        "NoneType": 1
+      },
+      "null_count": 1,
+      "distinct_non_null": 88,
+      "min": "2026-08-21 14:00:00",
+      "max": "2026-10-01 09:00:00",
+      "future_rows": [],
+      "invalid_non_null_rows": []
+    },
+    {
+      "name": "assignment_group",
+      "source_type_counts": {
+        "str": 97,
+        "NoneType": 5
+      },
+      "null_count": 5,
+      "distinct_non_null": 7,
+      "value_counts": {
+        "Mesa de Ayuda": 16,
+        "Aplicaciones": 20,
+        "ERP": 16,
+        "None": 5,
+        "CoE Retail": 18,
+        "Cognos": 25,
+        "ERP ": 1,
+        "Proveedor Externo": 1
+      }
+    },
+    {
+      "name": "assigned_to",
+      "source_type_counts": {
+        "str": 91,
+        "NoneType": 11
+      },
+      "null_count": 11,
+      "distinct_non_null": 11
+    },
+    {
+      "name": "category",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 6,
+      "value_counts": {
+        "Integración": 20,
+        "Reportería": 20,
+        "Hardware": 17,
+        "Software": 14,
+        "Acceso": 18,
+        "SAP": 13
+      }
+    },
+    {
+      "name": "short_description",
+      "source_type_counts": {
+        "str": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 100
+    },
+    {
+      "name": "sla_due",
+      "source_type_counts": {
+        "datetime": 102
+      },
+      "null_count": 0,
+      "distinct_non_null": 96,
+      "min": "2026-08-18 08:00:00",
+      "max": "2026-10-01 17:00:00",
+      "future_rows": [],
+      "invalid_non_null_rows": []
+    }
+  ],
+  "source_rows": 102,
+  "unique_ticket_ids": 100,
+  "canonical_tickets": 100,
+  "duplicates": [
+    {
+      "number": "INC1500015",
+      "source_rows": [
+        16,
+        102
+      ],
+      "canonical_row": 16,
+      "exact": true
+    },
+    {
+      "number": "SCTASK1500033",
+      "source_rows": [
+        34,
+        103
+      ],
+      "canonical_row": 103,
+      "exact": false
+    }
+  ],
+  "normalizations": [
+    {
+      "source_row": 42,
+      "field": "state",
+      "raw": "en progreso",
+      "normalized": "En progreso"
+    },
+    {
+      "source_row": 51,
+      "field": "assignment_group",
+      "raw": "ERP ",
+      "normalized": "ERP"
+    },
+    {
+      "source_row": 60,
+      "field": "state",
+      "raw": "En Progreso",
+      "normalized": "En progreso"
+    },
+    {
+      "source_row": 79,
+      "field": "state",
+      "raw": "CERRADO",
+      "normalized": "Cerrado"
+    }
+  ],
+  "date_anomalies": [
+    {
+      "source_row": 3,
+      "number": "INC1500002",
+      "included": true,
+      "backlog": true,
+      "stale_reasons": [
+        "updated_before_opened"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 13,
+      "number": "INC1500012",
+      "included": true,
+      "backlog": false,
+      "stale_reasons": [
+        "updated_before_opened"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 27,
+      "number": "SCTASK1500026",
+      "included": true,
+      "backlog": false,
+      "stale_reasons": [
+        "updated_before_opened"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 36,
+      "number": "RITM1500035",
+      "included": true,
+      "backlog": true,
+      "stale_reasons": [
+        "updated_at_missing"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 72,
+      "number": "INC1500071",
+      "included": true,
+      "backlog": true,
+      "stale_reasons": [
+        "updated_before_opened"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 86,
+      "number": "INC1500085",
+      "included": true,
+      "backlog": true,
+      "stale_reasons": [
+        "updated_before_opened"
+      ],
+      "age_reasons": []
+    },
+    {
+      "source_row": 90,
+      "number": "SCTASK1500089",
+      "included": true,
+      "backlog": true,
+      "stale_reasons": [
+        "opened_at_missing"
+      ],
+      "age_reasons": [
+        "opened_at_missing"
+      ]
+    }
+  ],
+  "formula_count": 0,
+  "expected_global": {
+    "ticket_count": 100,
+    "backlog": 64,
+    "stale_48h": 52,
+    "stale_evaluable": 59,
+    "stale_not_evaluable": 5,
+    "unassigned": 6,
+    "no_group": 2,
+    "age_evaluable": 63,
+    "age_not_evaluable": 1,
+    "age_mean_days": 21.044973544973544,
+    "age_median_days": 17.458333333333332,
+    "age_max_days": 45.375,
+    "by_group": {
+      "Aplicaciones": 12,
+      "CoE Retail": 11,
+      "Cognos": 16,
+      "ERP": 14,
+      "Mesa de Ayuda": 9,
+      "Sin grupo": 2
+    },
+    "backlog_source_rows": [
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      11,
+      14,
+      15,
+      17,
+      18,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      28,
+      31,
+      32,
+      33,
+      36,
+      37,
+      38,
+      42,
+      44,
+      45,
+      47,
+      48,
+      51,
+      52,
+      53,
+      54,
+      56,
+      57,
+      58,
+      60,
+      62,
+      63,
+      65,
+      69,
+      70,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      80,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      89,
+      90,
+      91,
+      92,
+      93,
+      97,
+      98,
+      100
+    ]
+  }
+}

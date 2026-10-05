@@ -1,0 +1,5426 @@
+{
+  "artifact_type": "QA_REPORT",
+  "artifact_version": "1.2",
+  "project_id": "servicenow-gestion-tickets",
+  "created_by": "SENTINEL",
+  "based_on": [
+    {
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.1",
+      "project_id": "servicenow-gestion-tickets",
+      "path": "specs/PROJECT_SPEC_v1.1.json",
+      "sha256": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28"
+    },
+    {
+      "artifact_type": "DATA_SPEC",
+      "artifact_version": "1.1",
+      "project_id": "servicenow-gestion-tickets",
+      "path": "specs/DATA_SPEC_v1.1.json",
+      "sha256": "47d34c62296366a74e29ca5f788e83d8825a3b2fc86b39e65ed740e5b90dad81"
+    },
+    {
+      "artifact_type": "DEV_REPORT",
+      "artifact_version": "1.2",
+      "project_id": "servicenow-gestion-tickets",
+      "path": "reports/DEV_REPORT_v1.2.json",
+      "sha256": "9fdcfea66c416a0767829b2329b8699263e1abaae4c909f91086c3c7a70a6310"
+    },
+    {
+      "artifact_type": "QA_REPORT",
+      "artifact_version": "1.1",
+      "project_id": "ATLAS-SN-QA-20261002",
+      "path": "history/qa/QA_REPORT_v1.1.json",
+      "sha256": "de40e5904ae890b12c3d2cacdda32c38dc5e222bd3f6b7146a2e35330d02f474"
+    }
+  ],
+  "validation_scope": {
+    "included": [
+      "160 AND filter combinations",
+      "All cards, state chart, group distribution, age summary, every detail row and anomaly row",
+      "32 all-priority regressions v1.1",
+      "62 empty intersections",
+      "10 independent date edge cases",
+      "Desktop and mobile reset",
+      "390px mobile visual and overflow smoke",
+      "Original source preservation and historical immutability",
+      "Ownership, versions, identity reconciliation and delivery hashes"
+    ],
+    "excluded": [
+      "Production business ratification",
+      "Cross-browser certification and comprehensive accessibility audit",
+      "Merge/deployment and final remote PR operations, owned by ATLAS"
+    ],
+    "critical_elements": [
+      "R1-R12",
+      "DATA_SPEC T1-T6",
+      "No unapproved KPI changes"
+    ],
+    "inputs": [
+      {
+        "artifact_type": "PROJECT_SPEC",
+        "artifact_version": "1.1",
+        "project_id": "servicenow-gestion-tickets",
+        "path": "specs/PROJECT_SPEC_v1.1.json",
+        "sha256": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28"
+      },
+      {
+        "artifact_type": "DATA_SPEC",
+        "artifact_version": "1.1",
+        "project_id": "servicenow-gestion-tickets",
+        "path": "specs/DATA_SPEC_v1.1.json",
+        "sha256": "47d34c62296366a74e29ca5f788e83d8825a3b2fc86b39e65ed740e5b90dad81"
+      },
+      {
+        "artifact_type": "DEV_REPORT",
+        "artifact_version": "1.2",
+        "project_id": "servicenow-gestion-tickets",
+        "path": "reports/DEV_REPORT_v1.2.json",
+        "sha256": "9fdcfea66c416a0767829b2329b8699263e1abaae4c909f91086c3c7a70a6310"
+      },
+      {
+        "artifact_type": "QA_REPORT",
+        "artifact_version": "1.1",
+        "project_id": "ATLAS-SN-QA-20261002",
+        "path": "history/qa/QA_REPORT_v1.1.json",
+        "sha256": "de40e5904ae890b12c3d2cacdda32c38dc5e222bd3f6b7146a2e35330d02f474"
+      },
+      {
+        "source": "history/source/nexus_servicenow_test_v1.xlsx",
+        "sha256": "a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c",
+        "sheets": [
+          "Tickets_ServiceNow",
+          "README"
+        ],
+        "rows": 102,
+        "canonical": 100
+      },
+      {
+        "implementation_revision": "8132a4f12984cf03f7ec2175a5f83a81ae2cc113",
+        "hashes_reference": "qa/integrity_v1.2.json#/audited_hashes"
+      }
+    ],
+    "tools_available": [
+      "Python openpyxl",
+      "Node.js",
+      "Playwright",
+      "Chromium headless shell"
+    ]
+  },
+  "requirements_validation": [
+    {
+      "requirement_id": "R1",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Backlog: Nuevo, En progreso y En espera",
+      "observed": "Conformidad en DOM observado contra cálculo independiente y regresión v1.1.",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R2",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Sin actualización: más de 48 horas corridas desde updated_at; updated_at < opened_at no evaluable; fechas faltantes identificadas como no evaluables",
+      "observed": "Conformidad en DOM observado contra cálculo independiente y regresión v1.1.",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R3",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Tickets sin asignar",
+      "observed": "Conformidad en DOM observado contra cálculo independiente y regresión v1.1.",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R4",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Antigüedad",
+      "observed": "Conformidad en DOM observado contra cálculo independiente y regresión v1.1.",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R5",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Distribución por grupo resolutor",
+      "observed": "Conformidad en DOM observado contra cálculo independiente y regresión v1.1.",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R6",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Filtros por tipo de ticket y grupo resolutor combinables y restablecibles; afectan consistentemente tarjetas, gráficos y detalle",
+      "observed": "Conformidad en DOM observado contra cálculo independiente y regresión v1.1.",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R7",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Fecha de corte 2026-10-01 18:00:00 misma referencia horaria del Excel",
+      "observed": "Conformidad en DOM observado contra cálculo independiente y regresión v1.1.",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R8",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "static_review",
+      "expected": "Ciclo ATLAS → NEXUS → FORGE → SENTINEL, corrección y segunda auditoría con historial inmutable",
+      "observed": "Contratos por propietario con hashes válidos; entrega FORGE auditada por SENTINEL; rama remota documentada. No merge autorizado por este informe.",
+      "evidence": [
+        "changes/GIT_EXECUTION_REPORT_v1.0.json",
+        "qa/integrity_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R9",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Filtro prioridad: Todas las prioridades, P1, P2, P3, P4. Conjunción AND con tipo y grupo antes de tarjetas, gráficos, distribución, antigüedad, detalle y no evaluables. Todas no restringe prioridad.",
+      "observed": "Conformidad en DOM observado contra cálculo independiente y regresión v1.1.",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R10",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Restablecer limpia tipo, grupo y prioridad y restaura población inicial.",
+      "observed": "Conformidad en DOM observado contra cálculo independiente y regresión v1.1.",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R11",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Preservar cálculos, fuente, corte, anomalías, deduplicación y comportamiento v1.1; sin nuevos defectos deliberados.",
+      "observed": "Conformidad en DOM observado contra cálculo independiente y regresión v1.1.",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    },
+    {
+      "requirement_id": "R12",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "static_review",
+      "expected": "Trabajar separado de main; auditoría independiente satisfactoria antes de cualquier merge. Preparar PR sin merge automático.",
+      "observed": "Contratos por propietario con hashes válidos; entrega FORGE auditada por SENTINEL; rama remota documentada. No merge autorizado por este informe.",
+      "evidence": [
+        "changes/GIT_EXECUTION_REPORT_v1.0.json",
+        "qa/integrity_v1.2.json"
+      ],
+      "implementation": "src/v1.2/core.js: filterTickets/evaluate/metrics; ui.js: render/reset; template.html"
+    }
+  ],
+  "kpi_validation": [
+    {
+      "kpi_id": "backlog",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "population": "Canonical tickets filtered by type AND group AND priority, then backlog; all 160 combinations",
+      "source": "history/source/nexus_servicenow_test_v1.xlsx / Tickets_ServiceNow / A2:K103",
+      "independent_calculation": "qa/independent_oracle.py: openpyxl, normalization, timestamp-ranked deduplication, datetime timedelta and statistics; does not import FORGE/NEXUS calculations",
+      "expected": {
+        "backlog": 64
+      },
+      "observed": {
+        "backlog": 64
+      },
+      "difference": "0 for counts, populations, groups, and displayed age values; raw arithmetic observation QA-002",
+      "tolerance_contractual": null,
+      "evidence": [
+        "qa/independent_expected_v1.2.json",
+        "qa/execution_v1.2.json"
+      ],
+      "observation_note": "Numeric expected/observed shown here are baseline oracle values. Actual DOM strings are archived for each case; baseline age mean UI 21,04, median 17,46, maximum 45,38. Raw arithmetic is separately recorded, not substituted for DOM observations."
+    },
+    {
+      "kpi_id": "stale_48h",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "population": "Canonical tickets filtered by type AND group AND priority, then backlog; all 160 combinations",
+      "source": "history/source/nexus_servicenow_test_v1.xlsx / Tickets_ServiceNow / A2:K103",
+      "independent_calculation": "qa/independent_oracle.py: openpyxl, normalization, timestamp-ranked deduplication, datetime timedelta and statistics; does not import FORGE/NEXUS calculations",
+      "expected": {
+        "stale_48h": 52
+      },
+      "observed": {
+        "stale_48h": 52
+      },
+      "difference": "0 for counts, populations, groups, and displayed age values; raw arithmetic observation QA-002",
+      "tolerance_contractual": null,
+      "evidence": [
+        "qa/independent_expected_v1.2.json",
+        "qa/execution_v1.2.json"
+      ],
+      "observation_note": "Numeric expected/observed shown here are baseline oracle values. Actual DOM strings are archived for each case; baseline age mean UI 21,04, median 17,46, maximum 45,38. Raw arithmetic is separately recorded, not substituted for DOM observations."
+    },
+    {
+      "kpi_id": "unassigned",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "population": "Canonical tickets filtered by type AND group AND priority, then backlog; all 160 combinations",
+      "source": "history/source/nexus_servicenow_test_v1.xlsx / Tickets_ServiceNow / A2:K103",
+      "independent_calculation": "qa/independent_oracle.py: openpyxl, normalization, timestamp-ranked deduplication, datetime timedelta and statistics; does not import FORGE/NEXUS calculations",
+      "expected": {
+        "unassigned": 6
+      },
+      "observed": {
+        "unassigned": 6
+      },
+      "difference": "0 for counts, populations, groups, and displayed age values; raw arithmetic observation QA-002",
+      "tolerance_contractual": null,
+      "evidence": [
+        "qa/independent_expected_v1.2.json",
+        "qa/execution_v1.2.json"
+      ],
+      "observation_note": "Numeric expected/observed shown here are baseline oracle values. Actual DOM strings are archived for each case; baseline age mean UI 21,04, median 17,46, maximum 45,38. Raw arithmetic is separately recorded, not substituted for DOM observations."
+    },
+    {
+      "kpi_id": "by_group",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "population": "Canonical tickets filtered by type AND group AND priority, then backlog; all 160 combinations",
+      "source": "history/source/nexus_servicenow_test_v1.xlsx / Tickets_ServiceNow / A2:K103",
+      "independent_calculation": "qa/independent_oracle.py: openpyxl, normalization, timestamp-ranked deduplication, datetime timedelta and statistics; does not import FORGE/NEXUS calculations",
+      "expected": {
+        "by_group": {
+          "Mesa de Ayuda": 9,
+          "Aplicaciones": 12,
+          "Sin grupo": 2,
+          "CoE Retail": 11,
+          "ERP": 14,
+          "Cognos": 16
+        }
+      },
+      "observed": {
+        "by_group": {
+          "Mesa de Ayuda": 9,
+          "Aplicaciones": 12,
+          "Sin grupo": 2,
+          "CoE Retail": 11,
+          "ERP": 14,
+          "Cognos": 16
+        }
+      },
+      "difference": "0 for counts, populations, groups, and displayed age values; raw arithmetic observation QA-002",
+      "tolerance_contractual": null,
+      "evidence": [
+        "qa/independent_expected_v1.2.json",
+        "qa/execution_v1.2.json"
+      ],
+      "observation_note": "Numeric expected/observed shown here are baseline oracle values. Actual DOM strings are archived for each case; baseline age mean UI 21,04, median 17,46, maximum 45,38. Raw arithmetic is separately recorded, not substituted for DOM observations."
+    },
+    {
+      "kpi_id": "age",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "population": "Canonical tickets filtered by type AND group AND priority, then backlog; all 160 combinations",
+      "source": "history/source/nexus_servicenow_test_v1.xlsx / Tickets_ServiceNow / A2:K103",
+      "independent_calculation": "qa/independent_oracle.py: openpyxl, normalization, timestamp-ranked deduplication, datetime timedelta and statistics; does not import FORGE/NEXUS calculations",
+      "expected": {
+        "age_mean_days": 21.044973544973544,
+        "age_median_days": 17.458333333333332,
+        "age_max_days": 45.375,
+        "age_evaluable": 63,
+        "age_not_evaluable": 1
+      },
+      "observed": {
+        "age_mean_days_display": "21,04",
+        "age_median_days_display": "17,46",
+        "age_max_days_display": "45,38",
+        "age_evaluable": 63,
+        "age_not_evaluable": 1
+      },
+      "difference": "0 for counts, populations, groups, and displayed age values; raw arithmetic observation QA-002",
+      "tolerance_contractual": null,
+      "evidence": [
+        "qa/independent_expected_v1.2.json",
+        "qa/execution_v1.2.json"
+      ],
+      "observation_note": "Numeric expected/observed shown here are baseline oracle values. Actual DOM strings are archived for each case; baseline age mean UI 21,04, median 17,46, maximum 45,38. Raw arithmetic is separately recorded, not substituted for DOM observations."
+    }
+  ],
+  "data_validation": [
+    {
+      "element": "T1-T5/source/deduplication",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Unchanged KPI definitions/T1-T5; source 102 rows preserved; 100 canonical tickets",
+      "observed": "95 integrity checks passed, raw embedded source exactly equals Excel including nulls and dates; independent canonical rows 16 and 103 selected for duplicate IDs",
+      "evidence": [
+        "qa/integrity_v1.2.json",
+        "qa/independent_expected_v1.2.json"
+      ]
+    },
+    {
+      "element": "T6",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "AND composition before all outputs and reset",
+      "observed": "160 cases exact DOM equality including 62 empty selections; controls/reset passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    }
+  ],
+  "implementation_validation": [
+    {
+      "element": "UI execution and responsive layout",
+      "contract": "PROJECT_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Consistent outputs, labelled selector and mobile wrapping",
+      "observed": "210 browser checks passed; screenshots visually inspected at desktop 1440px and mobile 390px; internal table scrolling preserved without document overflow",
+      "evidence": [
+        "qa/execution_v1.2.json",
+        "qa/desktop_v1.2.png",
+        "qa/mobile_v1.2.png"
+      ]
+    },
+    {
+      "element": "Identity/ownership/version controls",
+      "contract": "PROJECT_SPEC 1.1 identity_reconciliation and DEV_REPORT 1.2",
+      "result": "passed",
+      "method": "static_review",
+      "expected": "Canonical ID preserved, historical ID difference explicit, immutable owners/contracts",
+      "observed": "servicenow-gestion-tickets in new artifacts; ATLAS-SN-QA-20261002 remains untouched in history; hashes match pre-change manifest and FORGE consumed contracts",
+      "evidence": [
+        "qa/integrity_v1.2.json",
+        "specs/PROJECT_SPEC_v1.1.json"
+      ]
+    }
+  ],
+  "tests_executed": [
+    {
+      "test_id": "options-priority",
+      "objective": "options-priority",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/0/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/0/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-0",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/1/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/1/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-0",
+      "objective": "regression-0",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/2/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/2/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-1",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/3/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/3/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-2",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/4/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/4/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-3",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/5/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/5/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-4",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/6/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/6/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-5",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/7/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/7/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-5",
+      "objective": "regression-5",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/8/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/8/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-6",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/9/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/9/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-7",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/10/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/10/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-8",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/11/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/11/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-9",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/12/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/12/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-10",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/13/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/13/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-10",
+      "objective": "regression-10",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/14/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/14/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-11",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/15/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/15/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-12",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/16/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/16/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-13",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/17/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/17/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-14",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/18/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/18/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-15",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/19/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/19/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-15",
+      "objective": "regression-15",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/20/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/20/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-16",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/21/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/21/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-17",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/22/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/22/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-18",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/23/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/23/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-19",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/24/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/24/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-20",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/25/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/25/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-20",
+      "objective": "regression-20",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/26/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/26/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-21",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/27/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/27/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-22",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/28/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/28/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-23",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/29/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/29/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-24",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/30/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/30/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-25",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/31/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/31/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-25",
+      "objective": "regression-25",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/32/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/32/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-26",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/33/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/33/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-27",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/34/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/34/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-28",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/35/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/35/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-29",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/36/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/36/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-30",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/37/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/37/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-30",
+      "objective": "regression-30",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/38/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/38/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-31",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/39/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/39/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-32",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/40/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/40/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-33",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/41/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/41/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-34",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/42/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/42/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-35",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/43/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/43/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-35",
+      "objective": "regression-35",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/44/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/44/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-36",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/45/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/45/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-37",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/46/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/46/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-38",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/47/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/47/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-39",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/48/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/48/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-40",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/49/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/49/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-40",
+      "objective": "regression-40",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/50/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/50/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-41",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/51/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/51/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-42",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/52/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/52/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-43",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/53/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/53/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-44",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/54/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/54/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-45",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/55/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/55/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-45",
+      "objective": "regression-45",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/56/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/56/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-46",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/57/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/57/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-47",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/58/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/58/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-48",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/59/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/59/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-49",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/60/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/60/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-50",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/61/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/61/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-50",
+      "objective": "regression-50",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/62/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/62/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-51",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/63/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/63/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-52",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/64/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/64/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-53",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/65/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/65/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-54",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/66/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/66/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-55",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/67/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/67/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-55",
+      "objective": "regression-55",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/68/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/68/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-56",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/69/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/69/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-57",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/70/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/70/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-58",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/71/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/71/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-59",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/72/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/72/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-60",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/73/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/73/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-60",
+      "objective": "regression-60",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/74/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/74/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-61",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/75/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/75/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-62",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/76/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/76/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-63",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/77/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/77/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-64",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/78/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/78/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-65",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/79/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/79/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-65",
+      "objective": "regression-65",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/80/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/80/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-66",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/81/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/81/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-67",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/82/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/82/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-68",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/83/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/83/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-69",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/84/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/84/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-70",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/85/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/85/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-70",
+      "objective": "regression-70",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/86/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/86/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-71",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/87/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/87/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-72",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/88/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/88/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-73",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/89/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/89/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-74",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/90/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/90/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-75",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/91/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/91/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-75",
+      "objective": "regression-75",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/92/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/92/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-76",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/93/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/93/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-77",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/94/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/94/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-78",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/95/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/95/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-79",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/96/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/96/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-80",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/97/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/97/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-80",
+      "objective": "regression-80",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/98/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/98/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-81",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/99/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/99/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-82",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/100/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/100/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-83",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/101/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/101/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-84",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/102/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/102/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-85",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/103/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/103/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-85",
+      "objective": "regression-85",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/104/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/104/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-86",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/105/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/105/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-87",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/106/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/106/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-88",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/107/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/107/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-89",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/108/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/108/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-90",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/109/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/109/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-90",
+      "objective": "regression-90",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/110/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/110/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-91",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/111/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/111/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-92",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/112/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/112/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-93",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/113/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/113/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-94",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/114/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/114/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-95",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/115/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/115/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-95",
+      "objective": "regression-95",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/116/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/116/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-96",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/117/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/117/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-97",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/118/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/118/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-98",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/119/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/119/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-99",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/120/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/120/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-100",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/121/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/121/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-100",
+      "objective": "regression-100",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/122/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/122/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-101",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/123/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/123/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-102",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/124/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/124/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-103",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/125/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/125/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-104",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/126/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/126/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-105",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/127/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/127/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-105",
+      "objective": "regression-105",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/128/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/128/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-106",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/129/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/129/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-107",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/130/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/130/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-108",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/131/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/131/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-109",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/132/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/132/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-110",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/133/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/133/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-110",
+      "objective": "regression-110",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/134/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/134/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-111",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/135/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/135/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-112",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/136/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/136/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-113",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/137/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/137/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-114",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/138/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/138/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-115",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/139/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/139/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-115",
+      "objective": "regression-115",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/140/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/140/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-116",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/141/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/141/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-117",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/142/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/142/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-118",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/143/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/143/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-119",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/144/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/144/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-120",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/145/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/145/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-120",
+      "objective": "regression-120",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/146/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/146/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-121",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/147/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/147/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-122",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/148/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/148/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-123",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/149/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/149/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-124",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/150/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/150/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-125",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/151/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/151/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-125",
+      "objective": "regression-125",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/152/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/152/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-126",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/153/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/153/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-127",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/154/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/154/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-128",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/155/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/155/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-129",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/156/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/156/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-130",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/157/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/157/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-130",
+      "objective": "regression-130",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/158/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/158/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-131",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/159/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/159/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-132",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/160/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/160/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-133",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/161/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/161/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-134",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/162/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/162/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-135",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/163/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/163/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-135",
+      "objective": "regression-135",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/164/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/164/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-136",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/165/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/165/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-137",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/166/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/166/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-138",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/167/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/167/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-139",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/168/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/168/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-140",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/169/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/169/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-140",
+      "objective": "regression-140",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/170/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/170/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-141",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/171/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/171/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-142",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/172/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/172/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-143",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/173/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/173/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-144",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/174/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/174/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-145",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/175/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/175/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-145",
+      "objective": "regression-145",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/176/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/176/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-146",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/177/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/177/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-147",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/178/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/178/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-148",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/179/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/179/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-149",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/180/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/180/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-150",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/181/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/181/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-150",
+      "objective": "regression-150",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/182/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/182/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-151",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/183/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/183/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-152",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/184/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/184/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-153",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/185/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/185/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-154",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/186/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/186/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-155",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/187/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/187/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "regression-155",
+      "objective": "regression-155",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/188/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/188/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-156",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/189/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/189/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-157",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/190/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/190/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-158",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/191/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/191/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "matrix-159",
+      "objective": "Comparación de vistas DOM desde Excel",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/192/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/192/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "reset-controls",
+      "objective": "reset-controls",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/193/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/193/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "reset-all-views",
+      "objective": "reset-all-views",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/194/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/194/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "date-exact48",
+      "objective": "date-exact48",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/195/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/195/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "date-over48",
+      "objective": "date-over48",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/196/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/196/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "date-under48",
+      "objective": "date-under48",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/197/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/197/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "date-missingOpen",
+      "objective": "date-missingOpen",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/198/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/198/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "date-missingUpdate",
+      "objective": "date-missingUpdate",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/199/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/199/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "date-reversed",
+      "objective": "date-reversed",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/200/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/200/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "date-invalidOpen",
+      "objective": "date-invalidOpen",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/201/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/201/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "date-futureOpen",
+      "objective": "date-futureOpen",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/202/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/202/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "date-futureUpdate",
+      "objective": "date-futureUpdate",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/203/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/203/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "date-invalidUpdate",
+      "objective": "date-invalidUpdate",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/204/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/204/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "mobile-P2",
+      "objective": "mobile-P2",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/205/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/205/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "mobile-controls-in-viewport",
+      "objective": "mobile-controls-in-viewport",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/206/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/206/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "mobile-no-document-overflow",
+      "objective": "mobile-no-document-overflow",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/207/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/207/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "mobile-reset",
+      "objective": "mobile-reset",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/208/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/208/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "runtime-errors",
+      "objective": "runtime-errors",
+      "method": "execution",
+      "tool": "Chromium headless shell + Playwright",
+      "command": "node qa/browser_audit_v1.2.cjs",
+      "inputs": [
+        "PROJECT_SPEC 1.1",
+        "DATA_SPEC 1.1",
+        "DEV_REPORT 1.2",
+        "Excel SHA-256 a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+      ],
+      "expected": {
+        "reference": "qa/execution_v1.2.json#/checks/209/expected"
+      },
+      "actual": {
+        "reference": "qa/execution_v1.2.json#/checks/209/actual"
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "integrity",
+      "objective": "Fuente completa, invariantes de datos, propietarios y hashes de entrega/historia",
+      "method": "execution",
+      "tool": "Python openpyxl/hashlib",
+      "command": "python qa/integrity_v1.2.py",
+      "inputs": [
+        "history/source/nexus_servicenow_test_v1.xlsx",
+        "changes/historical-sha256.json",
+        "DEV_REPORT 1.2"
+      ],
+      "expected": {
+        "checks": 95,
+        "failed": 0
+      },
+      "actual": {
+        "checks": 95,
+        "failed": 0
+      },
+      "result": "passed",
+      "evidence": [
+        "qa/integrity_v1.2.json"
+      ]
+    },
+    {
+      "test_id": "raw-numeric-exploration",
+      "objective": "Trazar observación histórica QA-002, sin imponer tolerancia ni aceptación binaria nueva",
+      "method": "execution",
+      "tool": "Node core against independent Python expected values",
+      "command": "node qa/precision_v1.2.cjs",
+      "inputs": [
+        "src/v1.2/core.js",
+        "qa/independent_expected_v1.2.json"
+      ],
+      "expected": "Exploratory exact binary equality",
+      "actual": {
+        "different_means": 11,
+        "max_absolute_days": 3.552713678800501e-15
+      },
+      "result": "failed",
+      "evidence": [
+        "qa/precision_v1.2.json"
+      ],
+      "acceptance_impact": "Non-contractual exploratory comparison; functional/display requirements all passed; tracked as QA-002."
+    }
+  ],
+  "tests_not_executed": [],
+  "findings": [
+    {
+      "finding_id": "QA-001",
+      "severity": "high",
+      "category": "contract_compliance",
+      "description": "Filtro SCTASK remapeado a RITM: todas las 8 selecciones SCTASK entregan población canónica incorrecta y seis también diferencias operativas. El rótulo sigue diciendo SCTASK mientras detalle muestra RITM.",
+      "evidence": [
+        {
+          "historical_report": "history/qa/QA_REPORT_v1.1.json",
+          "finding_id": "QA-001"
+        },
+        "qa/execution_v1.2.json"
+      ],
+      "affected_requirement_or_kpi": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "T6",
+        "backlog",
+        "stale_48h",
+        "unassigned",
+        "age",
+        "by_group"
+      ],
+      "responsible_specialty": "FORGE",
+      "recommended_action": "Aplicar valor seleccionado sin sustitución, entregar versión nueva de implementación y DEV_REPORT; repetir matriz completa y bordes con SENTINEL.",
+      "blocking": false,
+      "blocking_reason": "Corrección verificada por ejecución independiente, no bloquea",
+      "status": "resolved",
+      "resolution": {
+        "version": "1.2",
+        "evidence": "All 40 SCTASK combinations passed against original Excel; 8 all-priority SCTASK cases equivalent to v1.1"
+      }
+    },
+    {
+      "finding_id": "QA-002",
+      "severity": "low",
+      "category": "numerical_precision",
+      "description": "Observación histórica de precisión IEEE permanece. Con recálculo independiente Python statistics.mean, 11 medias crudas de las 160 combinaciones difieren de JavaScript en hasta 3.552713678800501e-15 días. Las 160 representaciones UI y todos los conteos/poblaciones coinciden. No se establece tolerancia contractual ni se exige igualdad binaria.",
+      "evidence": [
+        {
+          "historical_report": "history/qa/QA_REPORT_v1.1.json",
+          "finding_id": "QA-002"
+        },
+        "qa/execution_v1.2.json",
+        "qa/precision_v1.2.json",
+        "qa/precision_v1.2.cjs"
+      ],
+      "affected_requirement_or_kpi": [
+        "R4",
+        "age_mean_days"
+      ],
+      "responsible_specialty": "ATLAS",
+      "recommended_action": "Conservar observación no bloqueante. Si se requiere igualdad binaria productiva, ATLAS debe coordinar contrato numérico explícito con NEXUS y FORGE y nueva auditoría.",
+      "blocking": false,
+      "blocking_reason": "Igualdad binaria entre lenguajes no es criterio contractual; fórmula, población y representación UI cumplen. Observación numérica sin impacto material en prototipo.",
+      "status": "open"
+    }
+  ],
+  "blocking_findings": [],
+  "non_blocking_findings": [
+    "QA-002"
+  ],
+  "regressions": {
+    "status": "passed",
+    "compared_versions": [
+      "implementation v1.1",
+      "implementation v1.2"
+    ],
+    "findings": [],
+    "reason": "32 type/group combinations with all priorities are DOM-equivalent; all original semantics and exact source retained."
+  },
+  "limitations": [
+    "Audit applies to provisional prototype and supplied complete synthetic dataset; business assumptions remain proposed.",
+    "Real browser execution in Chromium only; mobile smoke at 390px.",
+    "First browser launch failed due sandbox permissions; approved escalated execution completed all browser checks.",
+    "Git revision supplied by ATLAS and local bytes checked against delivery hashes; SENTINEL did not independently call GitHub, create commits, PR or merge. Final remote verification belongs to ATLAS.",
+    "QA-002 is raw IEEE arithmetic observation; UI values match and no numerical tolerance was invented."
+  ],
+  "overall_status": "passed_with_observations",
+  "recommended_actions": [
+    {
+      "finding_id": "QA-002",
+      "owner": "ATLAS",
+      "action": "Deliver prototype with inherited non-blocking numerical observation and provisional assumptions; coordinate explicit numerical contract only if needed for production.",
+      "depends_on": []
+    }
+  ],
+  "change_log": [
+    {
+      "version": "1.2",
+      "change": "Independent priority-filter audit from original Excel; 160 combinations, 32 historical regressions, 10 date boundaries, reset/mobile and source integrity validated; QA-001 remains resolved and QA-002 remains non-blocking."
+    }
+  ],
+  "next_action": {
+    "action": "ATLAS may commit QA evidence, verify remote bytes and open PR on feat/priority-filter-v1.2. Keep main unchanged; this report performs no merge.",
+    "owner": "ATLAS",
+    "depends_on": [
+      "Audited implementation SHA 8132a4f12984cf03f7ec2175a5f83a81ae2cc113",
+      "QA_REPORT 1.2"
+    ]
+  }
+}

@@ -1,0 +1,931 @@
+{
+  "checks": [
+    {
+      "id": "historical:history/LEEME.md",
+      "result": "passed",
+      "actual": "3691f5832345fd0aea4b184aa8a83dc22e5a20bf679c1982476ae25da25596fe",
+      "expected": "3691f5832345fd0aea4b184aa8a83dc22e5a20bf679c1982476ae25da25596fe"
+    },
+    {
+      "id": "historical:history/v1.0_frozen_hashes.json",
+      "result": "passed",
+      "actual": "561dcc31bb88ffabca220f087860323ca0d16a874a3179f71555feb9b1753d30",
+      "expected": "561dcc31bb88ffabca220f087860323ca0d16a874a3179f71555feb9b1753d30"
+    },
+    {
+      "id": "historical:history/SHA256_manifest.json",
+      "result": "passed",
+      "actual": "24df4b9cd2f99f9165d3e7c45a65e4f42c3a661cce56c90843903b3e98068691",
+      "expected": "24df4b9cd2f99f9165d3e7c45a65e4f42c3a661cce56c90843903b3e98068691"
+    },
+    {
+      "id": "historical:history/ATLAS_correction_assignment_v1.0.json",
+      "result": "passed",
+      "actual": "382e3a34b2da7f0808025e58a4aeed6ed538d1eb72ba4ab587c10138cdbc67fd",
+      "expected": "382e3a34b2da7f0808025e58a4aeed6ed538d1eb72ba4ab587c10138cdbc67fd"
+    },
+    {
+      "id": "historical:history/ATLAS_closure.json",
+      "result": "passed",
+      "actual": "50b446d074eade2df33ca780bb197bba30d54b5fa143490e0b92745a4ab60662",
+      "expected": "50b446d074eade2df33ca780bb197bba30d54b5fa143490e0b92745a4ab60662"
+    },
+    {
+      "id": "historical:history/ATLAS_handoff.json",
+      "result": "passed",
+      "actual": "7a55cf40e2755eee51ff8acd7ff68b4812a07a7cf1456dff861ad272f135ac07",
+      "expected": "7a55cf40e2755eee51ff8acd7ff68b4812a07a7cf1456dff861ad272f135ac07"
+    },
+    {
+      "id": "historical:history/controlled_defect_disclosure.json",
+      "result": "passed",
+      "actual": "41496439e2dc5bd6d06e28dc668146ca56370b4c614f83592350c18744bdd93e",
+      "expected": "41496439e2dc5bd6d06e28dc668146ca56370b4c614f83592350c18744bdd93e"
+    },
+    {
+      "id": "historical:history/contract_hashes_at_handoff.json",
+      "result": "passed",
+      "actual": "75edbe4c7f4fd7757e16c17a39d05c7611cb464d692221aa953ad8c455b2ff42",
+      "expected": "75edbe4c7f4fd7757e16c17a39d05c7611cb464d692221aa953ad8c455b2ff42"
+    },
+    {
+      "id": "historical:history/reports/DEV_REPORT_v1.1.json",
+      "result": "passed",
+      "actual": "98c788cbac4a5877f04b3fa35cfd7c58f481c6f543fc3cf9d1ef648028cb528d",
+      "expected": "98c788cbac4a5877f04b3fa35cfd7c58f481c6f543fc3cf9d1ef648028cb528d"
+    },
+    {
+      "id": "historical:history/reports/DEV_REPORT_v1.0.json",
+      "result": "passed",
+      "actual": "442a3384d528a73739ba47219b247811d88ba5efb89807ee3cce65787b1a005e",
+      "expected": "442a3384d528a73739ba47219b247811d88ba5efb89807ee3cce65787b1a005e"
+    },
+    {
+      "id": "historical:history/contracts/PROJECT_SPEC_v1.0.json",
+      "result": "passed",
+      "actual": "2703526c88db95f04dbce7d334b8e72f629da43e00a1659a1dcb5e805acb7b35",
+      "expected": "2703526c88db95f04dbce7d334b8e72f629da43e00a1659a1dcb5e805acb7b35"
+    },
+    {
+      "id": "historical:history/contracts/DATA_SPEC_v1.0.json",
+      "result": "passed",
+      "actual": "dad311e404f64e161f7287295ce643c46f3b37f9b7fc55c11e65b348ae5d6fcf",
+      "expected": "dad311e404f64e161f7287295ce643c46f3b37f9b7fc55c11e65b348ae5d6fcf"
+    },
+    {
+      "id": "historical:history/data/normalized_tickets.json",
+      "result": "passed",
+      "actual": "d029d7763884663eefb0bd4848f04e73aab1d07d9f3def3769f09684bbf68c08",
+      "expected": "d029d7763884663eefb0bd4848f04e73aab1d07d9f3def3769f09684bbf68c08"
+    },
+    {
+      "id": "historical:history/analysis/source_profile.json",
+      "result": "passed",
+      "actual": "da08b6253396e2fe8a45c1394a16530ba4d8be3f9c060ab85439ea5f4ae09ab0",
+      "expected": "da08b6253396e2fe8a45c1394a16530ba4d8be3f9c060ab85439ea5f4ae09ab0"
+    },
+    {
+      "id": "historical:history/analysis/emit_data_spec.py",
+      "result": "passed",
+      "actual": "d4a49b35621fc233c922e07c863769ef31068bb2fa7b7c2e876b924bec0eec73",
+      "expected": "d4a49b35621fc233c922e07c863769ef31068bb2fa7b7c2e876b924bec0eec73"
+    },
+    {
+      "id": "historical:history/analysis/expected_results.json",
+      "result": "passed",
+      "actual": "bc3b7b8b710b1bff83e8b413ca2728770eb9d39a144e76882b8084076a2734f4",
+      "expected": "bc3b7b8b710b1bff83e8b413ca2728770eb9d39a144e76882b8084076a2734f4"
+    },
+    {
+      "id": "historical:history/analysis/analyze_source.py",
+      "result": "passed",
+      "actual": "5ca1e509c91b606c2451356cd21fa2d7d69cb0287226d343dc7323472489ed0e",
+      "expected": "5ca1e509c91b606c2451356cd21fa2d7d69cb0287226d343dc7323472489ed0e"
+    },
+    {
+      "id": "historical:history/source/nexus_servicenow_test_v1.xlsx",
+      "result": "passed",
+      "actual": "a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c",
+      "expected": "a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c"
+    },
+    {
+      "id": "historical:history/qa/v1.1_sctask.png",
+      "result": "passed",
+      "actual": "c70f8957b28947f59780cf080a1e6eb70b929018cefd907d0782e816c2a13645",
+      "expected": "c70f8957b28947f59780cf080a1e6eb70b929018cefd907d0782e816c2a13645"
+    },
+    {
+      "id": "historical:history/qa/independent_expected.json",
+      "result": "passed",
+      "actual": "0b853d2a46c5fa53e0b185c14986d7e89050320f9f7c0c9618f2c1d1e3461efb",
+      "expected": "0b853d2a46c5fa53e0b185c14986d7e89050320f9f7c0c9618f2c1d1e3461efb"
+    },
+    {
+      "id": "historical:history/qa/source_integrity_v1.1.json",
+      "result": "passed",
+      "actual": "03ce857adc2ecbec509eef563139df9b4c363b86dfe3717c71ddc0607042e37c",
+      "expected": "03ce857adc2ecbec509eef563139df9b4c363b86dfe3717c71ddc0607042e37c"
+    },
+    {
+      "id": "historical:history/qa/v1.1_baseline.png",
+      "result": "passed",
+      "actual": "55c29c5e13c4001f0ba893e130277f495449440c0cf2474a26a595dcaf17b3a9",
+      "expected": "55c29c5e13c4001f0ba893e130277f495449440c0cf2474a26a595dcaf17b3a9"
+    },
+    {
+      "id": "historical:history/qa/precision_sorted_audit.cjs",
+      "result": "passed",
+      "actual": "654d892a36fdcd69a1b7996d8b00ff56702e866b4b5245645281b0bf0064dee6",
+      "expected": "654d892a36fdcd69a1b7996d8b00ff56702e866b4b5245645281b0bf0064dee6"
+    },
+    {
+      "id": "historical:history/qa/frozen_verification_v1.1.json",
+      "result": "passed",
+      "actual": "d76e0aeb70b59b37b619590a57ab39d929a23994c5c3ddbf6ff4e8f9b2e5f363",
+      "expected": "d76e0aeb70b59b37b619590a57ab39d929a23994c5c3ddbf6ff4e8f9b2e5f363"
+    },
+    {
+      "id": "historical:history/qa/precision_audit.cjs",
+      "result": "passed",
+      "actual": "55f665f9921e2a7cf919a74b9fb6df7a123988faf1d3d062bfe407e20f259a62",
+      "expected": "55f665f9921e2a7cf919a74b9fb6df7a123988faf1d3d062bfe407e20f259a62"
+    },
+    {
+      "id": "historical:history/qa/QA_REPORT_v1.1.json",
+      "result": "passed",
+      "actual": "de40e5904ae890b12c3d2cacdda32c38dc5e222bd3f6b7146a2e35330d02f474",
+      "expected": "de40e5904ae890b12c3d2cacdda32c38dc5e222bd3f6b7146a2e35330d02f474"
+    },
+    {
+      "id": "historical:history/qa/source_integrity.py",
+      "result": "passed",
+      "actual": "0c300fd37ae75faa9539691903a8182d26f1113fc8a22c526a233fd309ed620f",
+      "expected": "0c300fd37ae75faa9539691903a8182d26f1113fc8a22c526a233fd309ed620f"
+    },
+    {
+      "id": "historical:history/qa/source_integrity_v1.0.json",
+      "result": "passed",
+      "actual": "03ce857adc2ecbec509eef563139df9b4c363b86dfe3717c71ddc0607042e37c",
+      "expected": "03ce857adc2ecbec509eef563139df9b4c363b86dfe3717c71ddc0607042e37c"
+    },
+    {
+      "id": "historical:history/qa/browser_audit.cjs",
+      "result": "passed",
+      "actual": "8ae8d87968e0e65758378fdc90e992a76515c13c383bf7799d6fe8681689f421",
+      "expected": "8ae8d87968e0e65758378fdc90e992a76515c13c383bf7799d6fe8681689f421"
+    },
+    {
+      "id": "historical:history/qa/execution_v1.1.json",
+      "result": "passed",
+      "actual": "ef7dc59832af887c65dfde15aba7dd1704bf12348a4aa2312861c4ed3aea47d5",
+      "expected": "ef7dc59832af887c65dfde15aba7dd1704bf12348a4aa2312861c4ed3aea47d5"
+    },
+    {
+      "id": "historical:history/qa/v1.1_mobile.png",
+      "result": "passed",
+      "actual": "0f0b4551e4987424bb6021b7a1779c6264905abcc742621ab23f5d858810c144",
+      "expected": "0f0b4551e4987424bb6021b7a1779c6264905abcc742621ab23f5d858810c144"
+    },
+    {
+      "id": "historical:history/qa/execution_v1.0.json",
+      "result": "passed",
+      "actual": "f9ef48d283660f307668f879a1e3608c261f9a9683b84653d021b24a1536b041",
+      "expected": "f9ef48d283660f307668f879a1e3608c261f9a9683b84653d021b24a1536b041"
+    },
+    {
+      "id": "historical:history/qa/precision_sorted_v1.1.json",
+      "result": "passed",
+      "actual": "6572a1fb10cdd103b553fa5ed0b42dc1887bb6602a78b850bdcaa99ae9c1c3ad",
+      "expected": "6572a1fb10cdd103b553fa5ed0b42dc1887bb6602a78b850bdcaa99ae9c1c3ad"
+    },
+    {
+      "id": "historical:history/qa/source_integrity_v1.1.py",
+      "result": "passed",
+      "actual": "80bf1b4b43c3feda4b6f8e95204617ae7b430bddf7b3bfe840def313efba7ee3",
+      "expected": "80bf1b4b43c3feda4b6f8e95204617ae7b430bddf7b3bfe840def313efba7ee3"
+    },
+    {
+      "id": "historical:history/qa/mean_sorted_independent.json",
+      "result": "passed",
+      "actual": "4e732df70a293fe34912f0daa0d3b7c849e9d47f3574ba9aa2b46b69fa820e76",
+      "expected": "4e732df70a293fe34912f0daa0d3b7c849e9d47f3574ba9aa2b46b69fa820e76"
+    },
+    {
+      "id": "historical:history/qa/QA_REPORT_v1.0.json",
+      "result": "passed",
+      "actual": "53e135a536e941d7586416127d73886741bd88d3c35cdad07d460784fedba17d",
+      "expected": "53e135a536e941d7586416127d73886741bd88d3c35cdad07d460784fedba17d"
+    },
+    {
+      "id": "historical:history/qa/emit_qa.py",
+      "result": "passed",
+      "actual": "4719cde8d629253dc2b043ba5359ca88315c2d032340c1d58fad82b662b5afab",
+      "expected": "4719cde8d629253dc2b043ba5359ca88315c2d032340c1d58fad82b662b5afab"
+    },
+    {
+      "id": "historical:history/qa/precision_v1.1.json",
+      "result": "passed",
+      "actual": "6572a1fb10cdd103b553fa5ed0b42dc1887bb6602a78b850bdcaa99ae9c1c3ad",
+      "expected": "6572a1fb10cdd103b553fa5ed0b42dc1887bb6602a78b850bdcaa99ae9c1c3ad"
+    },
+    {
+      "id": "historical:history/qa/v1.0_baseline.png",
+      "result": "passed",
+      "actual": "4a713f354787e87e2062d5587b874a6f0d82f65b800da6ed0909b9c0b263f736",
+      "expected": "4a713f354787e87e2062d5587b874a6f0d82f65b800da6ed0909b9c0b263f736"
+    },
+    {
+      "id": "historical:history/qa/revalidate_report.py",
+      "result": "passed",
+      "actual": "27b87db2bc02d49e3951181e6cc6750e66624befa1737623098f4bcd57cce68e",
+      "expected": "27b87db2bc02d49e3951181e6cc6750e66624befa1737623098f4bcd57cce68e"
+    },
+    {
+      "id": "historical:history/qa/recalculate.py",
+      "result": "passed",
+      "actual": "513493a9cec5187dc36744d6c53fa8506bc2fe01ea10e0bdfc3aefd41ffb4167",
+      "expected": "513493a9cec5187dc36744d6c53fa8506bc2fe01ea10e0bdfc3aefd41ffb4167"
+    },
+    {
+      "id": "historical:history/qa/v1.0_mobile.png",
+      "result": "passed",
+      "actual": "f8b528404c55eabf7c709802c593364dee4b9cb83048825488174fb6d14df6bf",
+      "expected": "f8b528404c55eabf7c709802c593364dee4b9cb83048825488174fb6d14df6bf"
+    },
+    {
+      "id": "historical:history/qa/v1.0_sctask.png",
+      "result": "passed",
+      "actual": "a1a6053bcc7db853a62659adc1f399222b6d1c88c3526b35834d15706970bd94",
+      "expected": "a1a6053bcc7db853a62659adc1f399222b6d1c88c3526b35834d15706970bd94"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/desktop.png",
+      "result": "passed",
+      "actual": "4a713f354787e87e2062d5587b874a6f0d82f65b800da6ed0909b9c0b263f736",
+      "expected": "4a713f354787e87e2062d5587b874a6f0d82f65b800da6ed0909b9c0b263f736"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/smoke-node.log",
+      "result": "passed",
+      "actual": "11c95469a03ab014d29f1af6a4e155012b5f4e62553d4a91eadf7741d0886ee4",
+      "expected": "11c95469a03ab014d29f1af6a4e155012b5f4e62553d4a91eadf7741d0886ee4"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/ui.js",
+      "result": "passed",
+      "actual": "74618254c20a5cd129c45f8f616643df6b2893abe811df26dc8140b9962327b9",
+      "expected": "74618254c20a5cd129c45f8f616643df6b2893abe811df26dc8140b9962327b9"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/smoke.cjs",
+      "result": "passed",
+      "actual": "7920cfc6c7eed80c049f007a13a5b421d827ee1d5c8c079a19ec3fbb317fead5",
+      "expected": "7920cfc6c7eed80c049f007a13a5b421d827ee1d5c8c079a19ec3fbb317fead5"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/dashboard.html",
+      "result": "passed",
+      "actual": "d75d148ca8a5fb2c4cb1d133630230f38d53a3808e14f36556bac0a1364ef2e9",
+      "expected": "d75d148ca8a5fb2c4cb1d133630230f38d53a3808e14f36556bac0a1364ef2e9"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/template.html",
+      "result": "passed",
+      "actual": "417ec3507b4fc656cbb567fe6f7160bef428f9233d4db6f0bc943aa9c00f116a",
+      "expected": "417ec3507b4fc656cbb567fe6f7160bef428f9233d4db6f0bc943aa9c00f116a"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/mobile.png",
+      "result": "passed",
+      "actual": "f8b528404c55eabf7c709802c593364dee4b9cb83048825488174fb6d14df6bf",
+      "expected": "f8b528404c55eabf7c709802c593364dee4b9cb83048825488174fb6d14df6bf"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/build.py",
+      "result": "passed",
+      "actual": "e29610ad15c42a8b8a127e548fb5e0c60fee8e58f5e21b8bb9b649ff6dc2e65a",
+      "expected": "e29610ad15c42a8b8a127e548fb5e0c60fee8e58f5e21b8bb9b649ff6dc2e65a"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/core.js",
+      "result": "passed",
+      "actual": "8bd3939a536485b372fd50ed1360064ef45fd47747c1437b3241ffd33152c2a9",
+      "expected": "8bd3939a536485b372fd50ed1360064ef45fd47747c1437b3241ffd33152c2a9"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/browser-smoke.cjs",
+      "result": "passed",
+      "actual": "8a9e9f3c9eb6b860e40826c4783cdb24103e1a51e8a6a3e02bb206ded5a0b607",
+      "expected": "8a9e9f3c9eb6b860e40826c4783cdb24103e1a51e8a6a3e02bb206ded5a0b607"
+    },
+    {
+      "id": "historical:history/implementation/v1.0/smoke-browser.json",
+      "result": "passed",
+      "actual": "a7bcb9ae473a0dc05868cd2eeba77f3d3e61d97dedd9153bf664b0bb86317506",
+      "expected": "a7bcb9ae473a0dc05868cd2eeba77f3d3e61d97dedd9153bf664b0bb86317506"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/desktop.png",
+      "result": "passed",
+      "actual": "55c29c5e13c4001f0ba893e130277f495449440c0cf2474a26a595dcaf17b3a9",
+      "expected": "55c29c5e13c4001f0ba893e130277f495449440c0cf2474a26a595dcaf17b3a9"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/smoke-node.log",
+      "result": "passed",
+      "actual": "11c95469a03ab014d29f1af6a4e155012b5f4e62553d4a91eadf7741d0886ee4",
+      "expected": "11c95469a03ab014d29f1af6a4e155012b5f4e62553d4a91eadf7741d0886ee4"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/regression.cjs",
+      "result": "passed",
+      "actual": "f66b661adb56055d9592ce0e07dd06be0c3da0f1672b3080ee286c32698adbb1",
+      "expected": "f66b661adb56055d9592ce0e07dd06be0c3da0f1672b3080ee286c32698adbb1"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/ui.js",
+      "result": "passed",
+      "actual": "74618254c20a5cd129c45f8f616643df6b2893abe811df26dc8140b9962327b9",
+      "expected": "74618254c20a5cd129c45f8f616643df6b2893abe811df26dc8140b9962327b9"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/smoke.cjs",
+      "result": "passed",
+      "actual": "7920cfc6c7eed80c049f007a13a5b421d827ee1d5c8c079a19ec3fbb317fead5",
+      "expected": "7920cfc6c7eed80c049f007a13a5b421d827ee1d5c8c079a19ec3fbb317fead5"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/dashboard.html",
+      "result": "passed",
+      "actual": "0d8c5608cef58020ac543f05b9fbe707e9c2ac028c1e5a715ccba279df2c6d5d",
+      "expected": "0d8c5608cef58020ac543f05b9fbe707e9c2ac028c1e5a715ccba279df2c6d5d"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/template.html",
+      "result": "passed",
+      "actual": "ee73c7f21f24f18e10ed2e5648b96f731ab3bcd31e65fa966f09ee84451d4d33",
+      "expected": "ee73c7f21f24f18e10ed2e5648b96f731ab3bcd31e65fa966f09ee84451d4d33"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/mobile.png",
+      "result": "passed",
+      "actual": "0f0b4551e4987424bb6021b7a1779c6264905abcc742621ab23f5d858810c144",
+      "expected": "0f0b4551e4987424bb6021b7a1779c6264905abcc742621ab23f5d858810c144"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/build.py",
+      "result": "passed",
+      "actual": "e29610ad15c42a8b8a127e548fb5e0c60fee8e58f5e21b8bb9b649ff6dc2e65a",
+      "expected": "e29610ad15c42a8b8a127e548fb5e0c60fee8e58f5e21b8bb9b649ff6dc2e65a"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/before-sha256.json",
+      "result": "passed",
+      "actual": "4fe01f141bf0b77c66d56284fcebdbab189bf2b8d7ebd252cd95f5fdb99e3c1f",
+      "expected": "4fe01f141bf0b77c66d56284fcebdbab189bf2b8d7ebd252cd95f5fdb99e3c1f"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/core.js",
+      "result": "passed",
+      "actual": "e06d3d678f22a0e4b90473a27e4e49109b2686041f2c7798bac194ccbb011d69",
+      "expected": "e06d3d678f22a0e4b90473a27e4e49109b2686041f2c7798bac194ccbb011d69"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/browser-smoke.cjs",
+      "result": "passed",
+      "actual": "73c90f6fd931341fda93d4707e1068d6644133c749f93cf9f3590b96f001fff7",
+      "expected": "73c90f6fd931341fda93d4707e1068d6644133c749f93cf9f3590b96f001fff7"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/regression.json",
+      "result": "passed",
+      "actual": "949e2f15a9e606328b33d1b8720691a2a1f3bb67369a920dee3dc7237e73bfa5",
+      "expected": "949e2f15a9e606328b33d1b8720691a2a1f3bb67369a920dee3dc7237e73bfa5"
+    },
+    {
+      "id": "historical:history/implementation/v1.1/smoke-browser.json",
+      "result": "passed",
+      "actual": "53a2a85f0201cad13f4190cd7a3104a4f23e8a20509492c92dca7f40730d54fe",
+      "expected": "53a2a85f0201cad13f4190cd7a3104a4f23e8a20509492c92dca7f40730d54fe"
+    },
+    {
+      "id": "handoff:specs/PROJECT_SPEC_v1.1.json",
+      "result": "passed",
+      "actual": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28",
+      "expected": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28"
+    },
+    {
+      "id": "handoff:specs/DATA_SPEC_v1.1.json",
+      "result": "passed",
+      "actual": "47d34c62296366a74e29ca5f788e83d8825a3b2fc86b39e65ed740e5b90dad81",
+      "expected": "47d34c62296366a74e29ca5f788e83d8825a3b2fc86b39e65ed740e5b90dad81"
+    },
+    {
+      "id": "handoff:changes/CR-002-priority.json",
+      "result": "passed",
+      "actual": "916cc53eeb5057e2d719121ff290d821ce3b3f82c14b7a8cebb502a108768894",
+      "expected": "916cc53eeb5057e2d719121ff290d821ce3b3f82c14b7a8cebb502a108768894"
+    },
+    {
+      "id": "handoff:specs/PROJECT_SPEC_v1.1.json",
+      "result": "passed",
+      "actual": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28",
+      "expected": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28"
+    },
+    {
+      "id": "handoff:specs/DATA_SPEC_v1.1.json",
+      "result": "passed",
+      "actual": "47d34c62296366a74e29ca5f788e83d8825a3b2fc86b39e65ed740e5b90dad81",
+      "expected": "47d34c62296366a74e29ca5f788e83d8825a3b2fc86b39e65ed740e5b90dad81"
+    },
+    {
+      "id": "handoff:changes/CR-002-priority.json",
+      "result": "passed",
+      "actual": "916cc53eeb5057e2d719121ff290d821ce3b3f82c14b7a8cebb502a108768894",
+      "expected": "916cc53eeb5057e2d719121ff290d821ce3b3f82c14b7a8cebb502a108768894"
+    },
+    {
+      "id": "handoff:src/v1.2/build.py",
+      "result": "passed",
+      "actual": "2c996e46dfeb6fce56a5d3b1f0d743df30adf0501869e7e54b3d37126bc2fab6",
+      "expected": "2c996e46dfeb6fce56a5d3b1f0d743df30adf0501869e7e54b3d37126bc2fab6"
+    },
+    {
+      "id": "handoff:src/v1.2/core.js",
+      "result": "passed",
+      "actual": "44da88641b16ec9915d4f9bf97c9a0eea5e4312cad24bb759dce59152cea7e7d",
+      "expected": "44da88641b16ec9915d4f9bf97c9a0eea5e4312cad24bb759dce59152cea7e7d"
+    },
+    {
+      "id": "handoff:src/v1.2/dashboard.html",
+      "result": "passed",
+      "actual": "3d379ed390c6323d058f623f1d4001496719415af3978fb4fe13bcd94b4f79fc",
+      "expected": "3d379ed390c6323d058f623f1d4001496719415af3978fb4fe13bcd94b4f79fc"
+    },
+    {
+      "id": "handoff:src/v1.2/template.html",
+      "result": "passed",
+      "actual": "e82bd2187c2558550a0bad4338243e88327974341ffb9f71572c26dbf3c3f90d",
+      "expected": "e82bd2187c2558550a0bad4338243e88327974341ffb9f71572c26dbf3c3f90d"
+    },
+    {
+      "id": "handoff:src/v1.2/ui.js",
+      "result": "passed",
+      "actual": "831dba0b4b44b19d778f565586bd9bf5d1e7ab905101fb07eccefe6a7e355961",
+      "expected": "831dba0b4b44b19d778f565586bd9bf5d1e7ab905101fb07eccefe6a7e355961"
+    },
+    {
+      "id": "handoff:tests/forge/desktop.png",
+      "result": "passed",
+      "actual": "b92a252d463e83661a59b590c9c6f93235f1d784006a21575ccfbca90b6523ef",
+      "expected": "b92a252d463e83661a59b590c9c6f93235f1d784006a21575ccfbca90b6523ef"
+    },
+    {
+      "id": "handoff:tests/forge/execution.json",
+      "result": "passed",
+      "actual": "bcd2793080bb9f9d785a646b1857df0f6cc5ae05ff37e04a97ed2d336dea5ef4",
+      "expected": "bcd2793080bb9f9d785a646b1857df0f6cc5ae05ff37e04a97ed2d336dea5ef4"
+    },
+    {
+      "id": "handoff:tests/forge/mobile.png",
+      "result": "passed",
+      "actual": "2cd2fdffe57a34cb6bfc9777e013aec2f503ce58692987bf66ab41ed3f576876",
+      "expected": "2cd2fdffe57a34cb6bfc9777e013aec2f503ce58692987bf66ab41ed3f576876"
+    },
+    {
+      "id": "handoff:tests/forge/priority.cjs",
+      "result": "passed",
+      "actual": "4ed6db058c31b21876e66ed26b8b28d15b0fc1567746ec294e4c11bd683c6210",
+      "expected": "4ed6db058c31b21876e66ed26b8b28d15b0fc1567746ec294e4c11bd683c6210"
+    },
+    {
+      "id": "nexus:specs/PROJECT_SPEC_v1.1.json",
+      "result": "passed",
+      "actual": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28",
+      "expected": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28"
+    },
+    {
+      "id": "nexus:history/contracts/DATA_SPEC_v1.0.json",
+      "result": "passed",
+      "actual": "dad311e404f64e161f7287295ce643c46f3b37f9b7fc55c11e65b348ae5d6fcf",
+      "expected": "dad311e404f64e161f7287295ce643c46f3b37f9b7fc55c11e65b348ae5d6fcf"
+    },
+    {
+      "id": "nexus:changes/CR-002-priority.json",
+      "result": "passed",
+      "actual": "916cc53eeb5057e2d719121ff290d821ce3b3f82c14b7a8cebb502a108768894",
+      "expected": "916cc53eeb5057e2d719121ff290d821ce3b3f82c14b7a8cebb502a108768894"
+    },
+    {
+      "id": "owner:specs/PROJECT_SPEC_v1.1.json",
+      "result": "passed",
+      "actual": "ATLAS",
+      "expected": "ATLAS"
+    },
+    {
+      "id": "identity:specs/PROJECT_SPEC_v1.1.json",
+      "result": "passed",
+      "actual": "servicenow-gestion-tickets",
+      "expected": "servicenow-gestion-tickets"
+    },
+    {
+      "id": "owner:specs/DATA_SPEC_v1.1.json",
+      "result": "passed",
+      "actual": "NEXUS",
+      "expected": "NEXUS"
+    },
+    {
+      "id": "identity:specs/DATA_SPEC_v1.1.json",
+      "result": "passed",
+      "actual": "servicenow-gestion-tickets",
+      "expected": "servicenow-gestion-tickets"
+    },
+    {
+      "id": "owner:reports/DEV_REPORT_v1.2.json",
+      "result": "passed",
+      "actual": "FORGE",
+      "expected": "FORGE"
+    },
+    {
+      "id": "identity:reports/DEV_REPORT_v1.2.json",
+      "result": "passed",
+      "actual": "servicenow-gestion-tickets",
+      "expected": "servicenow-gestion-tickets"
+    },
+    {
+      "id": "source-raw-102-rows",
+      "result": "passed",
+      "actual": {
+        "rows": 102,
+        "digest": "bdc7ca6fc0045776db5396c1b96fda9b9b85cecf650b64ff3dd06cd678ab83c3"
+      },
+      "expected": {
+        "rows": 102,
+        "digest": "bdc7ca6fc0045776db5396c1b96fda9b9b85cecf650b64ff3dd06cd678ab83c3"
+      }
+    },
+    {
+      "id": "unchanged-kpis",
+      "result": "passed",
+      "actual": [
+        {
+          "kpi_id": "backlog",
+          "requirement_id": "R1",
+          "name": "Backlog",
+          "status": "calculable",
+          "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+          "required_fields": [
+            "number",
+            "state"
+          ],
+          "available_fields": [
+            "number",
+            "state"
+          ],
+          "calculation_rule": "Count canonical tickets whose normalized state is Nuevo, En progreso or En espera.",
+          "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+          "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+          "validations_pending": [
+            "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+          ],
+          "limitations": []
+        },
+        {
+          "kpi_id": "stale_48h",
+          "requirement_id": "R2",
+          "name": "Sin actualización >48h",
+          "status": "partially_calculable",
+          "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+          "required_fields": [
+            "number",
+            "state",
+            "opened_at",
+            "updated_at"
+          ],
+          "available_fields": [
+            "number",
+            "state",
+            "opened_at",
+            "updated_at"
+          ],
+          "calculation_rule": "Evaluate only when opened_at and updated_at parse, both <= cutoff, and updated_at >= opened_at. Count (cutoff-updated_at).total_seconds() > 172800. Exactly 48 hours is NOT stale; elapsed continuous hours, no business calendar. Show not-evaluable count separately.",
+          "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+          "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+          "validations_pending": [
+            "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+          ],
+          "limitations": [
+            "5 of 64 backlog tickets cannot be evaluated."
+          ]
+        },
+        {
+          "kpi_id": "unassigned",
+          "requirement_id": "R3",
+          "name": "Sin responsable",
+          "status": "calculable",
+          "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+          "required_fields": [
+            "number",
+            "state",
+            "assigned_to"
+          ],
+          "available_fields": [
+            "number",
+            "state",
+            "assigned_to"
+          ],
+          "calculation_rule": "Count backlog tickets with assigned_to null after trimming; report no_group separately as assignment_group null. Do not use OR between these conditions.",
+          "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+          "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+          "validations_pending": [
+            "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+          ],
+          "limitations": []
+        },
+        {
+          "kpi_id": "age",
+          "requirement_id": "R4",
+          "name": "Antigüedad",
+          "status": "partially_calculable",
+          "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+          "required_fields": [
+            "number",
+            "state",
+            "opened_at"
+          ],
+          "available_fields": [
+            "number",
+            "state",
+            "opened_at"
+          ],
+          "calculation_rule": "age_days=(cutoff-opened_at).total_seconds()/86400 for valid opened_at <= cutoff. Show arithmetic mean, median, maximum and evaluable denominator. Unknown age stays null, not zero. updated_at validity does not affect age.",
+          "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+          "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+          "validations_pending": [
+            "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+          ],
+          "limitations": [
+            "1 of 64 backlog tickets has missing opened_at."
+          ]
+        },
+        {
+          "kpi_id": "by_group",
+          "requirement_id": "R5",
+          "name": "Distribución por grupo resolutor",
+          "status": "calculable",
+          "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+          "required_fields": [
+            "number",
+            "state",
+            "assignment_group"
+          ],
+          "available_fields": [
+            "number",
+            "state",
+            "assignment_group"
+          ],
+          "calculation_rule": "Count backlog by trimmed assignment_group, replacing null only for display/filter by Sin grupo. Counts sum to filtered backlog. Empty groups may display zero or be omitted from chart; filter options derive from all canonical source tickets.",
+          "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+          "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+          "validations_pending": [
+            "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+          ],
+          "limitations": []
+        }
+      ],
+      "expected": [
+        {
+          "kpi_id": "backlog",
+          "requirement_id": "R1",
+          "name": "Backlog",
+          "status": "calculable",
+          "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+          "required_fields": [
+            "number",
+            "state"
+          ],
+          "available_fields": [
+            "number",
+            "state"
+          ],
+          "calculation_rule": "Count canonical tickets whose normalized state is Nuevo, En progreso or En espera.",
+          "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+          "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+          "validations_pending": [
+            "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+          ],
+          "limitations": []
+        },
+        {
+          "kpi_id": "stale_48h",
+          "requirement_id": "R2",
+          "name": "Sin actualización >48h",
+          "status": "partially_calculable",
+          "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+          "required_fields": [
+            "number",
+            "state",
+            "opened_at",
+            "updated_at"
+          ],
+          "available_fields": [
+            "number",
+            "state",
+            "opened_at",
+            "updated_at"
+          ],
+          "calculation_rule": "Evaluate only when opened_at and updated_at parse, both <= cutoff, and updated_at >= opened_at. Count (cutoff-updated_at).total_seconds() > 172800. Exactly 48 hours is NOT stale; elapsed continuous hours, no business calendar. Show not-evaluable count separately.",
+          "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+          "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+          "validations_pending": [
+            "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+          ],
+          "limitations": [
+            "5 of 64 backlog tickets cannot be evaluated."
+          ]
+        },
+        {
+          "kpi_id": "unassigned",
+          "requirement_id": "R3",
+          "name": "Sin responsable",
+          "status": "calculable",
+          "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+          "required_fields": [
+            "number",
+            "state",
+            "assigned_to"
+          ],
+          "available_fields": [
+            "number",
+            "state",
+            "assigned_to"
+          ],
+          "calculation_rule": "Count backlog tickets with assigned_to null after trimming; report no_group separately as assignment_group null. Do not use OR between these conditions.",
+          "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+          "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+          "validations_pending": [
+            "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+          ],
+          "limitations": []
+        },
+        {
+          "kpi_id": "age",
+          "requirement_id": "R4",
+          "name": "Antigüedad",
+          "status": "partially_calculable",
+          "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+          "required_fields": [
+            "number",
+            "state",
+            "opened_at"
+          ],
+          "available_fields": [
+            "number",
+            "state",
+            "opened_at"
+          ],
+          "calculation_rule": "age_days=(cutoff-opened_at).total_seconds()/86400 for valid opened_at <= cutoff. Show arithmetic mean, median, maximum and evaluable denominator. Unknown age stays null, not zero. updated_at validity does not affect age.",
+          "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+          "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+          "validations_pending": [
+            "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+          ],
+          "limitations": [
+            "1 of 64 backlog tickets has missing opened_at."
+          ]
+        },
+        {
+          "kpi_id": "by_group",
+          "requirement_id": "R5",
+          "name": "Distribución por grupo resolutor",
+          "status": "calculable",
+          "status_basis": "Required columns inspected across the entire source; supplied definitions plus explicitly provisional assumptions below.",
+          "required_fields": [
+            "number",
+            "state",
+            "assignment_group"
+          ],
+          "available_fields": [
+            "number",
+            "state",
+            "assignment_group"
+          ],
+          "calculation_rule": "Count backlog by trimmed assignment_group, replacing null only for display/filter by Sin grupo. Counts sum to filtered backlog. Empty groups may display zero or be omitted from chart; filter options derive from all canonical source tickets.",
+          "population_and_grain": "One canonical ticket after AND filters, then normalized state in {Nuevo, En progreso, En espera}; proposed A1 applies to ancillary KPIs.",
+          "null_duplicate_state_handling": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics.",
+          "validations_pending": [
+            "Business ratification of A1/A2/A4; does not block explicit provisional prototype."
+          ],
+          "limitations": []
+        }
+      ]
+    },
+    {
+      "id": "unchanged-T1-T5",
+      "result": "passed",
+      "actual": [
+        {
+          "id": "T1",
+          "rule": "Trim every source string; blank strings normalize to null. Preserve unmodified values under raw."
+        },
+        {
+          "id": "T2",
+          "rule": "ticket_type upper case; state casefold canonical map; do not infer unknown state or type from ticket number."
+        },
+        {
+          "id": "T3",
+          "status": "proposed",
+          "rule": "Group by normalized number, missing number treated as separate row. Choose greatest parseable updated_at <= cutoff; invalid/missing/future timestamp ranks below any valid timestamp. Ties select lowest source row. If all candidates lack valid timestamp select lowest source row and retain anomalies. Do not merge cells across versions.",
+          "selected": [
+            {
+              "number": "INC1500015",
+              "source_rows": [
+                16,
+                102
+              ],
+              "canonical_row": 16,
+              "exact": true
+            },
+            {
+              "number": "SCTASK1500033",
+              "source_rows": [
+                34,
+                103
+              ],
+              "canonical_row": 103,
+              "exact": false
+            }
+          ],
+          "warning": "Version selection is a provisional assumption, not confirmed user business rule. Both duplicate IDs are outside backlog here, so selection does not change these backlog KPI totals."
+        },
+        {
+          "id": "T4",
+          "rule": "Cutoff 2026-10-01 18:00:00 is naive in same clock reference as Excel. No timezone conversion or browser local-time dependence. Use deterministic calendar arithmetic. Future dates remain traceable, but exclude them only from date-dependent evaluations: future opened_at excludes age and stale; future updated_at excludes stale only; future sla_due has no KPI effect."
+        },
+        {
+          "id": "T5",
+          "rule": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics."
+        }
+      ],
+      "expected": [
+        {
+          "id": "T1",
+          "rule": "Trim every source string; blank strings normalize to null. Preserve unmodified values under raw."
+        },
+        {
+          "id": "T2",
+          "rule": "ticket_type upper case; state casefold canonical map; do not infer unknown state or type from ticket number."
+        },
+        {
+          "id": "T3",
+          "status": "proposed",
+          "rule": "Group by normalized number, missing number treated as separate row. Choose greatest parseable updated_at <= cutoff; invalid/missing/future timestamp ranks below any valid timestamp. Ties select lowest source row. If all candidates lack valid timestamp select lowest source row and retain anomalies. Do not merge cells across versions.",
+          "selected": [
+            {
+              "number": "INC1500015",
+              "source_rows": [
+                16,
+                102
+              ],
+              "canonical_row": 16,
+              "exact": true
+            },
+            {
+              "number": "SCTASK1500033",
+              "source_rows": [
+                34,
+                103
+              ],
+              "canonical_row": 103,
+              "exact": false
+            }
+          ],
+          "warning": "Version selection is a provisional assumption, not confirmed user business rule. Both duplicate IDs are outside backlog here, so selection does not change these backlog KPI totals."
+        },
+        {
+          "id": "T4",
+          "rule": "Cutoff 2026-10-01 18:00:00 is naive in same clock reference as Excel. No timezone conversion or browser local-time dependence. Use deterministic calendar arithmetic. Future dates remain traceable, but exclude them only from date-dependent evaluations: future opened_at excludes age and stale; future updated_at excludes stale only; future sla_due has no KPI effect."
+        },
+        {
+          "id": "T5",
+          "rule": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "checks": 95,
+    "failed": 0
+  },
+  "audited_revision": "8132a4f12984cf03f7ec2175a5f83a81ae2cc113",
+  "audited_hashes": {
+    "src/v1.2/ui.js": "831dba0b4b44b19d778f565586bd9bf5d1e7ab905101fb07eccefe6a7e355961",
+    "src/v1.2/dashboard.html": "3d379ed390c6323d058f623f1d4001496719415af3978fb4fe13bcd94b4f79fc",
+    "src/v1.2/template.html": "e82bd2187c2558550a0bad4338243e88327974341ffb9f71572c26dbf3c3f90d",
+    "src/v1.2/build.py": "2c996e46dfeb6fce56a5d3b1f0d743df30adf0501869e7e54b3d37126bc2fab6",
+    "src/v1.2/core.js": "44da88641b16ec9915d4f9bf97c9a0eea5e4312cad24bb759dce59152cea7e7d",
+    "specs/PROJECT_SPEC_v1.1.json": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28",
+    "specs/DATA_SPEC_v1.1.json": "47d34c62296366a74e29ca5f788e83d8825a3b2fc86b39e65ed740e5b90dad81",
+    "reports/DEV_REPORT_v1.2.json": "9fdcfea66c416a0767829b2329b8699263e1abaae4c909f91086c3c7a70a6310"
+  }
+}

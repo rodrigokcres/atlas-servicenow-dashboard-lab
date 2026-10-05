@@ -1,0 +1,274 @@
+{
+  "cases": [
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": null
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "Aplicaciones"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "CoE Retail"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "Cognos"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "ERP"
+      },
+      "result": "failed",
+      "differences": [
+        {
+          "key": "age_mean_days",
+          "expected": 22.559523809523807,
+          "actual": 22.559523809523814
+        }
+      ]
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "Mesa de Ayuda"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "Proveedor Externo"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": null,
+        "group_label": "Sin grupo"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": null
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Aplicaciones"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "CoE Retail"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Cognos"
+      },
+      "result": "failed",
+      "differences": [
+        {
+          "key": "age_mean_days",
+          "expected": 23.442708333333332,
+          "actual": 23.442708333333336
+        }
+      ]
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "ERP"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Mesa de Ayuda"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Proveedor Externo"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "INC",
+        "group_label": "Sin grupo"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": null
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Aplicaciones"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "CoE Retail"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Cognos"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "ERP"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Mesa de Ayuda"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Proveedor Externo"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "RITM",
+        "group_label": "Sin grupo"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": null
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Aplicaciones"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "CoE Retail"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Cognos"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "ERP"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Mesa de Ayuda"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Proveedor Externo"
+      },
+      "result": "passed",
+      "differences": []
+    },
+    {
+      "filters": {
+        "ticket_type": "SCTASK",
+        "group_label": "Sin grupo"
+      },
+      "result": "passed",
+      "differences": []
+    }
+  ],
+  "canonical_selection_exact": true,
+  "method": "Node API exact numbers; distinct from UI observation"
+}

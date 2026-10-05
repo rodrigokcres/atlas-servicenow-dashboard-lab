@@ -1,0 +1,37 @@
+{
+  "artifact_type": "ATLAS_CLOSURE",
+  "artifact_version": "1.0",
+  "project_id": "ATLAS-SN-QA-20261002",
+  "created_by": "ATLAS",
+  "based_on": [
+    {
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.0"
+    },
+    {
+      "artifact_type": "DATA_SPEC",
+      "artifact_version": "1.0"
+    },
+    {
+      "artifact_type": "DEV_REPORT",
+      "artifact_version": "1.1"
+    },
+    {
+      "artifact_type": "QA_REPORT",
+      "artifact_version": "1.1"
+    }
+  ],
+  "qa_status": "passed_with_observations",
+  "finding": "QA-001",
+  "finding_status": "resolved",
+  "contract_changes": false,
+  "source_choice": "Latest available nexus_servicenow_test_v1(3).xlsx; no new attachment provided",
+  "delivery": "implementation/v1.1/dashboard.html",
+  "limitations": [
+    "Supuestos de población, fuente y deduplicación siguen propuestos; aprobación limitada al prototipo provisional, no ratificación productiva.",
+    "Edades UI comprobadas con formato de hasta dos decimales. Dos medias API difieren ~7e-15/4e-15 días por aritmética IEEE entre lenguajes; se conserva prueba exploratoria fallida sin inventar tolerancia.",
+    "Pruebas reales ejecutadas en Chromium; mobile smoke a 390px sin desborde de documento; no se afirma cobertura accesibilidad integral ni todos los navegadores.",
+    "No se accedió a registros reservados o disclosure del defecto; cálculo propio desde Excel."
+  ],
+  "next_action": "Entregar prototipo y conservar supuestos para validación de negocio antes de producción."
+}

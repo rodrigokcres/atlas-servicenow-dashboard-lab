@@ -1,0 +1,35 @@
+{
+  "project_id": "ATLAS-SN-QA-20261002",
+  "created_by": "ATLAS",
+  "plugin_version": "0.4.0",
+  "plugin_release": "pluginrel_6abfdf25df508191bc6341d7d8c7b96e",
+  "phase": "contracts_handoff",
+  "input_source": "source/nexus_servicenow_test_v1.xlsx",
+  "source_sha256": "a9e51e2eeb45c44df7cb8fc2636924bbf704952142e26c2239a2e7baae938a2c",
+  "contract_versions": {
+    "PROJECT_SPEC": "1.0",
+    "DATA_SPEC": "1.0"
+  },
+  "decisions": [
+    {
+      "id": "D1",
+      "decision": "Usar provisionalmente Excel más reciente disponible ante ausencia de nuevo adjunto.",
+      "status": "assumption_disclosed"
+    },
+    {
+      "id": "D2",
+      "decision": "Supuestos A1/A2/A4/A5 se usan para prototipo y permanecen propuestos; no son reglas confirmadas por usuario.",
+      "status": "prototype_only"
+    },
+    {
+      "id": "D3",
+      "decision": "Único defecto controlado autorizado explícitamente por usuario, detalle reservado a FORGE hasta primer QA. Contratos no se alteran.",
+      "status": "authorized_by_user"
+    },
+    {
+      "id": "D4",
+      "decision": "SENTINEL tendrá agente sin historial de FORGE y no accederá al registro reservado. Aislamiento de contexto, no barrera de permisos del sistema de archivos.",
+      "status": "audit_protocol"
+    }
+  ]
+}

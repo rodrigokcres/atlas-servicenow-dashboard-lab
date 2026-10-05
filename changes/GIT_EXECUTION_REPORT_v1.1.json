@@ -1,0 +1,68 @@
+{
+  "artifact_type": "GIT_EXECUTION_REPORT",
+  "artifact_version": "1.1",
+  "project_id": "servicenow-gestion-tickets",
+  "created_by": "ATLAS",
+  "based_on": [
+    {
+      "artifact_type": "GIT_EXECUTION_REPORT",
+      "artifact_version": "1.0",
+      "path": "changes/GIT_EXECUTION_REPORT_v1.0.json"
+    },
+    {
+      "artifact_type": "QA_REPORT",
+      "artifact_version": "1.2",
+      "path": "reports/QA_REPORT_v1.2.json"
+    }
+  ],
+  "change_log": [
+    "Confirmados commit de implementación, commit QA, PR abierto y verificación final contra GitHub."
+  ],
+  "repository": "rodrigokcres/atlas-servicenow-dashboard-lab",
+  "branch": "feat/priority-filter-v1.2",
+  "commits": {
+    "base_main": "b27ca326c4fc6d6907e64bcb33f8df88437dc3b2",
+    "baseline": "797f6d52c497c7625364f88df6e37f658b59267b",
+    "implementation_audited": "8132a4f12984cf03f7ec2175a5f83a81ae2cc113",
+    "qa": "ce5898b0b8d6d7886303a2bb57288b6dc64f479d"
+  },
+  "pull_request": {
+    "number": 1,
+    "url": "https://github.com/rodrigokcres/atlas-servicenow-dashboard-lab/pull/1",
+    "state": "open",
+    "draft": false,
+    "merged": false
+  },
+  "qa_status": "passed_with_observations",
+  "verification": {
+    "tree": "a88605a03140bdeafb6d6831f2d5d4421d582dc2",
+    "files": 90,
+    "local_vs_remote_blob_mismatches": [],
+    "main_unchanged": true,
+    "implementation_unchanged_after_audit": true
+  },
+  "executed": [
+    "Creación real de rama de trabajo desde main.",
+    "Commits reales de histórico, implementación y auditoría; refs fast-forward sin force.",
+    "Creación real de PR #1 sin merge.",
+    "Verificación de 90 blobs remotos y sus bytes locales, y SHA de main."
+  ],
+  "not_executed": [
+    {
+      "operation": "git clone por CLI",
+      "reason": "Fallo de conectividad; GitHub API permitió completar las operaciones remotas solicitadas."
+    },
+    {
+      "operation": "merge a main",
+      "reason": "PR queda abierto para revisión."
+    },
+    {
+      "operation": "deploy",
+      "reason": "Fuera del alcance."
+    }
+  ],
+  "remaining_observations": [
+    "QA-002 heredado no bloqueante: diferencia de precisión numérica interna sin diferencia visible."
+  ],
+  "scope_note": "Este informe registra operaciones observadas hasta el commit QA. Su propio commit documental se identifica en el historial Git; no cambia la revisión de producto auditada."
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "DEV_REPORT",
+  "artifact_version": "1.2",
+  "project_id": "servicenow-gestion-tickets",
+  "created_by": "FORGE",
+  "based_on": [
+    {
+      "path": "specs/PROJECT_SPEC_v1.1.json",
+      "sha256": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28",
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.1"
+    },
+    {
+      "path": "specs/DATA_SPEC_v1.1.json",
+      "sha256": "47d34c62296366a74e29ca5f788e83d8825a3b2fc86b39e65ed740e5b90dad81",
+      "artifact_type": "DATA_SPEC",
+      "artifact_version": "1.1"
+    },
+    {
+      "path": "changes/CR-002-priority.json",
+      "sha256": "916cc53eeb5057e2d719121ff290d821ce3b3f82c14b7a8cebb502a108768894",
+      "artifact_type": "CHANGE_REQUEST",
+      "artifact_version": "1.0"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "1.2",
+      "change": "Priority AND filter with type/group; reset three controls; portable build; preserve prior arithmetic/normalization and visible provisional assumptions."
+    }
+  ],
+  "implementation_status": "completed",
+  "technical_summary": {
+    "summary": "Central priority predicate before shared metrics/render pipeline. All calculations and normalization otherwise unchanged.",
+    "input_contracts": [
+      {
+        "path": "specs/PROJECT_SPEC_v1.1.json",
+        "sha256": "1fccbb1c98e58a3501c567be7834d55e372d53d42b1cdbc2dc6041ddf957ee28",
+        "artifact_type": "PROJECT_SPEC",
+        "artifact_version": "1.1"
+      },
+      {
+        "path": "specs/DATA_SPEC_v1.1.json",
+        "sha256": "47d34c62296366a74e29ca5f788e83d8825a3b2fc86b39e65ed740e5b90dad81",
+        "artifact_type": "DATA_SPEC",
+        "artifact_version": "1.1"
+      },
+      {
+        "path": "changes/CR-002-priority.json",
+        "sha256": "916cc53eeb5057e2d719121ff290d821ce3b3f82c14b7a8cebb502a108768894",
+        "artifact_type": "CHANGE_REQUEST",
+        "artifact_version": "1.0"
+      }
+    ]
+  },
+  "architecture": {
+    "core": "src/v1.2/core.js: normalize/evaluate/filterTickets/metrics",
+    "ui": "src/v1.2/ui.js: render/reset",
+    "template": "src/v1.2/template.html: labelled priority control",
+    "build": "src/v1.2/build.py: embeds original raw fields from historical normalized data into standalone dashboard.html"
+  },
+  "stack": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Python 3 build",
+    "Node.js + Playwright verification"
+  ],
+  "files_created_or_modified": [
+    {
+      "path": "src/v1.2/build.py",
+      "sha256": "2c996e46dfeb6fce56a5d3b1f0d743df30adf0501869e7e54b3d37126bc2fab6"
+    },
+    {
+      "path": "src/v1.2/core.js",
+      "sha256": "44da88641b16ec9915d4f9bf97c9a0eea5e4312cad24bb759dce59152cea7e7d"
+    },
+    {
+      "path": "src/v1.2/dashboard.html",
+      "sha256": "3d379ed390c6323d058f623f1d4001496719415af3978fb4fe13bcd94b4f79fc"
+    },
+    {
+      "path": "src/v1.2/template.html",
+      "sha256": "e82bd2187c2558550a0bad4338243e88327974341ffb9f71572c26dbf3c3f90d"
+    },
+    {
+      "path": "src/v1.2/ui.js",
+      "sha256": "831dba0b4b44b19d778f565586bd9bf5d1e7ab905101fb07eccefe6a7e355961"
+    },
+    {
+      "path": "tests/forge/desktop.png",
+      "sha256": "b92a252d463e83661a59b590c9c6f93235f1d784006a21575ccfbca90b6523ef"
+    },
+    {
+      "path": "tests/forge/execution.json",
+      "sha256": "bcd2793080bb9f9d785a646b1857df0f6cc5ae05ff37e04a97ed2d336dea5ef4"
+    },
+    {
+      "path": "tests/forge/mobile.png",
+      "sha256": "2cd2fdffe57a34cb6bfc9777e013aec2f503ce58692987bf66ab41ed3f576876"
+    },
+    {
+      "path": "tests/forge/priority.cjs",
+      "sha256": "4ed6db058c31b21876e66ed26b8b28d15b0fc1567746ec294e4c11bd683c6210"
+    }
+  ],
+  "implemented_requirements": [
+    {
+      "requirement_id": "R1",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R2",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R3",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R4",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R5",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R6",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: filterTickets; src/v1.2/ui.js: render/reset; src/v1.2/template.html: priority control"
+    },
+    {
+      "requirement_id": "R7",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R8",
+      "status": "handoff_pending",
+      "implementation": "ATLAS owns Git and SENTINEL independent audit; FORGE does not merge."
+    },
+    {
+      "requirement_id": "R9",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: filterTickets; src/v1.2/ui.js: render/reset; src/v1.2/template.html: priority control"
+    },
+    {
+      "requirement_id": "R10",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: filterTickets; src/v1.2/ui.js: render/reset; src/v1.2/template.html: priority control"
+    },
+    {
+      "requirement_id": "R11",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: filterTickets; src/v1.2/ui.js: render/reset; src/v1.2/template.html: priority control"
+    },
+    {
+      "requirement_id": "R12",
+      "status": "handoff_pending",
+      "implementation": "ATLAS owns Git and SENTINEL independent audit; FORGE does not merge."
+    }
+  ],
+  "implemented_kpis": [
+    {
+      "kpi_id": "backlog",
+      "status": "calculable",
+      "calculation_rule": "Count canonical tickets whose normalized state is Nuevo, En progreso or En espera.",
+      "contract_reference": "DATA_SPEC 1.1 kpi_definitions",
+      "implementation": "src/v1.2/core.js: evaluate/metrics"
+    },
+    {
+      "kpi_id": "stale_48h",
+      "status": "partially_calculable",
+      "calculation_rule": "Evaluate only when opened_at and updated_at parse, both <= cutoff, and updated_at >= opened_at. Count (cutoff-updated_at).total_seconds() > 172800. Exactly 48 hours is NOT stale; elapsed continuous hours, no business calendar. Show not-evaluable count separately.",
+      "contract_reference": "DATA_SPEC 1.1 kpi_definitions",
+      "implementation": "src/v1.2/core.js: evaluate/metrics"
+    },
+    {
+      "kpi_id": "unassigned",
+      "status": "calculable",
+      "calculation_rule": "Count backlog tickets with assigned_to null after trimming; report no_group separately as assignment_group null. Do not use OR between these conditions.",
+      "contract_reference": "DATA_SPEC 1.1 kpi_definitions",
+      "implementation": "src/v1.2/core.js: evaluate/metrics"
+    },
+    {
+      "kpi_id": "age",
+      "status": "partially_calculable",
+      "calculation_rule": "age_days=(cutoff-opened_at).total_seconds()/86400 for valid opened_at <= cutoff. Show arithmetic mean, median, maximum and evaluable denominator. Unknown age stays null, not zero. updated_at validity does not affect age.",
+      "contract_reference": "DATA_SPEC 1.1 kpi_definitions",
+      "implementation": "src/v1.2/core.js: evaluate/metrics"
+    },
+    {
+      "kpi_id": "by_group",
+      "status": "calculable",
+      "calculation_rule": "Count backlog by trimmed assignment_group, replacing null only for display/filter by Sin grupo. Counts sum to filtered backlog. Empty groups may display zero or be omitted from chart; filter options derive from all canonical source tickets.",
+      "contract_reference": "DATA_SPEC 1.1 kpi_definitions",
+      "implementation": "src/v1.2/core.js: evaluate/metrics"
+    }
+  ],
+  "data_transformations": [
+    {
+      "id": "T1",
+      "rule": "Trim every source string; blank strings normalize to null. Preserve unmodified values under raw."
+    },
+    {
+      "id": "T2",
+      "rule": "ticket_type upper case; state casefold canonical map; do not infer unknown state or type from ticket number."
+    },
+    {
+      "id": "T3",
+      "status": "proposed",
+      "rule": "Group by normalized number, missing number treated as separate row. Choose greatest parseable updated_at <= cutoff; invalid/missing/future timestamp ranks below any valid timestamp. Ties select lowest source row. If all candidates lack valid timestamp select lowest source row and retain anomalies. Do not merge cells across versions.",
+      "selected": [
+        {
+          "number": "INC1500015",
+          "source_rows": [
+            16,
+            102
+          ],
+          "canonical_row": 16,
+          "exact": true
+        },
+        {
+          "number": "SCTASK1500033",
+          "source_rows": [
+            34,
+            103
+          ],
+          "canonical_row": 103,
+          "exact": false
+        }
+      ],
+      "warning": "Version selection is a provisional assumption, not confirmed user business rule. Both duplicate IDs are outside backlog here, so selection does not change these backlog KPI totals."
+    },
+    {
+      "id": "T4",
+      "rule": "Cutoff 2026-10-01 18:00:00 is naive in same clock reference as Excel. No timezone conversion or browser local-time dependence. Use deterministic calendar arithmetic. Future dates remain traceable, but exclude them only from date-dependent evaluations: future opened_at excludes age and stale; future updated_at excludes stale only; future sla_due has no KPI effect."
+    },
+    {
+      "id": "T5",
+      "rule": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics."
+    },
+    {
+      "id": "T6",
+      "rule": "Apply filters ticket_type AND group_label AND priority to canonical tickets before every card/chart/distribution/age/detail/non-evaluable computation. Each unset filter means all; Todas las prioridades imposes no priority restriction; selected priority uses exact equality after T1. Reset clears all three filters and restores initial population. Dashboard operational detail shows filtered backlog records; source audit detail may show all 102 with canonical markers and explicit scope. Total source 102 is invariant and labelled source; filtered canonical ticket_count changes with filters. Type/group options remain based on all canonical tickets including zero-backlog Proveedor Externo. Priority options are fixed: Todas las prioridades, P1, P2, P3, P4. Empty population counts=0, ages=null, denominators=0. All-priority outputs must match v1.1 for each original type/group combination."
+    }
+  ],
+  "technical_decisions": [
+    "Extend central filter predicate; no other core changes.",
+    "Fixed priority options; type/group options still derive from all canonical tickets.",
+    "Filter bar wraps at every width to accommodate third control.",
+    "Preserve detail columns, append active priority to detail scope label."
+  ],
+  "tests_performed": [
+    {
+      "name": "Core matches priority partition of historical v1.1 for all 160 combinations",
+      "status": "passed",
+      "evidence": "tests/forge/execution.json"
+    },
+    {
+      "name": "UI rows, cards, groups, states, age, anomalies and scope match same population for 160 combinations",
+      "status": "passed",
+      "evidence": "tests/forge/execution.json"
+    },
+    {
+      "name": "32 all-priority cases preserve v1.1 values",
+      "status": "passed",
+      "evidence": "tests/forge/execution.json"
+    },
+    {
+      "name": "Reset clears three controls and restores 64 backlog tickets",
+      "status": "passed",
+      "evidence": "tests/forge/execution.json"
+    },
+    {
+      "name": "390px viewport has no document overflow",
+      "status": "passed",
+      "evidence": "tests/forge/execution.json"
+    },
+    {
+      "name": "No browser errors or external requests",
+      "status": "passed",
+      "evidence": "tests/forge/execution.json"
+    },
+    {
+      "name": "Visual inspection desktop and mobile screenshots",
+      "status": "passed",
+      "evidence": [
+        "tests/forge/desktop.png",
+        "tests/forge/mobile.png"
+      ]
+    },
+    {
+      "name": "Initial sandbox browser launch",
+      "status": "not_run",
+      "reason": "Chromium startup prohibited by sandbox; identical suite later passed with approved escalation."
+    }
+  ],
+  "known_issues": [
+    "Inherited provisional assumptions need business ratification before production."
+  ],
+  "limitations": [
+    "FORGE regression uses historical v1.1 as metamorphic oracle; independent Excel recomputation is SENTINEL responsibility.",
+    "Original Excel remains local outside Git; build uses historical normalized JSON."
+  ],
+  "deviations": [],
+  "pending_decisions": [],
+  "run_instructions": {
+    "build": "python src/v1.2/build.py",
+    "open": "Open src/v1.2/dashboard.html in browser; file:// supported.",
+    "tests": "node tests/forge/priority.cjs; CODEX_PRIMARY_RUNTIME_NODE_MODULES must contain playwright; optional ATLAS_BROWSER overrides Chromium path."
+  },
+  "deployment_status": {
+    "status": "not_requested",
+    "target": null,
+    "url": null,
+    "evidence": [],
+    "reason": "Local prototype; Git operations managed by ATLAS."
+  },
+  "next_action": {
+    "action": "Independent original-Excel and browser audit before any merge.",
+    "owner": "SENTINEL",
+    "status": "pending",
+    "depends_on": [
+      "PROJECT_SPEC 1.1",
+      "DATA_SPEC 1.1",
+      "DEV_REPORT 1.2"
+    ]
+  },
+  "source": {
+    "path": "history/data/normalized_tickets.json",
+    "sha256": "d029d7763884663eefb0bd4848f04e73aab1d07d9f3def3769f09684bbf68c08"
+  },
+  "baseline": {
+    "path": "history/implementation/v1.1/dashboard.html",
+    "sha256": "0d8c5608cef58020ac543f05b9fbe707e9c2ac028c1e5a715ccba279df2c6d5d"
+  },
+  "identity_reconciliation": {
+    "canonical_project_id": "servicenow-gestion-tickets",
+    "historical_package_project_id": "ATLAS-SN-QA-20261002",
+    "basis": "El usuario identifica explícitamente este proyecto y ordena continuar desde la v1.1 validada; README de main coincide. Se conserva el ID solicitado y se documenta el ID discrepante del paquete histórico sin reescribirlo.",
+    "historical_artifacts_unchanged": true
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "DEV_REPORT",
+  "artifact_version": "1.0",
+  "project_id": "ATLAS-SN-QA-20261002",
+  "created_by": "FORGE",
+  "based_on": [
+    {
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.0",
+      "path": "contracts/PROJECT_SPEC_v1.0.json"
+    },
+    {
+      "artifact_type": "DATA_SPEC",
+      "artifact_version": "1.0",
+      "path": "contracts/DATA_SPEC_v1.0.json"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "1.0",
+      "change": "Primera implementación provisional para ensayo controlado e independiente de QA."
+    }
+  ],
+  "implementation_status": "partial",
+  "technical_summary": {
+    "summary": "Dashboard local autocontenido en español, responsive e indigo. Motor puro compartido con interfaz, basado en campos fuente; no consume agregaciones esperadas como lógica. Entrega deliberadamente parcial del ensayo autorizado, pendiente de auditoría.",
+    "input_contracts": [
+      {
+        "artifact_type": "PROJECT_SPEC",
+        "artifact_version": "1.0",
+        "path": "contracts/PROJECT_SPEC_v1.0.json"
+      },
+      {
+        "artifact_type": "DATA_SPEC",
+        "artifact_version": "1.0",
+        "path": "contracts/DATA_SPEC_v1.0.json"
+      }
+    ]
+  },
+  "architecture": {
+    "build": "build.py inserta datos fuente, core.js y ui.js en template.html; salida dashboard.html sin dependencias externas.",
+    "data_flow": "records.raw → normalize (T1/T2/T3/T5) → filterTickets → evaluate → metrics → render",
+    "api": "globalThis.DashboardCore en browser; require(core.js) en Node. normalize(records), filterTickets(tickets,filters), evaluate(record), metrics(tickets,filters), clock(value).",
+    "ui": "DashboardApp.render llama al mismo DashboardCore.metrics para todas las regiones. Selectores #type, #group, #reset; regiones #cards, #groups, #states, #ages, #tickets, #anomalies."
+  },
+  "stack": [
+    "HTML5",
+    "CSS responsive y barras accesibles con valores textuales",
+    "JavaScript ES2020 sin librerías en runtime",
+    "Python 3 para build",
+    "Node assert para smoke",
+    "Playwright/Chromium 131 para smoke real"
+  ],
+  "files_created_or_modified": [
+    "implementation/v1.0/browser-smoke.cjs",
+    "implementation/v1.0/build.py",
+    "implementation/v1.0/core.js",
+    "implementation/v1.0/dashboard.html",
+    "implementation/v1.0/desktop.png",
+    "implementation/v1.0/mobile.png",
+    "implementation/v1.0/smoke-browser.json",
+    "implementation/v1.0/smoke-node.log",
+    "implementation/v1.0/smoke.cjs",
+    "implementation/v1.0/template.html",
+    "implementation/v1.0/ui.js"
+  ],
+  "implemented_requirements": [
+    {
+      "requirement_id": "R1",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js evaluate/metrics: estados de backlog"
+    },
+    {
+      "requirement_id": "R2",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js clock/evaluate: >48h y no evaluables; UI tarjetas y tabla"
+    },
+    {
+      "requirement_id": "R3",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js metrics: responsable/grupo separados"
+    },
+    {
+      "requirement_id": "R4",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js metrics: media/mediana/máximo y denominadores"
+    },
+    {
+      "requirement_id": "R5",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js metrics by_group y ui.js bars"
+    },
+    {
+      "requirement_id": "R6",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js filterTickets; ui.js controles y render; sujeto a ensayo controlado"
+    },
+    {
+      "requirement_id": "R7",
+      "status": "implemented_pending_independent_qa",
+      "trace": "core.js CUTOFF y aritmética UTC utilizada como reloj naive"
+    },
+    {
+      "requirement_id": "R8",
+      "status": "partial",
+      "trace": "Entrega FORGE preparada; auditoría independiente, asignación de hallazgos y revalidación pendientes"
+    }
+  ],
+  "implemented_kpis": [
+    {
+      "kpi_id": "backlog",
+      "calculability": "calculable",
+      "rule_reference": "DATA_SPEC 1.0 kpi_definitions[kpi_id=backlog]",
+      "implementation": "core.js metrics/evaluate; ui.js render",
+      "validation_status": "baseline_smoke_passed; acceptance_pending"
+    },
+    {
+      "kpi_id": "stale_48h",
+      "calculability": "partially_calculable",
+      "rule_reference": "DATA_SPEC 1.0 kpi_definitions[kpi_id=stale_48h]",
+      "implementation": "core.js metrics/evaluate; ui.js render",
+      "validation_status": "baseline_smoke_passed; acceptance_pending"
+    },
+    {
+      "kpi_id": "unassigned",
+      "calculability": "calculable",
+      "rule_reference": "DATA_SPEC 1.0 kpi_definitions[kpi_id=unassigned]",
+      "implementation": "core.js metrics/evaluate; ui.js render",
+      "validation_status": "baseline_smoke_passed; acceptance_pending"
+    },
+    {
+      "kpi_id": "age",
+      "calculability": "partially_calculable",
+      "rule_reference": "DATA_SPEC 1.0 kpi_definitions[kpi_id=age]",
+      "implementation": "core.js metrics/evaluate; ui.js render",
+      "validation_status": "baseline_smoke_passed; acceptance_pending"
+    },
+    {
+      "kpi_id": "by_group",
+      "calculability": "calculable",
+      "rule_reference": "DATA_SPEC 1.0 kpi_definitions[kpi_id=by_group]",
+      "implementation": "core.js metrics/evaluate; ui.js render",
+      "validation_status": "baseline_smoke_passed; acceptance_pending"
+    }
+  ],
+  "data_transformations": [
+    {
+      "id": "T1",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js normalize",
+      "status": "specified",
+      "note": "Contrato preservado; aceptación global pendiente del ensayo controlado."
+    },
+    {
+      "id": "T2",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js normalize",
+      "status": "specified",
+      "note": "Contrato preservado; aceptación global pendiente del ensayo controlado."
+    },
+    {
+      "id": "T3",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js normalize",
+      "status": "proposed",
+      "note": "Contrato preservado; aceptación global pendiente del ensayo controlado."
+    },
+    {
+      "id": "T4",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js clock/evaluate",
+      "status": "specified",
+      "note": "Contrato preservado; aceptación global pendiente del ensayo controlado."
+    },
+    {
+      "id": "T5",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js normalize",
+      "status": "specified",
+      "note": "Contrato preservado; aceptación global pendiente del ensayo controlado."
+    },
+    {
+      "id": "T6",
+      "contract": "DATA_SPEC 1.0",
+      "implementation": "core.js filterTickets/metrics y ui.js render",
+      "status": "specified",
+      "note": "Contrato preservado; aceptación global pendiente del ensayo controlado."
+    }
+  ],
+  "technical_decisions": [
+    "Un único motor puro para UI y pruebas, sin respuestas precalculadas.",
+    "Se recalcula normalización y selección canónica desde raw; se preserva procedencia por fila.",
+    "No redondear antes de agregación; presentar hasta dos decimales con formato es-ES.",
+    "Fecha fija con componentes UTC para evitar dependencia de zona local; no convierte la referencia horaria Excel.",
+    "Opciones derivadas de todas las filas canónicas, incluidos grupos sin backlog.",
+    "Nombres personales no se muestran en tablas; solo condición de asignación."
+  ],
+  "tests_performed": [
+    {
+      "name": "Node smoke",
+      "status": "passed",
+      "command": "node implementation/v1.0/smoke.cjs",
+      "evidence": "implementation/v1.0/smoke-node.log",
+      "scope": "5 grupos: baseline de todos los KPIs, una intersección, vacío, fechas sintéticas, integridad HTML/motor. No cubre matriz completa."
+    },
+    {
+      "name": "Browser smoke real",
+      "status": "passed",
+      "command": "node implementation/v1.0/browser-smoke.cjs",
+      "evidence": "implementation/v1.0/smoke-browser.json",
+      "scope": "file://; baseline; una intersección; reset; mobile 390px; errores JS y solicitudes externas."
+    },
+    {
+      "name": "Capturas y revisión visual escritorio",
+      "status": "passed",
+      "evidence": [
+        "implementation/v1.0/desktop.png",
+        "implementation/v1.0/mobile.png"
+      ],
+      "scope": "Capturas reales 1440px y 390px; desktop inspeccionado visualmente. No constituye auditoría de accesibilidad integral."
+    },
+    {
+      "name": "Matriz independiente completa y aceptación",
+      "status": "not_run",
+      "evidence": null,
+      "scope": "Propiedad SENTINEL; pendiente para esta entrega."
+    }
+  ],
+  "known_issues": [
+    {
+      "id": "CONTROLLED-TRIAL-1",
+      "description": "Entrega controlada con una desviación funcional deliberada autorizada; identidad y ubicación reservadas hasta la auditoría independiente.",
+      "status": "pending_independent_qa"
+    }
+  ],
+  "limitations": [
+    "Ensayo autorizado: no declarar cumplimiento funcional total.",
+    "Smoke propio no sustituye QA independiente contra Excel.",
+    "Supuestos A1/A2/A3/A4/A5 y elección de fuente provisionales visibles; ratificación productiva pendiente.",
+    "No reconstruye estados históricos; fecha de corte aplicada a instantánea.",
+    "Chromium local requiere ejecución fuera del sandbox restrictivo; archivo HTML no requiere servidor ni conexión."
+  ],
+  "deviations": [
+    {
+      "contract": "PROJECT_SPEC / DATA_SPEC",
+      "version": "1.0 / 1.0",
+      "expected_behavior": "Comportamiento funcional completo según contratos congelados.",
+      "difference": "Una desviación funcional deliberada en la primera entrega, detalle reservado hasta auditoría independiente.",
+      "reason": "Ensayo controlado de detección y corrección solicitado explícitamente.",
+      "impact": "Entrega parcial no aprobada hasta auditoría, corrección y revalidación.",
+      "authorization": "PROJECT_SPEC 1.0 constraints.confirmed: autorización explícita del usuario de exactamente un defecto en v1.0.",
+      "resolution": "Esperar QA_REPORT de SENTINEL; ATLAS asignará hallazgo y FORGE emitirá versión corregida sin modificar v1.0."
+    }
+  ],
+  "pending_decisions": [
+    {
+      "owner": "SENTINEL",
+      "decision": "Emitir primera auditoría independiente",
+      "status": "pending"
+    },
+    {
+      "owner": "ATLAS",
+      "decision": "Asignar hallazgos y coordinar corrección/revalidación",
+      "status": "pending"
+    },
+    {
+      "owner": "Usuario / ATLAS",
+      "decision": "Ratificar supuestos propuestos antes de producción",
+      "status": "pending"
+    }
+  ],
+  "run_instructions": {
+    "open": "Abrir implementation/v1.0/dashboard.html directamente en navegador. No instalar dependencias para usarlo.",
+    "build": "Desde carpeta deliverables: python implementation/v1.0/build.py",
+    "node_smoke": "Desde deliverables: node implementation/v1.0/smoke.cjs",
+    "browser_smoke": "Desde deliverables: node implementation/v1.0/browser-smoke.cjs. Requiere Playwright en CODEX_PRIMARY_RUNTIME_NODE_MODULES y Chromium en ATLAS_BROWSER o ruta por defecto indicada en script.",
+    "filters": "Seleccionar tipo y grupo; botón Restablecer vacía ambos."
+  },
+  "deployment_status": {
+    "status": "not_requested",
+    "target": null,
+    "url": null,
+    "evidence": [],
+    "reason": "Prototipo local descargable; no publicación externa solicitada."
+  },
+  "next_action": {
+    "action": "Auditar v1.0 de manera independiente, sin detalle sellado.",
+    "owner": "ATLAS",
+    "status": "pending",
+    "depends_on": [
+      "SENTINEL QA_REPORT v1.0"
+    ]
+  }
+}

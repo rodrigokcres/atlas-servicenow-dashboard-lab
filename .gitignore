@@ -4,3 +4,8 @@ Thumbs.db
 .env
 .env.*
 node_modules/
+
+# La fuente binaria permanece fuera de Git conforme a data/README.md.
+*.xlsx
+*.xls
+__pycache__/
