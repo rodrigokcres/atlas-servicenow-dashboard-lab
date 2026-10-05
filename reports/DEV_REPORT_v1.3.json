@@ -1,0 +1,289 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "DEV_REPORT",
+  "artifact_version": "1.3",
+  "project_id": "servicenow-gestion-tickets",
+  "created_by": "FORGE",
+  "based_on": [
+    {
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.2",
+      "path": "specs/PROJECT_SPEC_v1.2.json"
+    },
+    {
+      "artifact_type": "DATA_SPEC",
+      "artifact_version": "1.1",
+      "path": "specs/DATA_SPEC_v1.1.json"
+    },
+    {
+      "artifact_type": "DEV_REPORT",
+      "artifact_version": "1.2",
+      "path": "reports/DEV_REPORT_v1.2.json"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "1.2",
+      "change": "Priority AND filter with type/group; reset three controls; portable build; preserve prior arithmetic/normalization and visible provisional assumptions."
+    },
+    {
+      "version": "1.3",
+      "change": "Preparación estática GitHub Pages, sin cambios funcionales."
+    }
+  ],
+  "implementation_status": "completed",
+  "technical_summary": {
+    "summary": "Preparación Pages mediante copia byte a byte del HTML autocontenido v1.2 en docs/index.html.",
+    "input_contracts": [
+      {
+        "artifact_type": "PROJECT_SPEC",
+        "artifact_version": "1.2",
+        "path": "specs/PROJECT_SPEC_v1.2.json"
+      },
+      {
+        "artifact_type": "DATA_SPEC",
+        "artifact_version": "1.1",
+        "path": "specs/DATA_SPEC_v1.1.json"
+      },
+      {
+        "artifact_type": "DEV_REPORT",
+        "artifact_version": "1.2",
+        "path": "reports/DEV_REPORT_v1.2.json"
+      }
+    ],
+    "baseline_commit": "cbf7c25c72e9f2bf14bbe978cc70e7de36050b0e"
+  },
+  "architecture": {
+    "core": "src/v1.2/core.js: normalize/evaluate/filterTickets/metrics",
+    "ui": "src/v1.2/ui.js: render/reset",
+    "template": "src/v1.2/template.html: labelled priority control",
+    "build": "src/v1.2/build.py: embeds original raw fields from historical normalized data into standalone dashboard.html"
+  },
+  "stack": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "GitHub Pages estático"
+  ],
+  "files_created_or_modified": [
+    "docs/index.html",
+    "docs/.nojekyll",
+    "specs/PROJECT_SPEC_v1.2.json",
+    "reports/DEV_REPORT_v1.3.json",
+    "DEPLOYMENT.md",
+    "README.md"
+  ],
+  "implemented_requirements": [
+    {
+      "requirement_id": "R1",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R2",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R3",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R4",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R5",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R6",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: filterTickets; src/v1.2/ui.js: render/reset; src/v1.2/template.html: priority control"
+    },
+    {
+      "requirement_id": "R7",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: normalize/evaluate/metrics"
+    },
+    {
+      "requirement_id": "R8",
+      "status": "handoff_pending",
+      "implementation": "ATLAS owns Git and SENTINEL independent audit; FORGE does not merge."
+    },
+    {
+      "requirement_id": "R9",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: filterTickets; src/v1.2/ui.js: render/reset; src/v1.2/template.html: priority control"
+    },
+    {
+      "requirement_id": "R10",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: filterTickets; src/v1.2/ui.js: render/reset; src/v1.2/template.html: priority control"
+    },
+    {
+      "requirement_id": "R11",
+      "status": "implemented",
+      "implementation": "src/v1.2/core.js: filterTickets; src/v1.2/ui.js: render/reset; src/v1.2/template.html: priority control"
+    },
+    {
+      "requirement_id": "R12",
+      "status": "handoff_pending",
+      "implementation": "ATLAS owns Git and SENTINEL independent audit; FORGE does not merge."
+    }
+  ],
+  "implemented_kpis": [
+    {
+      "kpi_id": "backlog",
+      "status": "calculable",
+      "calculation_rule": "Count canonical tickets whose normalized state is Nuevo, En progreso or En espera.",
+      "contract_reference": "DATA_SPEC 1.1 kpi_definitions",
+      "implementation": "src/v1.2/core.js: evaluate/metrics"
+    },
+    {
+      "kpi_id": "stale_48h",
+      "status": "partially_calculable",
+      "calculation_rule": "Evaluate only when opened_at and updated_at parse, both <= cutoff, and updated_at >= opened_at. Count (cutoff-updated_at).total_seconds() > 172800. Exactly 48 hours is NOT stale; elapsed continuous hours, no business calendar. Show not-evaluable count separately.",
+      "contract_reference": "DATA_SPEC 1.1 kpi_definitions",
+      "implementation": "src/v1.2/core.js: evaluate/metrics"
+    },
+    {
+      "kpi_id": "unassigned",
+      "status": "calculable",
+      "calculation_rule": "Count backlog tickets with assigned_to null after trimming; report no_group separately as assignment_group null. Do not use OR between these conditions.",
+      "contract_reference": "DATA_SPEC 1.1 kpi_definitions",
+      "implementation": "src/v1.2/core.js: evaluate/metrics"
+    },
+    {
+      "kpi_id": "age",
+      "status": "partially_calculable",
+      "calculation_rule": "age_days=(cutoff-opened_at).total_seconds()/86400 for valid opened_at <= cutoff. Show arithmetic mean, median, maximum and evaluable denominator. Unknown age stays null, not zero. updated_at validity does not affect age.",
+      "contract_reference": "DATA_SPEC 1.1 kpi_definitions",
+      "implementation": "src/v1.2/core.js: evaluate/metrics"
+    },
+    {
+      "kpi_id": "by_group",
+      "status": "calculable",
+      "calculation_rule": "Count backlog by trimmed assignment_group, replacing null only for display/filter by Sin grupo. Counts sum to filtered backlog. Empty groups may display zero or be omitted from chart; filter options derive from all canonical source tickets.",
+      "contract_reference": "DATA_SPEC 1.1 kpi_definitions",
+      "implementation": "src/v1.2/core.js: evaluate/metrics"
+    }
+  ],
+  "data_transformations": [
+    {
+      "id": "T1",
+      "rule": "Trim every source string; blank strings normalize to null. Preserve unmodified values under raw."
+    },
+    {
+      "id": "T2",
+      "rule": "ticket_type upper case; state casefold canonical map; do not infer unknown state or type from ticket number."
+    },
+    {
+      "id": "T3",
+      "status": "proposed",
+      "rule": "Group by normalized number, missing number treated as separate row. Choose greatest parseable updated_at <= cutoff; invalid/missing/future timestamp ranks below any valid timestamp. Ties select lowest source row. If all candidates lack valid timestamp select lowest source row and retain anomalies. Do not merge cells across versions.",
+      "selected": [
+        {
+          "number": "INC1500015",
+          "source_rows": [
+            16,
+            102
+          ],
+          "canonical_row": 16,
+          "exact": true
+        },
+        {
+          "number": "SCTASK1500033",
+          "source_rows": [
+            34,
+            103
+          ],
+          "canonical_row": 103,
+          "exact": false
+        }
+      ],
+      "warning": "Version selection is a provisional assumption, not confirmed user business rule. Both duplicate IDs are outside backlog here, so selection does not change these backlog KPI totals."
+    },
+    {
+      "id": "T4",
+      "rule": "Cutoff 2026-10-01 18:00:00 is naive in same clock reference as Excel. No timezone conversion or browser local-time dependence. Use deterministic calendar arithmetic. Future dates remain traceable, but exclude them only from date-dependent evaluations: future opened_at excludes age and stale; future updated_at excludes stale only; future sla_due has no KPI effect."
+    },
+    {
+      "id": "T5",
+      "rule": "Canonical ticket by number; retain all 102 source rows in evidence, include only canonical row in metrics. Trim strings, blanks become null; state casefold map to Nuevo/En progreso/En espera/Resuelto/Cerrado. Unknown states excluded from backlog and flagged; unknown types retained as their upper-case value. Null type shown Sin tipo; missing group shown Sin grupo. Date anomalies never remove tickets from backlog or assignment/group metrics."
+    },
+    {
+      "id": "T6",
+      "rule": "Apply filters ticket_type AND group_label AND priority to canonical tickets before every card/chart/distribution/age/detail/non-evaluable computation. Each unset filter means all; Todas las prioridades imposes no priority restriction; selected priority uses exact equality after T1. Reset clears all three filters and restores initial population. Dashboard operational detail shows filtered backlog records; source audit detail may show all 102 with canonical markers and explicit scope. Total source 102 is invariant and labelled source; filtered canonical ticket_count changes with filters. Type/group options remain based on all canonical tickets including zero-backlog Proveedor Externo. Priority options are fixed: Todas las prioridades, P1, P2, P3, P4. Empty population counts=0, ages=null, denominators=0. All-priority outputs must match v1.1 for each original type/group combination."
+    }
+  ],
+  "technical_decisions": [
+    "Copiar HTML autocontenido validado sin modificar bytes.",
+    "Servir únicamente docs desde Pages main /docs.",
+    "No agregar Actions ni activar Pages durante esta preparación."
+  ],
+  "tests_performed": [
+    {
+      "test_id": "FORGE-copy",
+      "status": "passed",
+      "command": "Python: comparar bytes docs/index.html y src/v1.2/dashboard.html",
+      "evidence": {
+        "path": "src/v1.2/dashboard.html",
+        "commit": "cbf7c25c72e9f2bf14bbe978cc70e7de36050b0e",
+        "sha256": "5eb48bda209560aebb2b724933c0aa074f23754d81d41cacec2ebed7c43d6ed4"
+      },
+      "result": true
+    }
+  ],
+  "known_issues": [
+    "Inherited provisional assumptions need business ratification before production."
+  ],
+  "limitations": [
+    "No hay Chromium instalado; SENTINEL verificará ejecución DOM y equivalencia exacta.",
+    "Excel original no disponible; se conserva la fuente embebida sin cambios."
+  ],
+  "deviations": [],
+  "pending_decisions": [
+    "Revisión y aprobación del PR por usuario",
+    "Aprobación posterior de activación Pages"
+  ],
+  "run_instructions": {
+    "local": "python3 -m http.server 8000 --directory docs",
+    "publication": "Ver DEPLOYMENT.md"
+  },
+  "deployment_status": {
+    "status": "prepared",
+    "target": "GitHub Pages: main /docs",
+    "url": null,
+    "evidence": [
+      "docs/index.html"
+    ],
+    "reason": "Activación y despliegue pendientes de aprobación explícita"
+  },
+  "next_action": {
+    "action": "Auditoría independiente antes de PR",
+    "owner": "SENTINEL",
+    "status": "pending",
+    "depends_on": [
+      "DEV_REPORT 1.3"
+    ]
+  },
+  "source": {
+    "path": "history/data/normalized_tickets.json",
+    "sha256": "d029d7763884663eefb0bd4848f04e73aab1d07d9f3def3769f09684bbf68c08"
+  },
+  "baseline": {
+    "path": "src/v1.2/dashboard.html",
+    "commit": "cbf7c25c72e9f2bf14bbe978cc70e7de36050b0e",
+    "sha256": "3d379ed390c6323d058f623f1d4001496719415af3978fb4fe13bcd94b4f79fc"
+  },
+  "identity_reconciliation": {
+    "canonical_project_id": "servicenow-gestion-tickets",
+    "historical_package_project_id": "ATLAS-SN-QA-20261002",
+    "basis": "El usuario identifica explícitamente este proyecto y ordena continuar desde la v1.1 validada; README de main coincide. Se conserva el ID solicitado y se documenta el ID discrepante del paquete histórico sin reescribirlo.",
+    "historical_artifacts_unchanged": true
+  }
+}

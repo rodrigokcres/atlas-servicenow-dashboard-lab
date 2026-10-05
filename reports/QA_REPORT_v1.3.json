@@ -1,0 +1,310 @@
+{
+  "artifact_type": "QA_REPORT",
+  "artifact_version": "1.3",
+  "project_id": "servicenow-gestion-tickets",
+  "created_by": "SENTINEL",
+  "based_on": [
+    {
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.2",
+      "project_id": "servicenow-gestion-tickets",
+      "path": "specs/PROJECT_SPEC_v1.2.json",
+      "sha256": "99b1ff054f0a8bb37a6951ba702ed16b4e2591c12b853454cd42f2cca5f2b4a8"
+    },
+    {
+      "artifact_type": "DATA_SPEC",
+      "artifact_version": "1.1",
+      "project_id": "servicenow-gestion-tickets",
+      "path": "specs/DATA_SPEC_v1.1.json",
+      "sha256": "47d34c62296366a74e29ca5f788e83d8825a3b2fc86b39e65ed740e5b90dad81"
+    },
+    {
+      "artifact_type": "DEV_REPORT",
+      "artifact_version": "1.3",
+      "project_id": "servicenow-gestion-tickets",
+      "path": "reports/DEV_REPORT_v1.3.json",
+      "sha256": "61397798cb2f213b01df264aae45a30dd144a93de9993c6ca87516832663f7b9"
+    }
+  ],
+  "validation_scope": {
+    "included": [
+      "Preparación estática Pages y regresión respecto de dashboard funcional v1.2",
+      "160 combinaciones filtros AND, reset, DOM generado, KPIs, filas, HTTP subruta",
+      "Identidad Git blob y bytes de fuente/código/UI"
+    ],
+    "excluded": [
+      "Nueva certificación desde Excel original",
+      "Despliegue real y visual móvil: pendientes autorización"
+    ],
+    "critical_elements": [
+      "Equivalencia exacta v1.2",
+      "Ejecución de filtros y reset",
+      "Entrada HTTP estática"
+    ],
+    "inputs": [
+      "src/v1.2/dashboard.html Git blob 231d019fa37fae006f9127dc70a89d095cf947ec",
+      "docs/index.html",
+      "qa/independent_expected_v1.2.json"
+    ],
+    "tools_available": [
+      "Node v24 vm",
+      "DOM stub propio",
+      "HTTP local",
+      "Python hashes"
+    ]
+  },
+  "requirements_validation": [
+    {
+      "element": "Entrada docs/index.html",
+      "contract": "PROJECT_SPEC 1.2",
+      "result": "passed",
+      "method": "execution",
+      "expected": "SHA256 baseline",
+      "observed": "3d379ed390c6323d058f623f1d4001496719415af3978fb4fe13bcd94b4f79fc",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ]
+    },
+    {
+      "element": "Conservación comportamiento",
+      "contract": "PROJECT_SPEC 1.2",
+      "result": "passed",
+      "method": "execution",
+      "expected": "160 combinaciones idénticas a baseline y oráculo",
+      "observed": "160 aprobadas",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ]
+    },
+    {
+      "element": "Publicación diferida",
+      "contract": "PROJECT_SPEC 1.2",
+      "result": "passed",
+      "method": "static_review",
+      "expected": "Procedimiento sin ejecución Pages",
+      "observed": "DEPLOYMENT.md documenta pasos pendientes",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ]
+    }
+  ],
+  "kpi_validation": [
+    {
+      "element": "backlog",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Oráculo histórico en 160 filtros",
+      "observed": "Coincidente",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ],
+      "population": "Backlog filtrado según DATA_SPEC; 160 casos",
+      "source": "Fuente embebida idéntica; oráculo histórico qa/independent_expected_v1.2.json",
+      "independent_calculation": "Oráculo independiente histórico conservado; no recalculado desde Excel en esta fase",
+      "difference": 0,
+      "tolerance": "Exacta en conteos/filas; edades a precisión UI visible, no tolerancia contractual nueva"
+    },
+    {
+      "element": "stale_48h",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Oráculo histórico en 160 filtros",
+      "observed": "Coincidente",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ],
+      "population": "Backlog filtrado según DATA_SPEC; 160 casos",
+      "source": "Fuente embebida idéntica; oráculo histórico qa/independent_expected_v1.2.json",
+      "independent_calculation": "Oráculo independiente histórico conservado; no recalculado desde Excel en esta fase",
+      "difference": 0,
+      "tolerance": "Exacta en conteos/filas; edades a precisión UI visible, no tolerancia contractual nueva"
+    },
+    {
+      "element": "unassigned",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Oráculo histórico en 160 filtros",
+      "observed": "Coincidente",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ],
+      "population": "Backlog filtrado según DATA_SPEC; 160 casos",
+      "source": "Fuente embebida idéntica; oráculo histórico qa/independent_expected_v1.2.json",
+      "independent_calculation": "Oráculo independiente histórico conservado; no recalculado desde Excel en esta fase",
+      "difference": 0,
+      "tolerance": "Exacta en conteos/filas; edades a precisión UI visible, no tolerancia contractual nueva"
+    },
+    {
+      "element": "age",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Oráculo histórico en 160 filtros",
+      "observed": "Coincidente",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ],
+      "population": "Backlog filtrado según DATA_SPEC; 160 casos",
+      "source": "Fuente embebida idéntica; oráculo histórico qa/independent_expected_v1.2.json",
+      "independent_calculation": "Oráculo independiente histórico conservado; no recalculado desde Excel en esta fase",
+      "difference": 0,
+      "tolerance": "Exacta en conteos/filas; edades a precisión UI visible, no tolerancia contractual nueva"
+    },
+    {
+      "element": "by_group",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Oráculo histórico en 160 filtros",
+      "observed": "Coincidente",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ],
+      "population": "Backlog filtrado según DATA_SPEC; 160 casos",
+      "source": "Fuente embebida idéntica; oráculo histórico qa/independent_expected_v1.2.json",
+      "independent_calculation": "Oráculo independiente histórico conservado; no recalculado desde Excel en esta fase",
+      "difference": 0,
+      "tolerance": "Exacta en conteos/filas; edades a precisión UI visible, no tolerancia contractual nueva"
+    }
+  ],
+  "data_validation": [
+    {
+      "element": "Fuente embebida",
+      "contract": "DATA_SPEC 1.1",
+      "result": "passed",
+      "method": "execution",
+      "expected": "102 filas fuente; 100 canónicas",
+      "observed": "102 filas fuente; 100 canónicas e identidad HTML completa",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ]
+    }
+  ],
+  "implementation_validation": [
+    {
+      "element": "HTTP subruta",
+      "contract": "PROJECT_SPEC 1.2",
+      "result": "passed",
+      "method": "execution",
+      "expected": "200 y bytes idénticos",
+      "observed": "200 y bytes idénticos",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ]
+    },
+    {
+      "element": "Dependencias web",
+      "contract": "DEV_REPORT 1.3",
+      "result": "passed",
+      "method": "execution",
+      "expected": "Sin scripts externos ni stylesheets externos",
+      "observed": "Ausentes",
+      "evidence": [
+        "qa/pages_audit_v1.3.cjs",
+        "qa/execution_v1.3.json"
+      ]
+    }
+  ],
+  "tests_executed": [
+    {
+      "test_id": "PAGES-EXEC-1",
+      "objective": "Verificación independiente de preparación",
+      "method": "execution",
+      "tool": "Node vm DOM stub + HTTP",
+      "command": "node qa/pages_audit_v1.3.cjs",
+      "inputs": [
+        "docs/index.html",
+        "src/v1.2/dashboard.html",
+        "qa/independent_expected_v1.2.json"
+      ],
+      "expected": "160 casos y reset sin regresiones, HTTP 200, bytes idénticos",
+      "actual": "3863 comprobaciones aprobadas; 160 casos; 0 fallos",
+      "result": "passed",
+      "evidence": [
+        "qa/execution_v1.3.json"
+      ]
+    }
+  ],
+  "tests_not_executed": [
+    {
+      "test_id": "VISUAL",
+      "objective": "Layout y móvil navegador real",
+      "method": "not_executed",
+      "reason": "Chromium no instalado",
+      "impact": "Layout no reejecutado; CSS íntegramente idéntico a v1.2",
+      "critical": false,
+      "action": "Abrir navegador tras publicación autorizada",
+      "owner": "ATLAS"
+    },
+    {
+      "test_id": "PUBLIC",
+      "objective": "URL pública GitHub Pages",
+      "method": "not_executed",
+      "reason": "Activación/despliegue no autorizados en esta fase",
+      "impact": "No se confirma disponibilidad pública",
+      "critical": false,
+      "action": "Tras aprobación del usuario activar y verificar",
+      "owner": "ATLAS"
+    },
+    {
+      "test_id": "EXCEL",
+      "objective": "Recalcular desde Excel original",
+      "method": "not_executed",
+      "reason": "Excel original ausente; excluido de alcance preparación",
+      "impact": "Contraste reutiliza oráculo histórico conservado, no nueva certificación fuente original",
+      "critical": false,
+      "action": "No requerido para copia exacta; aportar Excel si se solicita nueva certificación",
+      "owner": "ATLAS"
+    }
+  ],
+  "findings": [],
+  "blocking_findings": [],
+  "non_blocking_findings": [],
+  "regressions": {
+    "status": "verified",
+    "compared_versions": [
+      "dashboard funcional v1.2 main cbf7c25",
+      "preparación Pages DEV_REPORT 1.3"
+    ],
+    "findings": [],
+    "reason": "Identidad Git blob y byte a byte; DOM generado equivalente en 160 casos y reset."
+  },
+  "limitations": [
+    "DOM stub ejecuta JavaScript y conserva cadenas renderizadas; no es navegador real y no valida layout, accesibilidad ni selección nativa.",
+    "Antigüedad contrastada contra oráculo a precisión visible Intl de 2 decimales; sin tolerancia nueva para resultados de negocio. Identidad completa garantiza precisión interna igual a baseline.",
+    "Inicial intento git show falló porque directorio es descarga de API, no checkout; baseline comprobado por hash Git blob esperado.",
+    "La referencia de blob main proviene del inventario ATLAS; SENTINEL calcula independientemente identidad local.",
+    "Contratos históricos y fuente no modificados por SENTINEL; no se obtuvo todo historial remoto para auditoría inmutabilidad completa."
+  ],
+  "overall_status": "passed_with_observations",
+  "recommended_actions": [
+    "ATLAS preparar PR sin merge; aprobación posterior requerida para Pages.",
+    "Verificar URL pública, filtros/reset y móvil con navegador tras publicación autorizada."
+  ],
+  "change_log": [
+    {
+      "version": "1.3",
+      "change": "Auditoría independiente limitada a preparación GitHub Pages; sin recertificación Excel ni despliegue real."
+    }
+  ],
+  "next_action": {
+    "action": "Preparar Pull Request hacia main sin fusionar ni activar Pages",
+    "owner": "ATLAS",
+    "depends_on": [
+      "QA_REPORT 1.3 passed_with_observations"
+    ]
+  }
+}

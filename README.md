@@ -61,3 +61,8 @@ node qa/browser_audit_v1.2.cjs
 ```
 
 Resultado de SENTINEL para v1.2: **passed_with_observations**. Pasaron las 160 combinaciones, 32 regresiones contra v1.1, restablecimiento, selecciones vacías, bordes de fechas y vista móvil. La observación histórica QA-002 corresponde a diferencias internas IEEE-754 de medias frente a Python (máximo 3,55e-15 días); no se ocultó con tolerancias y las representaciones visibles coinciden. Consulte el informe independiente para el alcance y evidencia exactos.
+
+
+## Preparación GitHub Pages
+
+La funcionalidad continúa en v1.2. El punto de entrada preparado es `docs/index.html`, copia exacta del dashboard validado. Consulte [DEPLOYMENT.md](DEPLOYMENT.md) para publicación posterior desde `main /docs`. Esta preparación no activa Pages ni autoriza merge automático. Contratos: PROJECT_SPEC 1.2, DATA_SPEC 1.1, DEV_REPORT 1.3 y QA_REPORT 1.3.
