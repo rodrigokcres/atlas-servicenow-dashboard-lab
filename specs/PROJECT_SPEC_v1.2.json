@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "PROJECT_SPEC",
+  "artifact_version": "1.2",
+  "project_id": "servicenow-gestion-tickets",
+  "created_by": "ATLAS",
+  "based_on": [
+    {
+      "artifact_type": "PROJECT_SPEC",
+      "artifact_version": "1.1",
+      "path": "specs/PROJECT_SPEC_v1.1.json"
+    }
+  ],
+  "change_log": [
+    "Creación inicial de proyecto de prueba integral independiente.",
+    {
+      "version": "1.1",
+      "change": "Filtro prioridad P1-P4 combinable; restablecimiento; flujo Git; reconciliación explícita del identificador histórico."
+    },
+    {
+      "version": "1.2",
+      "change": "Preparación de GitHub Pages; funcionalidad v1.2 intacta; publicación pendiente de aprobación."
+    }
+  ],
+  "name": {
+    "value": "ServiceNow · Prueba integral de QA",
+    "status": "confirmed"
+  },
+  "objective": {
+    "value": "Preparar publicación del dashboard v1.2 sin cambios funcionales.",
+    "status": "confirmed"
+  },
+  "scope": {
+    "confirmed_in_scope": [
+      "Excel completo",
+      "Dashboard local funcional",
+      "QA independiente y revalidación",
+      "Preparar despliegue estático GitHub Pages desde main /docs mediante PR"
+    ],
+    "confirmed_out_of_scope": [
+      "Backend",
+      "Base de datos",
+      "Autenticación",
+      "Servicios adicionales",
+      "Merge automático",
+      "Activar Pages o desplegar sin aprobación"
+    ],
+    "proposed_in_scope": [],
+    "proposed_out_of_scope": []
+  },
+  "data_sources": {
+    "confirmed": [],
+    "proposed": [
+      {
+        "file": "input/nexus_servicenow_test_v1(3).xlsx",
+        "reason": "Excel más reciente disponible; mensaje sin nuevo adjunto"
+      }
+    ],
+    "pending": []
+  },
+  "requirements": {
+    "confirmed": [
+      {
+        "id": "R1",
+        "text": "Backlog: Nuevo, En progreso y En espera"
+      },
+      {
+        "id": "R2",
+        "text": "Sin actualización: más de 48 horas corridas desde updated_at; updated_at < opened_at no evaluable; fechas faltantes identificadas como no evaluables"
+      },
+      {
+        "id": "R3",
+        "text": "Tickets sin asignar"
+      },
+      {
+        "id": "R4",
+        "text": "Antigüedad"
+      },
+      {
+        "id": "R5",
+        "text": "Distribución por grupo resolutor"
+      },
+      {
+        "id": "R6",
+        "text": "Filtros por tipo de ticket y grupo resolutor combinables y restablecibles; afectan consistentemente tarjetas, gráficos y detalle"
+      },
+      {
+        "id": "R7",
+        "text": "Fecha de corte 2026-10-01 18:00:00 misma referencia horaria del Excel"
+      },
+      {
+        "id": "R8",
+        "text": "Ciclo ATLAS → NEXUS → FORGE → SENTINEL, corrección y segunda auditoría con historial inmutable"
+      },
+      {
+        "id": "R9",
+        "text": "Filtro prioridad: Todas las prioridades, P1, P2, P3, P4. Conjunción AND con tipo y grupo antes de tarjetas, gráficos, distribución, antigüedad, detalle y no evaluables. Todas no restringe prioridad."
+      },
+      {
+        "id": "R10",
+        "text": "Restablecer limpia tipo, grupo y prioridad y restaura población inicial."
+      },
+      {
+        "id": "R11",
+        "text": "Preservar cálculos, fuente, corte, anomalías, deduplicación y comportamiento v1.1; sin nuevos defectos deliberados."
+      },
+      {
+        "id": "R12",
+        "text": "Trabajar separado de main; auditoría independiente satisfactoria antes de cualquier merge. Preparar PR sin merge automático."
+      },
+      {
+        "id": "R13",
+        "text": "docs/index.html conserva exactamente src/v1.2/dashboard.html de main; publicar rama y PR solo tras QA satisfactorio; activación Pages posterior autorizada."
+      }
+    ],
+    "proposed": []
+  },
+  "kpis": {
+    "confirmed": [
+      "backlog",
+      "stale_48h",
+      "unassigned",
+      "age",
+      "by_group"
+    ],
+    "proposed": [],
+    "pending": []
+  },
+  "assumptions": [
+    {
+      "id": "A1",
+      "status": "proposed",
+      "text": "KPIs operativos sin actualización, sin asignar, antigüedad y distribución se calculan sobre backlog; mostrar total fuente y detalle de población."
+    },
+    {
+      "id": "A2",
+      "status": "proposed",
+      "text": "Separar sin responsable de sin grupo; antigüedad al corte desde opened_at."
+    }
+  ],
+  "open_questions": [],
+  "constraints": {
+    "confirmed": [
+      "No alterar fuente",
+      "PROJECT_SPEC y DATA_SPEC consumidos inmutables",
+      "No fingir pruebas ni aprobaciones",
+      "La autorización de defecto deliberado corresponde solo al historial v1.0 y no aplica a esta entrega.",
+      "Mantener Excel de prueba fuera de Git conforme a data/README.md; fuente disponible localmente para QA."
+    ],
+    "proposed": [],
+    "pending": []
+  },
+  "agents_required": [
+    "ATLAS",
+    "NEXUS",
+    "FORGE",
+    "SENTINEL"
+  ],
+  "workflow": {
+    "confirmed_steps": [
+      "ATLAS inspecciona main y emite PROJECT_SPEC 1.2",
+      "FORGE prepara docs y DEV_REPORT 1.3 conservando DATA_SPEC 1.1",
+      "SENTINEL audita independientemente y emite QA_REPORT 1.3",
+      "Preparar PR sin merge",
+      "Tras revisión y aprobación del usuario: merge y configuración Pages en paso posterior"
+    ],
+    "proposed_steps": [],
+    "dependencies": []
+  },
+  "deliverables": {
+    "confirmed": [
+      "dashboard funcional",
+      "PROJECT_SPEC",
+      "DATA_SPEC",
+      "DEV_REPORT por versión",
+      "QA_REPORT por auditoría",
+      "evidencia reproducible",
+      "historial y paquete descargable"
+    ],
+    "proposed": [],
+    "pending": []
+  },
+  "acceptance_criteria": {
+    "confirmed": [
+      "docs/index.html idéntico byte a byte al dashboard v1.2 de main cbf7c25",
+      "Ejecutar de forma independiente combinaciones de filtros y reset sobre scripts embebidos; contrastar oráculo histórico conservado",
+      "Comprobar servicio HTTP del índice bajo subruta del proyecto sin recursos externos",
+      "Mantener contratos previos, src y datos sin modificaciones",
+      "Crear PR únicamente si QA de preparación es satisfactorio; no merge ni activación Pages"
+    ],
+    "proposed": [],
+    "pending": [
+      "Ensayo de URL pública y navegador visual después de activación autorizada"
+    ]
+  },
+  "next_action": {
+    "action": "Preparar publicación",
+    "status": "ready",
+    "owner": "FORGE",
+    "depends_on": [
+      "PROJECT_SPEC 1.2",
+      "DATA_SPEC 1.1"
+    ]
+  },
+  "identity_reconciliation": {
+    "canonical_project_id": "servicenow-gestion-tickets",
+    "historical_package_project_id": "ATLAS-SN-QA-20261002",
+    "basis": "El usuario identifica explícitamente este proyecto y ordena continuar desde la v1.1 validada; README de main coincide. Se conserva el ID solicitado y se documenta el ID discrepante del paquete histórico sin reescribirlo.",
+    "historical_artifacts_unchanged": true
+  },
+  "historical_acceptance_criteria_v1_2": {
+    "confirmed": [
+      "Semántica exacta de reglas confirmadas",
+      "Filtros individuales, combinaciones y restablecimiento consistentes",
+      "No evaluables visibles y excluidos solo de cálculos que requieren sus fechas",
+      "Auditoría final basada en ejecución real y fuente independiente",
+      "Verificar las 160 combinaciones: 4 tipos (incluido todos) × 8 grupos (incluido todos) × 5 prioridades (incluido todas).",
+      "Contrastar valores y filas contra Excel original con cálculo independiente; vacíos, no evaluables, reset, regresión y móvil.",
+      "Con Todas las prioridades resultados equivalentes a v1.1 para las 32 combinaciones anteriores."
+    ],
+    "proposed": [],
+    "pending": []
+  },
+  "validation_scope": {
+    "current": "Preparación de despliegue y ausencia de regresiones respecto de la implementación exacta v1.2; no nueva certificación de cálculos desde Excel.",
+    "historical": "Criterios funcionales históricos se preservan como referencia; identidad exacta mantiene artefacto previamente validado.",
+    "limitations": "Excel y navegador visual no disponibles; no declarar esas pruebas reejecutadas."
+  }
+}
